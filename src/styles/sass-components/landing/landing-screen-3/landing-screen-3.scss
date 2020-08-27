@@ -7,3 +7,10 @@
     font-weight:bold;
   }
 }
+@include respond(phone){
+  .landingScreen3{
+    &__head{
+      padding: 2rem ;
+    }
+  }
+}

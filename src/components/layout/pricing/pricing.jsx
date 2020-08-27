@@ -11,7 +11,6 @@ import LandingScreen9 from "../landing/landing-screen-9/landing-screen-9"
           <div className="pricing">
               <Price />
               <Faq />
-              <LandingScreen9 />
           </div>
      )
    }

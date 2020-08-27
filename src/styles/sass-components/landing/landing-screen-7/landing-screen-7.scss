@@ -9,6 +9,7 @@
       transform: skewX(-5deg);
       @include respond(phone){
         transform: skewX(0);
+          margin: 1rem;
       }
     &-review{
       transform: skewX(5deg);

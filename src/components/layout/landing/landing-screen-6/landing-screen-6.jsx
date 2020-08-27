@@ -16,6 +16,9 @@ import Carousel from 'react-elastic-carousel';
     moduleNo:14
   }
 
+   componentDidMount=()=>{
+     document.getElementsByClassName('rec-arrow').id = "newId"
+   }
 
 
    render(){
@@ -23,7 +26,7 @@ import Carousel from 'react-elastic-carousel';
      return (
          <div className="landingScreen6">
          <div className="landingScreen6__head">Module ({this.state.moduleNo})</div>
-         <Carousel>
+         <Carousel className="carousel">
                  {this.state.items.map(item => <div  className="landingScreen3__cardWrapper" key={item.id}>
                  <div  className="card">
                           <div style={this.props.styles} className="card__side card__side--front">

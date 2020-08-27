@@ -63,6 +63,9 @@ a{
 .main{
   padding: 0 4rem;
   letter-spacing: 1.2px;
+  @include respond(phone){
+    padding: 0 .1rem;
+  }
 }
 // .App{
 //   -webkit-user-select: none; /* Safari */

@@ -32,7 +32,7 @@
 }
 .card__side {
     // background-color: $color-white;
-    height: 90vh;
+    height: 65vh;
     transition: all 0.8s ease;
     position: absolute;
     overflow: hidden;
@@ -48,7 +48,7 @@
     }
 }
 .card__side--front {
-     border-radius: 60px;
+     // border-radius: 60px;
     // background-color: $color-white;
     // color: $color-secondary-blue;
     position: relative;
@@ -79,7 +79,7 @@
 
 }
 .card__side--back {
-    border-radius: 60px;
+    // border-radius: 60px;
     // background-color: rgba($color-secondary-blue,1);
     transform: rotateY(180deg);
     display: flex;

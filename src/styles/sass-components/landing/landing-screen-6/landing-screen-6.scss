@@ -7,3 +7,14 @@
      font-weight: bold;
   }
 }
+@include respond(phone){
+  .landingScreen6{
+    padding: 0rem 0;
+    &__head{
+       text-align: center;
+       font-size: 4rem;
+       padding: 0rem 0;
+       font-weight: bold;
+    }
+  }
+}
