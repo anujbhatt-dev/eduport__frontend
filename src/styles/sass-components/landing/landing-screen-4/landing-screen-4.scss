@@ -1,0 +1,31 @@
+.landingScreen4{
+  padding: 0 25rem;
+  padding-bottom: 5rem;
+
+  &__data{
+    padding-bottom: 5rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+  }
+}
+
+@include respond(tab-port)
+{
+  .landingScreen4{
+    padding: 0 15rem;
+    padding-bottom: 5rem;
+  }
+}
+
+@include respond(phone)
+{
+  .landingScreen4{
+    padding: 0 5rem;
+    padding-bottom: 5rem;
+    &__data{
+      padding-bottom: 3rem;
+      // font-size: 2rem;
+      text-align: center;
+    }
+  }
+}

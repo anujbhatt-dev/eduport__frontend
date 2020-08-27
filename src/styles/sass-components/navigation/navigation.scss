@@ -1,0 +1,43 @@
+.navigation{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+   &__items{
+     & a{
+       color: $color-black;
+     }
+     font-size: 1.8rem;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding-right: 3rem;
+     &-item{
+        padding: 0 .5rem;
+        text-transform: uppercase;
+     }
+   }
+}
+@include respond(tab-land){
+  .navigation{
+     &__items{
+       font-size: 1.2rem;
+       padding-right: 0rem;
+       &-item{
+          padding: 0 .5rem;
+      }
+     }
+  }
+}
+@include respond(tab-port){
+  .navigation{
+     &__items{
+       font-size: 1.3rem;
+       padding-right: 1rem;
+       font-weight: bold;
+       display: none;
+       &-item{
+          padding: 0 .5rem;
+      }
+     }
+  }
+}

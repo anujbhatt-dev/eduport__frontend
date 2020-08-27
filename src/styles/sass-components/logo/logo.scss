@@ -1,0 +1,73 @@
+.logo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.5em;
+  padding-left:14rem;
+  font-weight: 500;
+  &__name{
+    padding-right: 4rem;
+    border-right: 1px solid rgba($color-red,.8);
+    font-size: 1.8rem;
+    &-main{
+       text-transform: uppercase;
+    }
+    &-secondary{
+
+    }
+  }
+  &__tagline{
+     padding-left: 3rem;
+     font-size: 1.5rem;
+  }
+}
+
+@include respond(tab-land){
+  .logo{
+    padding: 2rem;
+    padding-left: 8rem;
+    font-weight: 500;
+    &__name{
+      padding-right: 4rem;
+      border-right: 1px solid rgba($color-red,.8);
+      font-size: 1.4rem;
+      &-main{
+         text-transform: uppercase;
+      }
+      &-secondary{
+
+      }
+    }
+    &__tagline{
+       padding-left: 3rem;
+       font-size: 1.2rem;
+    }
+  }
+}
+
+@include respond(tab-port){
+  .logo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    padding-left: 3rem;
+    font-weight: 500;
+    &__name{
+      padding-right: 4rem;
+      border-right: 1px solid rgba($color-red,.8);
+      font-size: 1.4rem;
+      &-main{
+         text-transform: uppercase;
+      }
+      &-secondary{
+
+      }
+    }
+    &__tagline{
+       padding-left: 3rem;
+       font-size: 1.2rem;
+       // display: none;
+    }
+  }
+}

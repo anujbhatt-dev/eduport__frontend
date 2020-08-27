@@ -1,0 +1,11 @@
+.callUsBar{
+  // text-align: right;
+  padding-right: 2rem;
+  height: 4rem;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1.5rem;
+  color: $color-white;
+  background: rgba($color-secondary-blue,.9);
+}

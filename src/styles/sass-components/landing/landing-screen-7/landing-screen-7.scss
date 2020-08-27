@@ -1,0 +1,35 @@
+.landingScreen7{
+   margin: 5rem 1rem;
+   padding-bottom: 10rem;
+  &__container{
+      margin: 5rem;
+      // padding: 0 15rem;
+      background: $color-white;
+      box-shadow: 0rem 0rem 5rem rgba($color-black,.2);
+      transform: skewX(-5deg);
+      @include respond(phone){
+        transform: skewX(0);
+      }
+    &-review{
+      transform: skewX(5deg);
+      margin: 5rem auto;
+      // text-align: center;
+      width: 80%;
+      padding-left: 1rem;
+      @include respond(phone){
+        width: 99%;
+        transform: skewX(0);
+      }
+      &-name{
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        padding-bottom:.5rem;
+      }
+      &-detail{
+        font-size: 2rem;
+        font-weight: 300;
+      }
+    }
+  }
+}

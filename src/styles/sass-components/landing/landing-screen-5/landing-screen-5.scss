@@ -1,0 +1,80 @@
+.landingScreen5{
+  padding-bottom: 3rem;
+  &__head{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 400;
+    color: rgba($color-black,.9);
+    padding-bottom: 3rem;
+  }
+  &__body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    &-box{
+      opacity: .7;
+      flex-basis: 32%;
+      padding: 2rem 2rem;
+      transition: all .2s;
+      cursor: default;
+      line-height: 2;
+      &-head{
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+      &-detail{
+        font-size: 1.8rem;
+      }
+      &:hover{
+        opacity: 1;
+      }
+    }
+    &-arrow{
+      opacity: .7;
+      font-size: 8rem;
+      flex-basis: 2%;
+      font-weight: 900;
+      color: $color-Spring-green;
+      &Down{
+        display: none;
+      }
+    }
+  }
+}
+@include respond(phone){
+  .landingScreen5{
+    &__body{
+      flex-flow: column;
+      &-box{
+        opacity: .7;
+        flex-basis: 32%;
+        padding: 2rem 2rem;
+        transition: all .2s;
+        cursor: default;
+        line-height: 2;
+        &-head{
+          font-size: 2.5rem;
+          font-weight: bold;
+        }
+        &-detail{
+          font-size: 1.8rem;
+        }
+        &:hover{
+          opacity: 1;
+        }
+      }
+      &-arrow{
+        display: none;
+        &Down{
+          display: inline-block;
+          opacity: .7;
+          font-size: 8rem;
+          flex-basis: 2%;
+          font-weight: 900;
+          color: $color-Spring-green;
+        }
+      }
+    }
+  }
+}

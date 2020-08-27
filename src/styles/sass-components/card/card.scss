@@ -1,0 +1,123 @@
+.landingScreen3__cardWrapper{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 7rem;
+  @include respond(tab-port){
+    flex-flow: column;
+    align-items: center;
+  }
+}
+
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    // height: 90vh;
+    margin: 5rem 3rem;
+    width: 30%;
+    @include respond(tab-land){
+      // height: 90vh;
+      margin: 1rem 1rem;
+      width: 70%;
+    }
+    @include respond(phone){
+      display: flex;
+      // height: 90vh;
+      justify-content: center;
+      flex-flow:column;
+      margin: 1rem auto;
+      width: 100%;
+    }
+}
+.card__side {
+    // background-color: $color-white;
+    height: 90vh;
+    transition: all 0.8s ease;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 3px;
+    box-shadow: 0 1rem 5rem  rgba($color-postman-background, 0.5);
+    @include respond(tab-land){
+       height: 50vh;
+    }
+}
+.card__side--front {
+     border-radius: 60px;
+    // background-color: $color-white;
+    // color: $color-secondary-blue;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    &-image{
+      width: 100%;
+      // position: absolute;
+      bottom: 0;
+      padding-bottom: 5rem;
+    }
+    &-head{
+       font-size: 3.5rem;
+       font-weight: bolder;
+       letter-spacing: 2px;
+       padding: 1.5rem ;
+       padding-top: 5rem;
+
+    }
+    &-para{
+      font-size: 1.8rem;
+      font-weight: bolder;
+      letter-spacing: 2px;
+      padding: 1.5rem;
+      padding-bottom:  5rem;
+    }
+
+}
+.card__side--back {
+    border-radius: 60px;
+    // background-color: rgba($color-secondary-blue,1);
+    transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.card:hover .card__side--front {
+    position: relative;
+    transform: rotateY(-180deg);
+}
+.card:hover .card__side--back {
+    transform: rotateY(0);
+}
+
+
+
+
+@media only screen and (hover: none), only screen and (max-width: 56.25em) {
+    .card {
+        // height: 90vh;
+        border-radius: 3px;
+        // background-color: #fff;
+        box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
+    }
+    .card__side {
+      // height: 90vh;
+        box-shadow: none;
+        height: auto;
+        position: relative;
+    }
+    .card__side--back {
+        // background-color: rgba($color-secondary-blue,1);
+        transform: rotateY(0);
+
+    }
+    .card:hover .card__side--front {
+        transform: rotateY(0);
+    }
+}

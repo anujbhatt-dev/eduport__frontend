@@ -1,0 +1,276 @@
+.footer{
+  background: $color-secondary-blue;
+  color: $color-white;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10rem;
+  min-height: 50vh;
+  justify-content: space-between;
+  &__copyright{
+     padding-bottom: 5rem;
+    &-h1{
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      & span{
+         font-size: 2rem;
+         letter-spacing: 1.5px;
+      }
+    }
+    &-text{
+      font-size: 1.3rem;
+      line-height: 2;
+      margin-bottom: 2rem;
+    }
+    &-copyrightText{
+     font-size: 1.5rem;
+     color: $color-grey-dark-2;
+    }
+  }
+  &__nav{
+    padding-bottom: 5rem;
+     display: flex;
+    &-col{
+      padding: 1rem 0;
+      &-link{
+         font-size: 1.8rem;
+         padding: .5rem 3rem;
+         padding-left: 0;
+      }
+    }
+  }
+  &__socialMedia{
+    &-question{
+         display: flex;
+         flex-flow: column;
+         font-size: 1.8rem;
+      &-p1{
+        padding:  .5rem 0;
+        font-weight: lighter;
+
+      }
+      &-p2{
+        padding:  .5rem 0;
+        margin-bottom: 5rem;
+        font-weight: bug;
+      }
+    }
+    &-links{
+
+      &-head{
+          font-size: 2rem;
+          padding-bottom: .5rem;
+      }
+      &-row{
+
+        &-item{
+          font-size: 2.5rem;
+          padding-right: 2rem;
+        }
+        &-1{
+
+        }
+        &-2{
+
+        }
+        &-3{
+
+        }
+        &-4{
+
+        }
+      }
+    }
+  }
+}
+@include respond(tab-land){
+  .footer{
+
+    &__copright{
+
+      &-h1{
+
+      }
+      &-text{
+
+      }
+      &-copyrightText{
+
+      }
+    }
+    &__nav{
+
+      &-col{
+
+        &-link{
+
+        }
+      }
+    }
+    &__socialmedia{
+
+      &-question{
+
+        &-p1{
+
+        }
+        &-p2{
+
+        }
+      }
+      &-links{
+
+        &-head{
+
+        }
+        &-row{
+
+          &-item{
+
+          }
+          &-1{
+
+          }
+          &-2{
+
+          }
+          &-3{
+
+          }
+          &-4{
+
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@include respond(tab-port){
+  .footer{
+
+    &__copright{
+
+      &-h1{
+
+      }
+      &-text{
+
+      }
+      &-copyrightText{
+
+      }
+    }
+    &__nav{
+
+      &-col{
+
+        &-link{
+
+        }
+      }
+    }
+    &__socialmedia{
+
+      &-question{
+
+        &-p1{
+
+        }
+        &-p2{
+
+        }
+      }
+      &-links{
+
+        &-head{
+
+        }
+        &-row{
+
+          &-item{
+
+          }
+          &-1{
+
+          }
+          &-2{
+
+          }
+          &-3{
+
+          }
+          &-4{
+
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+@include respond(phone){
+  .footer{
+
+    &__copright{
+
+      &-h1{
+
+      }
+      &-text{
+
+      }
+      &-copyrightText{
+
+      }
+    }
+    &__nav{
+
+      &-col{
+
+        &-link{
+
+        }
+      }
+    }
+    &__socialmedia{
+
+      &-question{
+
+        &-p1{
+
+        }
+        &-p2{
+
+        }
+      }
+      &-links{
+
+        &-head{
+
+        }
+        &-row{
+
+          &-item{
+
+          }
+          &-1{
+
+          }
+          &-2{
+
+          }
+          &-3{
+
+          }
+          &-4{
+
+          }
+        }
+      }
+    }
+  }
+}
