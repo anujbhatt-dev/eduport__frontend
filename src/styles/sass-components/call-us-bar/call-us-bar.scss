@@ -29,6 +29,11 @@
   animation: vib 1s linear infinite;
   // animation-fill-mode: forwards;
   backface-visibility: hidden;
+  @include respond(phone){
+    height: 3.5rem;
+    width: 3.5rem;
+    margin-top: .2rem;
+  }
   &:hover{
     color: $color-Spring-green;
     background: $color-white;

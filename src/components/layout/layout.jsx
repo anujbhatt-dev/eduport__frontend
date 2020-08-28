@@ -8,6 +8,7 @@ import Navigation from "./navigation/navigation"
 import CallUsBar from "./call-us-bar/call-us-bar"
 import {Switch,Route} from "react-router-dom"
 import Footer from "./footer/footer"
+import Spinner from "../../UI/spinner/spinner"
 
  class Layout extends Component{
 
@@ -40,6 +41,7 @@ import Footer from "./footer/footer"
              </Switch>
            </div>
             <Footer/>
+            <Spinner />
         </div>
      )
    }

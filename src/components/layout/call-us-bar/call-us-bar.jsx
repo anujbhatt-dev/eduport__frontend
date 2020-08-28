@@ -18,7 +18,7 @@
    render(){
 
      return (
-          <div className="callUsBar"><a href="tel://+1234567890"><i onClick={this.showHandler} id="call" className="call fa fa-phone" aria-hidden="true"></i></a>  {this.state.show?<span >+91 8080107744</span>:null}</div>
+          <div className="callUsBar"><a href="tel://+918889266799"><i onClick={this.showHandler} id="call" className="call fa fa-phone" aria-hidden="true"></i></a>  {this.state.show?<span >+91 8080107744</span>:null}</div>
      )
    }
  }

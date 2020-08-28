@@ -15,10 +15,6 @@ import {Link} from "react-router-dom"
                     business by educating and brushing exim skills of<br/>
                     the working class.
                 </p>
-                <div className="footer__contact">Contact Us</div>
-                <div className="footer__contactNo">+ 91 8889266799</div>
-                <div className="footer__contactNo">+ 91 8080107744</div>
-                <div className="footer__contactNo">hello@eduports.in</div>
                 <p className="footer__copyright-copyrightText"> copyright 2019-20</p>
             </div>
             <div className="footer__nav">
@@ -43,12 +39,17 @@ import {Link} from "react-router-dom"
                      <div className="footer__socialMedia-links-head">
                          Follow Us
                      </div>
+
                      <div className="footer__socialMedia-links-row">
                          <Link  to="" className="footer__socialMedia-links-row-item footer__socialMedia-links-row-1"><i className="fa fa-facebook" aria-hidden="true"></i></Link>
                          <Link  to="" className="footer__socialMedia-links-row-item footer__socialMedia-links-row-2"><i className="fa fa-twitter" aria-hidden="true"></i></Link>
                          <Link  to="" className="footer__socialMedia-links-row-item footer__socialMedia-links-row-3"><i className="fa fa-instagram" aria-hidden="true"></i></Link>
                          <Link  to="" className="footer__socialMedia-links-row-item footer__socialMedia-links-row-4"><i className="fa fa-linkedin" aria-hidden="true"></i></Link>
                      </div>
+                     <div className="footer__contact">Contact Us</div>
+                     <div className="footer__contactNo"><a href="tel://+918889266799">+ 91 8889266799</a></div>
+                     <div className="footer__contactNo"><a href="tel://+918080107744">+ 91 8080107744</a></div>
+                     <div className="footer__contactNo">hello@eduports.in</div>
                 </div>
             </div>
         </footer>

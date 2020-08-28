@@ -26,7 +26,7 @@ class LandingScreen9 extends Component{
         <div style={this.props.styles} className="landingScreen9">
                 <div className="landingScreen9__details">
                      <div className="landingScreen9__details-contact">Contact Us</div>
-                     <div className="landingScreen9__details-contactNo">+ 91 8889266799</div>
+                     <div className="landingScreen9__details-contactNo">8080107744+ 91 8889266799</div>
                      <div className="landingScreen9__details-contactNo">+ 91 8080107744</div>
                      <div className="landingScreen9__details-email">hello@eduports.in</div>
                 </div>
