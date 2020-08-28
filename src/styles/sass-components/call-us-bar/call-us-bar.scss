@@ -6,6 +6,55 @@
   justify-content: flex-end;
   align-items: center;
   font-size: 1.5rem;
+  color: $color-black;
+  // background: rgba($color-secondary-blue,.9);
+  & span{
+     color: $color-black;
+     animation: call .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);}
+}
+.call{
   color: $color-white;
-  background: rgba($color-secondary-blue,.9);
+  font-size: 2rem;
+  padding:.5rem;
+  height: 3rem;
+  width: 3rem;
+  margin-right: 2rem;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // border: 2px solid $color-secondary-blue;
+  transition: all .5s;
+  background: $color-Spring-green;
+  animation: vib 1s linear infinite;
+  // animation-fill-mode: forwards;
+  backface-visibility: hidden;
+  &:hover{
+    color: $color-Spring-green;
+    background: $color-white;
+  }
+
+}
+@keyframes call {
+   from{
+     color: $color-black;
+     transform: translateX(200%);
+   }to{
+     color: $color-black;
+     transform: translateX(0%);
+   }
+}
+@keyframes vib {
+   0%{
+     transform: rotate(0deg);
+   }25%{
+     transform: rotate(20deg);
+   }50%{
+     transform: rotate(0deg);
+   }75%{
+     transform: rotate(-20deg);
+   }100%{
+     transform: rotate(0deg);
+   }
+
 }

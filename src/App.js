@@ -6,7 +6,7 @@ import Layout from "./components/layout/layout"
 class App extends React.Component {
 
    state={
-     background:"#f1f3f8",
+     background:"#e3dfc8",
      fontColor:"#000"
    }
 

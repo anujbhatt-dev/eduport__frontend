@@ -2,6 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 5000;
+  background: $color-white;
+
    &__items{
      & a{
        color: $color-black;
@@ -16,6 +21,7 @@
         text-transform: uppercase;
      }
    }
+
 }
 @include respond(tab-land){
   .navigation{
@@ -37,7 +43,12 @@
        display: none;
        &-item{
           padding: 0 .5rem;
+
       }
      }
   }
+}
+.navigation__items-active{
+  color: $color-secondary-blue;
+
 }

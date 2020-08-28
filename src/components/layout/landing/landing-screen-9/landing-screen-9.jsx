@@ -22,14 +22,12 @@ class LandingScreen9 extends Component{
 
   render(){
 
-    return (
-        <div className="landingScreen9">
+    return (<><div className="landingScreen6__head">Why Wait! <span >Get Started </span></div>
+        <div style={this.props.styles} className="landingScreen9">
                 <div className="landingScreen9__details">
-                     <div className="landingScreen9__details-whyWait">why wait!</div>
-                     <div className="landingScreen9__details-getStarted">GetStarted</div>
                      <div className="landingScreen9__details-contact">Contact Us</div>
                      <div className="landingScreen9__details-contactNo">+ 91 8889266799</div>
-                     <div className="landingScreen9__details-contactNo">+ 91 8080107744!</div>
+                     <div className="landingScreen9__details-contactNo">+ 91 8080107744</div>
                      <div className="landingScreen9__details-email">hello@eduports.in</div>
                 </div>
                 <div className="landingScreen9__enquire">
@@ -44,7 +42,7 @@ class LandingScreen9 extends Component{
                      message
                 </div>
 
-        </div>
+        </div></>
     )
   }
 }

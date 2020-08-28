@@ -15,6 +15,10 @@ import {Link} from "react-router-dom"
                     business by educating and brushing exim skills of<br/>
                     the working class.
                 </p>
+                <div className="footer__contact">Contact Us</div>
+                <div className="footer__contactNo">+ 91 8889266799</div>
+                <div className="footer__contactNo">+ 91 8080107744</div>
+                <div className="footer__contactNo">hello@eduports.in</div>
                 <p className="footer__copyright-copyrightText"> copyright 2019-20</p>
             </div>
             <div className="footer__nav">

@@ -10,7 +10,7 @@ class LandingScreen7 extends Component{
    items: [
      {
        id: 1,
-       reviews: [
+       reviews:[
          {
            name:"Anuj BHatt",
            review:"very good review very good review very good review very good review"
@@ -67,7 +67,7 @@ class LandingScreen7 extends Component{
   render(){
 
     return (
-        <div className="landingScreen7">
+        <div style={this.props.styles} className="landingScreen7">
         <div className="landingScreen6__head">Reviews</div>
         <Carousel>
                 {this.state.items.map((container,i) => <div style={{display:"flex"}} key={container.id}>

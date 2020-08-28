@@ -1,7 +1,7 @@
 .price{
   perspective: 1000px;
   // height: 100vh;
-  background: rgba($color-react-blue,.2);
+  background: rgba($color-secondary-blue,.2);
   padding: 5rem 10rem;
   display: flex;
   // flex-flow: wrap;
@@ -21,7 +21,7 @@
     padding: 2rem 1rem;
     margin: 2rem 3rem;
     padding-bottom: 1rem;
-    border-radius: 18px;
+    // border-radius: 18px;
     @include respond(phone){
       font-size: 2.5rem;
       padding: 0rem 0rem;
@@ -109,28 +109,28 @@
    transform: rotate3d(1, 1, 1, 0deg) rotateY(20deg);
    box-shadow: -1rem 2rem 5rem rgba($color-black,.5);
    box-sizing: border-box;
-   border-top: 5rem solid rgba($color-react-blue,.7);
-   border-right: 5px solid rgba($color-react-blue,.7);
-   border-bottom: 5px solid rgba($color-react-blue,.7);
-   border-left: 5px solid rgba($color-react-blue,.7);
+   border-top: 5rem solid rgba($color-secondary-blue,1);
+   border-right: 5px solid rgba($color-secondary-blue,1);
+   border-bottom: 5px solid rgba($color-secondary-blue,1);
+   border-left: 5px solid rgba($color-secondary-blue,1);
 }
 .price__card-2{
   transform: scaleY(0.95);
   box-sizing: border-box;
-  border-top: 5rem solid rgba($color-react-blue,.7);
-  border-right: 5px solid rgba($color-react-blue,.7);
-  border-bottom: 5px solid rgba($color-react-blue,.7);
-  border-left: 5px solid rgba($color-react-blue,.7);
+  border-top: 5rem solid rgba($color-secondary-blue,1);
+  border-right: 5px solid rgba($color-secondary-blue,1);
+  border-bottom: 5px solid rgba($color-secondary-blue,1);
+  border-left: 5px solid rgba($color-secondary-blue,1);
 }
 
 .price__card-3{
    transform: rotate3d(1, 1, 1, 0deg) rotateY(-20deg);
    box-shadow: 1rem 2rem 5rem rgba($color-black,.5);
    box-sizing: border-box;
-   border-top: 5rem solid rgba($color-react-blue,.7);
-   border-right: 5px solid rgba($color-react-blue,.7);
-   border-bottom: 5px solid rgba($color-react-blue,.7);
-   border-left: 5px solid rgba($color-react-blue,.7);
+   border-top: 5rem solid rgba($color-secondary-blue,1);
+   border-right: 5px solid rgba($color-secondary-blue,1);
+   border-bottom: 5px solid rgba($color-secondary-blue,1);
+   border-left: 5px solid rgba($color-secondary-blue,1);
 }
 @include respond(tab-land){
   .price{

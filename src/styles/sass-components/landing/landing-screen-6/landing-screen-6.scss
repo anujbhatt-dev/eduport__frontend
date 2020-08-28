@@ -1,20 +1,84 @@
 .landingScreen6{
-  padding: 5rem 0;
   &__head{
      text-align: center;
      font-size: 4rem;
-     padding: 5rem 0;
-     font-weight: bold;
+     padding: 2rem 0;
+  }
+  &__Wrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    &-card{
+      // width: 25%;
+      box-shadow: inset 0rem 0rem 5rem rgba($color-secondary-blue,.1);
+      margin: 1rem;
+      padding: 2rem 1rem;
+      // background: rgba($color-secondary-blue,.1);
+      &-iconWrapper{
+
+        &-icon{
+          font-size: 3rem;
+          padding: 1rem;
+          border-radius: 100px;
+          margin-bottom: 1rem;
+          // display: flex;
+          // justify-content: center;
+          // align-items: center;
+          color: $color-secondary-blue;
+          background: $color-white;
+          box-shadow: 0rem 0rem 2rem rgba($color-secondary-blue,.2);
+        }
+      }
+      &-head{
+        font-size: 2.5rem;
+        font-weight:500;
+        padding-bottom: .5rem;
+      }
+      &-time{
+        padding-bottom: 2rem;
+        font-size: 1.5rem;
+        font-weight:500;
+        opacity: .7;
+      }
+      &-list{
+        &-item{
+          padding-bottom: 1rem;
+          font-size: 1.5rem;
+          font-weight:800;
+          letter-spacing: 1.5px;
+          color: $color-secondary-blue;
+        }
+      }
+    }
   }
 }
+
+
+
 @include respond(phone){
   .landingScreen6{
-    padding: 0rem 0;
     &__head{
-       text-align: center;
-       font-size: 4rem;
-       padding: 0rem 0;
-       font-weight: bold;
+       font-size: 3rem;
+    }
+    &__Wrapper{
+      &-card{
+        text-align: center;
+        // width: 25%;
+        margin: 1rem 0;
+        padding: 2rem 2rem;
+        // background: rgba($color-secondary-blue,.1);
+        &-head{
+          font-size: 2rem;
+        }
+        &-time{
+          font-size: 1.3rem;
+        }
+        &-list{
+          &-item{
+            font-size: 1.3rem;;
+          }
+        }
+      }
     }
   }
 }

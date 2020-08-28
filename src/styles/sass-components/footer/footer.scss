@@ -6,6 +6,14 @@
   padding: 10rem;
   min-height: 50vh;
   justify-content: space-between;
+  &__contact{
+    font-size: 2rem;
+    padding-bottom: 1rem;
+  }
+  &__contactNo{
+    font-size: 1.5rem;
+    padding-bottom: .5rem;
+  }
   &__copyright{
      padding-bottom: 5rem;
     &-h1{

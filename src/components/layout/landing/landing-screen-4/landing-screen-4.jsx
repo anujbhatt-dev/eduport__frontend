@@ -24,7 +24,7 @@
    render(){
 
      return (
-         <div className="landingScreen4">
+         <div style={this.props.styles} className="landingScreen4">
                 <div className="landingScreen3__head">Who can Enroll!</div>
                 {this.state.data.map(data=>{
                   return <div className="landingScreen4__data"><strong>{data.for}</strong> - {data.detail}</div>

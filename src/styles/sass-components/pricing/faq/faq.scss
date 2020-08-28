@@ -1,3 +1,5 @@
+
+
 .faq{
   background: rgba($color-grey-light,.1);
   // width: 100vw;
@@ -10,14 +12,41 @@
   }
   &__questions{
     &-item{
+      overflow: hidden;
+      cursor: pointer;
     font-size: 2rem;
-    border-radius: 18px;
+    // border-radius: 18px;
     background: $color-white;
     padding: 3rem 2rem;
     margin:  3rem 15rem;
     box-shadow: 0 0 5rem -3rem rgba($color-black,.5);
+    transition: all .2s;
+
+    & h6{
+      margin-top:1rem;
+      font-weight: 400;
+      animation: para .5s ease-out;
+    }
+    & p{
+      display:flex;
+      justify-content:space-between;
+      align-items: center;
+       // margin: 3rem;
+    }
+    &:hover{
+      background: rgba($color-react-blue,.2);
+    }
   }
 
+  }
+}
+
+@keyframes para {
+  from{
+     transform: translateY(500%);
+
+  }to{
+      transform: translateY(0%);
   }
 }
 @include respond(tab-land){
@@ -31,6 +60,7 @@
     &__questions{
       &-item{
       margin:  5rem 10rem;
+
     }
 
     }
@@ -53,4 +83,43 @@
 
     }
   }
+}
+
+.renderAnimation{
+  animation: renderAnimation .5s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes renderAnimation {
+  from{
+     transform: rotate(0deg);
+     // position: absolute;
+     // top: 5%;
+     // right: 5%;
+  }to{
+    // position: absolute;
+    // top: 95%;
+    // right: 5%;
+      transform: rotate(540deg);
+  }
+}
+.renderAnimation2{
+  animation: renderAnimation2 .3s linear;
+  animation-fill-mode: forwards;
+}
+@keyframes renderAnimation2 {
+  from{
+     transform: rotate(0deg);
+     // position: absolute;
+     // top: 5%;
+     // right: 5%;
+  }to{
+    // position: absolute;
+    // top: 95%;
+    // right: 5%;
+      transform: rotate(-360deg);
+  }
+}
+.doubleArrow{
+  font-size: 3rem;
+  animation-fill-mode: forwards;
 }

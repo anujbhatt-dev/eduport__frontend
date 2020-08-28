@@ -30,7 +30,7 @@ class Navigation extends Component{
 
 
     return (
-         <div className="navigation">
+         <div style={this.props.styles} className="navigation">
             <i onClick={this.modalHandler} style={this.state.show?{}:{}} className={this.state.show?"fa fa-times bars":"fa fa-bars bars"} aria-hidden="true"></i>
             <div className="logo">
                  <div className="logo__name">
@@ -42,10 +42,10 @@ class Navigation extends Component{
                  </div>
             </div>
             <nav className="navigation__items">
-                  <NavLink activClassName="navigation__items-avtive" to="/pricing"><div className="navigation__items-item">Pricing</div></NavLink>
-                  <NavLink activClassName="navigation__items-avtive" to="/aboutUs"><div className="navigation__items-item">About us</div></NavLink>
-                  <NavLink activClassName="navigation__items-avtive" to="/blogs"><div className="navigation__items-item">blogs.</div></NavLink>
-                  <NavLink activClassName="navigation__items-avtive" to="/contactUs"><div className="navigation__items-item">contact us</div></NavLink>
+                  <NavLink activeClassName="navigation__items-active" to="/pricing"><div className="navigation__items-item">Pricing</div></NavLink>
+                  <NavLink activeClassName="navigation__items-active" to="/aboutUs"><div className="navigation__items-item">About us</div></NavLink>
+                  <NavLink activeClassName="navigation__items-active" to="/blogs"><div className="navigation__items-item">blogs.</div></NavLink>
+                  <NavLink activeClassName="navigation__items-active" to="/contactUs"><div className="navigation__items-item">contact us</div></NavLink>
             </nav>
 
             <Modal clicked={this.modalHandler} show={this.state.show}>

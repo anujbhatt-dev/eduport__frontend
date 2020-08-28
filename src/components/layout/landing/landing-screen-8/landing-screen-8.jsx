@@ -42,7 +42,8 @@ class LandingScreen8 extends Component{
     let icon5 = <i className="fa fa-file-text file" aria-hidden="true"></i>
 
     return (
-        <div className="landingScreen8">
+        <div style={this.props.styles} className="landingScreen8">
+             
              <div className="landingScreen8__appLink" >
                 <div className="landingScreen8__appLink-box">
 

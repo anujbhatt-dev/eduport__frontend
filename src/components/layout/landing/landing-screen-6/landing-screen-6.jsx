@@ -9,9 +9,52 @@ import Carousel from 'react-elastic-carousel';
 
    state = {
     items: [
-      {id: 1, title: 'item #1'},
-      {id: 2, title: 'item #2'},
-      {id: 3, title: 'item #3'},
+      {
+        id: 1,
+        data: [
+          {
+            icon:"life-ring",
+            h1:"Build Your web Presense",
+            h2:"5 lessons / 30 min",
+            list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."]
+          },
+          {
+            icon:"bar-chart",
+            h1:"Build Your web Presense",
+            h2:"5 lessons / 30 min",
+            list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."]
+          },
+          {
+            icon:"camera",
+            h1:"Build Your web Presense",
+            h2:"5 lessons / 30 min",
+            list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."]
+          },
+        ]
+      },
+      {
+        id: 1,
+        data: [
+          {
+            icon:"life-ring",
+            h1:"Build Your web Presense",
+            h2:"5 lessons / 30 min",
+            list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."]
+          },
+          {
+            icon:"bar-chart",
+            h1:"Build Your web Presense",
+            h2:"5 lessons / 30 min",
+            list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."]
+          },
+          {
+            icon:"camera",
+            h1:"Build Your web Presense",
+            h2:"5 lessons / 30 min",
+            list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."]
+          },
+        ]
+      },
     ],
     moduleNo:14
   }
@@ -24,40 +67,23 @@ import Carousel from 'react-elastic-carousel';
    render(){
 
      return (
-         <div className="landingScreen6">
+         <div style={this.props.styles} className="landingScreen6">
          <div className="landingScreen6__head">Module ({this.state.moduleNo})</div>
-         <Carousel className="carousel">
-                 {this.state.items.map(item => <div  className="landingScreen3__cardWrapper" key={item.id}>
-                 <div  className="card">
-                          <div style={this.props.styles} className="card__side card__side--front">
-                             <div className="card__side-head card__side--front-head">hello</div>
-                             <div className="card__side-para card__side--front-para">hello</div>
-                             <img className="card__side-image card__side--front-image" src={pic} alt=""/>
-                          </div>
-                          <div className="card__side card__side--back card__side--back-1">
-                              <a href="#" class="btn btn-white">Explore &#8594;</a>
-                          </div>
-                 </div>
-                 <div className="card">
-                          <div  style={this.props.styles} className="card__side card__side--front">
-                             <div className="card__side-head card__side--front-head">hello</div>
-                             <div className="card__side-para card__side--front-para">hello</div>
-                             <img className="card__side-image card__side--front-image" src={pic} alt=""/>
-                          </div>
-                          <div className="card__side card__side--back card__side--back-1">
-                              <a href="#" class="btn btn-white">Explore &#8594;</a>
-                          </div>
-                 </div>
-                 <div className="card">
-                          <div  style={this.props.styles} className="card__side card__side--front">
-                             <div className="card__side-head card__side--front-head">hello</div>
-                             <div className="card__side-para card__side--front-para">hello</div>
-                             <img className="card__side-image card__side--front-image" src={pic} alt=""/>
-                          </div>
-                          <div className="card__side card__side--back card__side--back-1">
-                              <a href="#" class="btn btn-white">Explore &#8594;</a>
-                          </div>
-                 </div>
+         <Carousel >
+                 {this.state.items.map(item => <div  className="landingScreen6__Wrapper" key={item.id}>
+                 {item.data.map(data=>{
+                   return   <div  className="landingScreen6__Wrapper-card">
+                               <div className="landingScreen6__Wrapper-card-iconWrapper"><i className={"landingScreen6__Wrapper-card-iconWrapper-icon fa fa-"+data.icon} aria-hidden="true"></i></div>
+                               <div className="landingScreen6__Wrapper-card-head">{data.h1}</div>
+                               <div className="landingScreen6__Wrapper-card-time">{data.h2}</div>
+                               <div className="landingScreen6__Wrapper-card-list">
+                                   {data.list.map(listItem=>{
+                                     return <div className="landingScreen6__Wrapper-card-list-item">{listItem}</div>
+                                   })}
+                               </div>
+                            </div>})
+                 }
+
 
                    </div>)}
          </Carousel>
