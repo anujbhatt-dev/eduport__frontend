@@ -17,6 +17,11 @@
       padding: 2rem 1rem;
       // background: rgba($color-secondary-blue,.1);
       text-align: center;
+      transition: all .5s;
+      transform: scale(0.9);
+      &:hover{
+        transform: scale(1);
+      }
       &-iconWrapper{
 
         &-icon{
