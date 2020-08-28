@@ -22,7 +22,7 @@ class Spinner extends Component{
     </div>
 
     <div class="text">
-        <span>Loading</span><span class = "dots">...</span>
+        <span>We Will Reach Out to You Soon</span><span class = "dots">...</span>
     </div>
 </div>
     )

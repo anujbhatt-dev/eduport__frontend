@@ -26,6 +26,10 @@ class Navigation extends Component{
      this.props.history.push("/"+id)
    }
 
+  clickHandler=()=>{
+    this.props.history.push("/");
+  }
+
   render(){
 
 
@@ -34,7 +38,7 @@ class Navigation extends Component{
             <i onClick={this.modalHandler} style={this.state.show?{}:{}} className={this.state.show?"fa fa-times bars":"fa fa-bars bars"} aria-hidden="true"></i>
             <div className="logo">
                  <div className="logo__name">
-                      <div className="logo__name-main">Eduport</div>
+                      <div onClick={this.clickHandler} className="logo__name-main">Eduport</div>
                       <div className="logo__name-secondary">By IndiaPort</div>
                  </div>
                  <div className="logo__tagline">
@@ -42,10 +46,10 @@ class Navigation extends Component{
                  </div>
             </div>
             <nav className="navigation__items">
-                  <NavLink activeClassName="navigation__items-active" to="/pricing"><div className="navigation__items-item">Pricing</div></NavLink>
-                  <NavLink activeClassName="navigation__items-active" to="/aboutUs"><div className="navigation__items-item">About us</div></NavLink>
-                  <NavLink activeClassName="navigation__items-active" to="/blogs"><div className="navigation__items-item">blogs.</div></NavLink>
-                  <NavLink activeClassName="navigation__items-active" to="/contactUs"><div className="navigation__items-item">contact us</div></NavLink>
+                  <NavLink activeStyle={{color: "#0f3460"}} to="/pricing"><div className="navigation__items-item">Pricing</div></NavLink>
+                  <NavLink activeStyle={{color: "#0f3460"}} to="/aboutUs"><div className="navigation__items-item">About</div></NavLink>
+                  <NavLink activeStyle={{color: "#0f3460"}} to="/blogs"><div className="navigation__items-item">blogs</div></NavLink>
+                  <NavLink activeStyle={{color: "#0f3460"}} to="/contactUs"><div className="navigation__items-item">contact</div></NavLink>
             </nav>
 
             <Modal clicked={this.modalHandler} show={this.state.show}>

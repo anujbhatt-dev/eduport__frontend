@@ -4,8 +4,12 @@
   &__container{
       margin: 5rem;
       // padding: 0 15rem;
+      // display: flex;
+      // justify-content: center;
+      // align-items: center;
+
       background: $color-white;
-      // box-shadow: 0rem 0rem 5rem rgba($color-secondary-blue,.2);
+      box-shadow: 0rem 0rem 5rem rgba($color-secondary-blue,.2);
       transform: skewX(-5deg);
       border-bottom: 1rem solid $color-secondary-blue;
       border-left: 1rem solid $color-secondary-blue;
@@ -13,6 +17,7 @@
         transform: skewX(0);
           margin: 1rem;
           border: none;
+          box-shadow: none;
           // box-shadow: inset 0rem 0rem 2rem rgba($color-secondary-blue,.2);
       }
     &-review{
@@ -26,13 +31,13 @@
         transform: skewX(0);
       }
       &-name{
-        font-size: 2rem;
+        font-size: 1.8rem;
         font-weight: normal;
         text-transform: uppercase;
         padding-bottom:.5rem;
       }
       &-detail{
-        font-size: 1.8rem;
+        font-size: 1.5rem;
         font-weight: 300;
       }
     }

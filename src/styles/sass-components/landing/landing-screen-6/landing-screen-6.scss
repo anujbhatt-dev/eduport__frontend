@@ -10,8 +10,10 @@
     flex-wrap: wrap;
     &-card{
       // width: 25%;
+      border-bottom: 1rem solid $color-secondary-blue;
+      border-left: 1rem solid $color-secondary-blue;
       box-shadow: inset 0rem 0rem 5rem rgba($color-secondary-blue,.1);
-      margin: 1rem 3rem;
+      margin: 1rem 6rem;
       padding: 2rem 1rem;
       // background: rgba($color-secondary-blue,.1);
       text-align: center;

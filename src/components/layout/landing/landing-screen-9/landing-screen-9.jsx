@@ -1,4 +1,6 @@
 import React, {Component} from "react"
+import Spinner from "../../../../UI/spinner/spinner"
+import Backdrop from "../../../../UI/backdrop/backdrop"
 
 
 class LandingScreen9 extends Component{
@@ -17,8 +19,22 @@ class LandingScreen9 extends Component{
         for:"Share your certificate",
         detail:"Download the showcase your new qualification on LinkedIn and your CV."
       }
-    ]
+    ],
+    loading:false
   }
+
+   submitHandler=(e)=>{
+     this.setState({
+       loading:true
+     })
+     setTimeout(()=>{
+       this.setState({
+             loading:false
+           })
+      }, 3000);
+     e.preventDefault();
+   }
+
 
   render(){
 
@@ -26,17 +42,17 @@ class LandingScreen9 extends Component{
         <div style={this.props.styles} className="landingScreen9">
                 <div className="landingScreen9__details">
                      <div className="landingScreen9__details-contact">Contact Us</div>
-                     <div className="landingScreen9__details-contactNo">8080107744+ 91 8889266799</div>
+                     <div className="landingScreen9__details-contactNo">+ 91 8889266799</div>
                      <div className="landingScreen9__details-contactNo">+ 91 8080107744</div>
                      <div className="landingScreen9__details-email">hello@eduports.in</div>
                 </div>
                 <div className="landingScreen9__enquire">
-                     <form className="landingScreen9__enquire-form" onSubmit={this.submitHandler}>
+                     {this.state.loading?<><Spinner/><Backdrop show={this.state.loading}/></>:<form onSubmit={(e)=>this.submitHandler(e)} className="landingScreen9__enquire-form" >
                            <input required className="landingScreen9__enquire-form-input" placeholder="Your Name" type="text"/>
                            <input required className="landingScreen9__enquire-form-input" placeholder="Your Number" type="tel"/>
                            <input className="landingScreen9__enquire-form-input" placeholder="Your Email" type="email"/>
-                           <button  className="landingScreen9__enquire-form-btn">Enquire Now</button>
-                     </form>
+                           <button type="submit"  className="landingScreen9__enquire-form-btn">Enquire Now</button>
+                     </form>}
                 </div>
                 <div className="landingScreen9__message">
                      message

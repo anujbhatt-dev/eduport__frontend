@@ -1,33 +1,33 @@
 @keyframes spin {
   0% {
-    transform: translate(2px, 1px) rotate(0deg);
+    transform: translate(20px, 1px) rotate(0deg);
   }
   10% {
-    transform: translate(-1px, -3px) rotate(36deg);
+    transform: translate(-10px, -3x) rotate(36deg);
   }
   20% {
-    transform: translate(-2px, 0px) rotate(72deg);
+    transform: translate(-20px, 0px) rotate(72deg);
   }
   30% {
-    transform: translate(1px, 2px) rotate(108deg);
+    transform: translate(10px, 2px) rotate(108deg);
   }
   40% {
-    transform: translate(1px, -1px) rotate(144deg);
+    transform: translate(10px, -1px) rotate(144deg);
   }
   50% {
-    transform: translate(-1px, 3px) rotate(180deg);
+    transform: translate(-10px, 3px) rotate(180deg);
   }
   60% {
-    transform: translate(-1px, 1px) rotate(216deg);
+    transform: translate(-10px, 1px) rotate(216deg);
   }
   70% {
-    transform: translate(3px, 1px) rotate(252deg);
+    transform: translate(30px, 1px) rotate(252deg);
   }
   80% {
-    transform: translate(-2px, -1px) rotate(288deg);
+    transform: translate(-20px, -1px) rotate(288deg);
   }
   90% {
-    transform: translate(2px, 1px) rotate(324deg);
+    transform: translate(20px, 1px) rotate(324deg);
   }
   100% {
     transform: translate(1px, -2px) rotate(360deg);
@@ -35,37 +35,37 @@
 }
 @keyframes speed {
   0% {
-    transform: translate(2px, 1px) rotate(0deg);
+    transform: translate(20px, 1px) rotate(0deg);
   }
   10% {
-    transform: translate(-1px, -3px) rotate(-1deg);
+    transform: translate(-10px, -3px) rotate(-1deg);
   }
   20% {
-    transform: translate(-2px, 0px) rotate(1deg);
+    transform: translate(-20px, 0px) rotate(1deg);
   }
   30% {
-    transform: translate(1px, 2px) rotate(0deg);
+    transform: translate(10px, 2px) rotate(0deg);
   }
   40% {
-    transform: translate(1px, -1px) rotate(1deg);
+    transform: translate(10px, -1px) rotate(1deg);
   }
   50% {
-    transform: translate(-1px, 3px) rotate(-1deg);
+    transform: translate(-10px, 3px) rotate(-1deg);
   }
   60% {
-    transform: translate(-1px, 1px) rotate(0deg);
+    transform: translate(-10px, 1px) rotate(0deg);
   }
   70% {
-    transform: translate(3px, 1px) rotate(-1deg);
+    transform: translate(30px, 1px) rotate(-1deg);
   }
   80% {
-    transform: translate(-2px, -1px) rotate(1deg);
+    transform: translate(-20px, -1px) rotate(1deg);
   }
   90% {
-    transform: translate(2px, 1px) rotate(0deg);
+    transform: translate(20px, 1px) rotate(0deg);
   }
   100% {
-    transform: translate(1px, -2px) rotate(-1deg);
+    transform: translate(10px, -2px) rotate(-1deg);
   }
 }
 @keyframes strikes {
@@ -94,7 +94,7 @@
   }
 }
 body {
-  background: #333;
+  // background: #333;
   font-family: "Lato", "Lucida Grande", "Lucida Sans Unicode", Tahoma, Sans-Serif;
 }
 
@@ -103,10 +103,11 @@ body {
 }
 
 .loading-window {
-  background: #333;
+  overflow: hidden;
+  background: $color-secondary-blue;
   border-radius: 6px;
-  border: 3px solid #ffe4e1;
-  color: #ffe4e1;
+  border: 3px solid $color-secondary-warning;
+  color: $color-secondary-warning;
   height: 200px;
   left: 50%;
   margin-left: -150px;
@@ -114,15 +115,16 @@ body {
   position: fixed;
   top: 50%;
   width: 300px;
-  z-index: 99;
+  z-index: 9900;
 }
 .loading-window .text {
-  font-size: 16px;
+  font-size: 1.5rem;
   position: absolute;
   width: auto;
-  top: 75%;
-  left: 38%;
-  margin: 0 auto;
+  bottom: 5%;
+  // left: 38%;
+  text-align: center;
+  margin: 0 3.5rem;
 }
 .loading-window .dots {
   display: inline-block;
@@ -135,7 +137,7 @@ body {
 
 .car {
   position: absolute;
-  width: 117px;
+  width: 500rem;
   height: 42px;
   left: 92px;
   top: 70px;
@@ -144,7 +146,7 @@ body {
   position: absolute;
   width: 11px;
   height: 1px;
-  background: #ffe4e1;
+  background: $color-secondary-warning;
   animation: strikes 0.2s linear infinite;
 }
 .car .strike2 {
@@ -166,8 +168,8 @@ body {
 .car-detail {
   position: absolute;
   display: block;
-  background: #ffe4e1;
-  animation: speed 0.5s linear infinite;
+  background: $color-secondary-warning;
+  animation: speed 5s linear infinite;
 }
 .car-detail.spoiler {
   width: 0;
@@ -175,8 +177,8 @@ body {
   top: 7px;
   background: none;
   border: 20px solid transparent;
-  border-bottom: 8px solid #ffe4e1;
-  border-left: 20px solid #ffe4e1;
+  border-bottom: 8px solid $color-secondary-warning;
+  border-left: 20px solid $color-secondary-warning;
 }
 .car-detail.back {
   height: 20px;
@@ -190,7 +192,7 @@ body {
   left: 12px;
   border-top-left-radius: 30px;
   border-top-right-radius: 45px 40px;
-  border: 4px solid #ffe4e1;
+  border: 4px solid $color-secondary-warning;
   background: none;
   box-sizing: border-box;
 }
@@ -215,7 +217,7 @@ body {
   top: 20px;
   left: 12px;
   border: 3px solid #333;
-  background: linear-gradient(45deg, transparent 45%, #ffe4e1 46%, #ffe4e1 54%, transparent 55%), linear-gradient(-45deg, transparent 45%, #ffe4e1 46%, #ffe4e1 54%, transparent 55%), linear-gradient(90deg, transparent 45%, #ffe4e1 46%, #ffe4e1 54%, transparent 55%), linear-gradient(0deg, transparent 45%, #ffe4e1 46%, #ffe4e1 54%, transparent 55%), radial-gradient(#ffe4e1 29%, transparent 30%, transparent 50%, #ffe4e1 51%), #333;
+  background: linear-gradient(45deg, transparent 45%, $color-secondary-warning 46%, $color-secondary-warning 54%, transparent 55%), linear-gradient(-45deg, transparent 45%, $color-secondary-warning 46%, $color-secondary-warning 54%, transparent 55%), linear-gradient(90deg, transparent 45%, $color-secondary-warning 46%, $color-secondary-warning 54%, transparent 55%), linear-gradient(0deg, transparent 45%, $color-secondary-warning 46%, $color-secondary-warning 54%, transparent 55%), radial-gradient($color-secondary-warning 29%, transparent 30%, transparent 50%, $color-secondary-warning 51%), #333;
   animation-name: spin;
 }
 .car-detail.wheel2 {

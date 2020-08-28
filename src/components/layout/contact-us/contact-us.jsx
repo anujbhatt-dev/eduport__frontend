@@ -23,8 +23,8 @@
                 <h2 className="contactUs__h2">{this.state.h3}</h2>
                 <form className="contactUs__form" omSubmit={this.submitHandler}>
                     <input required placeholder="Name" className="contactUs__form-input" type="text"/>
-                    <input required placeholder="Name" className="contactUs__form-input" type="tel"/>
-                    <input required placeholder="Name" className="contactUs__form-input" type="email"/>
+                    <input required placeholder="Nunber" className="contactUs__form-input" type="tel"/>
+                    <input required placeholder="Email" className="contactUs__form-input" type="email"/>
                     <button className="contactUs__form-submit">Proceed</button>
                 </form>
                 <div className="contactUs__benefits">

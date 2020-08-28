@@ -1,15 +1,15 @@
 .backdrop{
-  z-index: 200;
+  z-index: 8000;
   position: fixed;
   height: 100%;
   width: 100%;
   color:$color-white;
-  background: rgba($color-primary-blue,.9);
+  background: rgba($color-black,.9);
   // font-size: 20rem;
   display: flex;
   justify-content: center;
   align-items: center;
   top: 0;
   left: 0;
-  backdrop-filter: blur(2px);
+  backdrop-filter: blur(18px);
 }
