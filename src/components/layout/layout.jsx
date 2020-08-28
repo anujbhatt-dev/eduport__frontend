@@ -10,21 +10,22 @@ import {Switch,Route} from "react-router-dom"
 import Footer from "./footer/footer"
 import Spinner from "../../UI/spinner/spinner"
 
+
+
  class Layout extends Component{
 
 
 
    render(){
-
+   
      return (
-
         <div className="Layout">
            <CallUsBar />
            <div className="main">
              <Navigation styles={this.props.styles}/>
              <Switch>
                 <Route exact path="/">
-                    <Landing  styles={this.props.styles}/>
+                    <Landing styleHandler={this.props.styleHandler}  styles={this.props.styles}/>
                 </Route>
                 <Route exact path="/pricing">
                     <Pricing   styles={this.props.styles}/>

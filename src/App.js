@@ -10,6 +10,17 @@ class App extends React.Component {
      fontColor:"#000"
    }
 
+   
+
+   styleHandler=(e)=>{
+
+    //alert( e.target.name )
+
+    this.setState({[e.target.name]:e.target.value});
+  }
+
+
+
 
   render(){
     // #f9f7d9
@@ -22,7 +33,7 @@ class App extends React.Component {
     return (
       <ErrorBoundary>
       <div style={{background:this.state.background,color:this.state.color}} className="App">
-      <Layout styles={styles}/>
+      <Layout styleHandler={this.styleHandler} styles={styles}/>
 
       </div>
       </ErrorBoundary>
