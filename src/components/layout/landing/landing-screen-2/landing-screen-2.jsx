@@ -17,7 +17,7 @@
    render(){
 
      return (
-         <div className="landingScreen2">
+         <div style={{color:this.props.styles.color}} className="landingScreen2">
                <div className="landingScreen2__about">
                  <div className="landingScreen2__about-head">
                     {this.state.about.h2}

@@ -51,7 +51,7 @@
 
      return (
          <div className="faq">
-             <div className="faq__head">{this.state.head}</div>
+             <div style={{color:this.props.styles.color}} className="faq__head">{this.state.head}</div>
              <div className="faq__questions">
                  {this.state.questions.map((data,i)=>{
                    return <div onClick={()=>this.showHandler(i)} className="faq__questions-item">

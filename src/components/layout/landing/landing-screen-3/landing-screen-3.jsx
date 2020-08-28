@@ -26,7 +26,7 @@
    render(){
 
      return (<>
-         <div className="landingScreen3__head">{this.state.h3}</div>
+         <div style={{color:this.props.styles.color}} className="landingScreen3__head">{this.state.h3}</div>
          <div className="landingScreen3">
                <div className="landingScreen3__cardWrapper">
                      <div  className="card">

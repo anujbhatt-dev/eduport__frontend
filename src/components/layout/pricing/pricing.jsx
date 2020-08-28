@@ -8,9 +8,9 @@ import LandingScreen9 from "../landing/landing-screen-9/landing-screen-9"
    render(){
 
      return (
-          <div className="pricing">
-              <Price />
-              <Faq />
+          <div styles={this.props.styles} className="pricing">
+              <Price  styles={this.props.styles}/>
+              <Faq styles={this.props.styles}/>
           </div>
      )
    }

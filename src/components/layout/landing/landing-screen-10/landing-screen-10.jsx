@@ -11,7 +11,7 @@ class LandingScreen10 extends Component{
   render(){
 
     return (
-        <div className="landingScreen10">
+        <div style={{color:this.props.styles.color}} className="landingScreen10">
                 <div className="landingScreen10__thought"><i className="quote fa fa-quote-left" aria-hidden="true"></i> {this.state.thought} <i className="quote fa fa-quote-right" aria-hidden="true"></i></div>
                 <div className="landingScreen10__by">-{this.state.by}-</div>
 

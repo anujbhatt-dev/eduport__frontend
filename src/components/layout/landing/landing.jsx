@@ -15,6 +15,8 @@ import LandingScreen10 from "./landing-screen-10/landing-screen-10"
 
      return (
           <div className="landing">
+               <input name="background" onChange={(e)=>this.props.styleHandler(e)} value={this.props.styles.background} type="color"/>
+               <input name="fontColor" onChange={(e)=>this.props.styleHandler(e)} value={this.props.styles.background} type="color"/>
               <LandingScreen1 styles={this.props.styles}/>
               <LandingScreen2 styles={this.props.styles}/>
               <LandingScreen3 styles={this.props.styles}/>

@@ -14,7 +14,7 @@ import screen1 from "../../../../assets/images/screen1.svg"
    render(){
 
      return (
-        <div className="landingScreen1">
+        <div style={{color:this.props.styles.color}} className="landingScreen1">
             <div className="landingScreen1__text">
                <div className="landingScreen1__text-head">
                   {this.state.screen1.h1}

@@ -38,7 +38,7 @@ class LandingScreen9 extends Component{
 
   render(){
 
-    return (<><div className="landingScreen6__head">Why Wait! <span >Get Started </span></div>
+    return (<><div style={{color:this.props.styles.color}} className="landingScreen6__head">Why Wait! <span >Get Started </span></div>
         <div style={this.props.styles} className="landingScreen9">
                 <div className="landingScreen9__details">
                      <div className="landingScreen9__details-contact">Contact Us</div>

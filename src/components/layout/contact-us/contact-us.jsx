@@ -17,7 +17,7 @@
    render(){
 
      return (
-          <div className="contactUs">
+          <div style={{color:this.props.styles.color}} className="contactUs">
                 <h1 className="contactUs__h1">{this.state.h1}</h1>
                 <h2 className="contactUs__h1">{this.state.h2}</h2>
                 <h2 className="contactUs__h2">{this.state.h3}</h2>
