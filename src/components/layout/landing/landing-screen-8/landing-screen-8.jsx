@@ -1,5 +1,7 @@
 import React, {Component} from "react"
 import s8p1 from "../../../../assets/images/screen8-pic1.svg"
+import Aos from "aos"
+import "aos/dist/aos.css"
 
 class LandingScreen8 extends Component{
 
@@ -33,6 +35,14 @@ class LandingScreen8 extends Component{
     ]
   }
 
+  componentDidMount=()=>{
+    Aos.init({duration:1000});
+  }
+
+  componentDidUpdate=()=>{
+    Aos.init({duration:1000});
+  }
+
   render(){
     let icon0 = <i className="fa fa-folder folder" aria-hidden="true"></i>
     let icon1 = <i className="fa fa-pause pause" aria-hidden="true"></i>
@@ -43,7 +53,7 @@ class LandingScreen8 extends Component{
 
     return (
         <div style={this.props.styles} className="landingScreen8">
-             
+
              <div className="landingScreen8__appLink" >
                 <div className="landingScreen8__appLink-box">
 
@@ -58,8 +68,8 @@ class LandingScreen8 extends Component{
                              </div>
 
                 </div>
-                <div className="landingScreen8__appLink-mobile">
-                    <img src={s8p1} alt="mobile"/>
+                <div data-aos="slide-left" data-aos-delay={2000}  className="landingScreen8__appLink-mobile">
+                    <img  src={s8p1} alt="mobile"/>
                 </div>
              </div>
               <div  className="landingScreen8__features">

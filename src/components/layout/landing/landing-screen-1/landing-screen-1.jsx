@@ -1,5 +1,8 @@
 import React, {Component} from "react"
 import screen1 from "../../../../assets/images/screen1.svg"
+import Aos from "aos"
+import "aos/dist/aos.css"
+
 
  class LandingScreen1 extends Component{
 
@@ -10,11 +13,19 @@ import screen1 from "../../../../assets/images/screen1.svg"
      }
    }
 
+   componentDidMount=()=>{
+     Aos.init({duration:1000});
+   }
+
+   componentDidUpdate=()=>{
+     Aos.init({duration:1000});
+   }
+
 
    render(){
 
      return (
-        <div style={{color:this.props.styles.color}} className="landingScreen1">
+        <div data-aos="zoom-out" data-aos-once={true}  style={{color:this.props.styles.color}} className="landingScreen1">
             <div className="landingScreen1__text">
                <div className="landingScreen1__text-head">
                   {this.state.screen1.h1}

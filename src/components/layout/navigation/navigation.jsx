@@ -120,10 +120,10 @@ this.repeat();
                  </div>
             </div>
             <nav  className="navigation__items">
-                  <NavLink style={{color:this.props.styles.color}} activeStyle={{color: "#0f3460"}} to="/pricing"><div className="navigation__items-item">Pricing</div></NavLink>
-                  <NavLink style={{color:this.props.styles.color}} activeStyle={{color: "#0f3460"}} to="/aboutUs"><div className="navigation__items-item">About</div></NavLink>
-                  <NavLink style={{color:this.props.styles.color}} activeStyle={{color: "#0f3460"}} to="/blogs"><div className="navigation__items-item">blogs</div></NavLink>
-                  <NavLink style={{color:this.props.styles.color}} activeStyle={{color: "#0f3460"}} to="/contactUs"><div className="navigation__items-item">contact</div></NavLink>
+                  <NavLink style={{color:this.props.styles.color}} activeStyle={{color: "#0f3460",textDecoration:"underline"}} to="/pricing"><div className="navigation__items-item">Pricing</div></NavLink>
+                  <NavLink style={{color:this.props.styles.color}} activeStyle={{color: "#0f3460",textDecoration:"underline"}} to="/aboutUs"><div className="navigation__items-item">About</div></NavLink>
+                  <NavLink style={{color:this.props.styles.color}} activeStyle={{color: "#0f3460",textDecoration:"underline"}} to="/blogs"><div className="navigation__items-item">blogs</div></NavLink>
+                  <NavLink style={{color:this.props.styles.color}} activeStyle={{color: "#0f3460",textDecoration:"underline"}} to="/contactUs"><div className="navigation__items-item">contact</div></NavLink>
             </nav>
 
             <Modal clicked={this.modalHandler} show={this.state.show}>
