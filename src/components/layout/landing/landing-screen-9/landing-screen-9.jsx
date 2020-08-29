@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import Spinner from "../../../../UI/spinner/spinner"
 import Backdrop from "../../../../UI/backdrop/backdrop"
-
+import enquire from "../../../../assets/images/enquire.svg"
 
 class LandingScreen9 extends Component{
 
@@ -55,7 +55,7 @@ class LandingScreen9 extends Component{
                      </form>}
                 </div>
                 <div className="landingScreen9__message">
-                     message
+                     <img src={enquire} alt=""/>
                 </div>
 
         </div></>

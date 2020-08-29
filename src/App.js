@@ -20,7 +20,9 @@ class App extends React.Component {
   }
 
 
-
+  componentDidMount=()=>{
+    window.scrollTo({top:0,behavior:"smooth"})
+  }
 
   render(){
     // #f9f7d9

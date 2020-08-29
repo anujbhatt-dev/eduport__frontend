@@ -9,9 +9,12 @@
   }
 }
 .landingScreen10{
+    position: relative;
     padding: 5rem 25rem;
     text-align: center;
+    margin: 5rem 0rem;
   &__thought{
+
     font-size: 4rem;
     padding-bottom: 2rem;
     font-weight: 400;
@@ -20,6 +23,17 @@
     font-weight: 800;
     font-size: 4rem;
     font-family: 'Indie Flower', cursive;
+  }
+  &__ashoka{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    text-align: center;
+    right: 50%;
+    transform: translateX(50%);
+    // opacity: .5;
+    padding: 1rem 0rem;
+
   }
 }
 @include respond(tab-port){

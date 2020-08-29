@@ -68,11 +68,11 @@ class LandingScreen8 extends Component{
                              </div>
 
                 </div>
-                <div data-aos="slide-left" data-aos-delay={2000}  className="landingScreen8__appLink-mobile">
+                <div data-aos="fade-left" data-aos-offset="100px" data-aos-once={true} data-aos-anchor="#features" className="landingScreen8__appLink-mobile">
                     <img  src={s8p1} alt="mobile"/>
                 </div>
              </div>
-              <div  className="landingScreen8__features">
+              <div id="features"  className="landingScreen8__features">
                 {this.state.data.map((data,i)=>{
                   return <div className="landingScreen8__features-items">
                                  <div className="landingScreen8__features-items-iconWrapper">

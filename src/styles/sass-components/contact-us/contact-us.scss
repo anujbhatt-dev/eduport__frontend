@@ -46,9 +46,15 @@
        text-transform: uppercase;
        font-size: 2rem;
        background: $color-secondary-blue;
-       border: 1px solid rgba($color-black,.9);
+       border: none;
        margin-bottom: 5rem;
        padding: 1rem 2rem;
+       transition: all .5s;
+       &:hover{
+         background: $color-cyan;
+         color: $color-black;
+         box-shadow: 0rem 0rem 1rem rgba($color-cyan,.5), 0rem 0rem 2rem rgba($color-cyan,.5) , 0rem 0rem 3rem rgba($color-cyan,.5) , 0rem 0rem 4rem rgba($color-cyan,.5);
+       }
      }
    }
    &__benefits{

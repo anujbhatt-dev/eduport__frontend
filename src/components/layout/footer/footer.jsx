@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
    render(){
 
      return (
-        <footer className="footer">
+        <footer id="footer" className="footer">
             <div className="footer__copyright">
                 <h1 className="footer__copyright-h1">EDUPORT <br/> <span>By IndiaPort</span></h1>
                 <p className="footer__copyright-text">

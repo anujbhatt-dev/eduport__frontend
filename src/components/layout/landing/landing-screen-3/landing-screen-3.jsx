@@ -25,11 +25,11 @@
    }
 
    componentDidMount=()=>{
-     Aos.init({duration:1000});
+     Aos.init({duration:100});
    }
 
    componentDidUpdate=()=>{
-     Aos.init({duration:1000});
+     Aos.init({duration:100});
    }
 
 
@@ -38,8 +38,8 @@
      return (<>
          <div style={{color:this.props.styles.color}} className="landingScreen3__head">{this.state.h3}</div>
          <div className="landingScreen3">
-               <div className="landingScreen3__cardWrapper">
-                     <div data-aos-once={true} data-aos="fade-right" data-aos-delay={350}  className="card">
+               <div data-aos="fade-right" data-aos-offset="200px" data-aos-once={true} data-aos-anchor="#screen4" className="landingScreen3__cardWrapper">
+                     <div  className="card">
                               <div style={this.props.styles} className="card__side card__side--front">
                                  <div className="card__side-head card__side--front-head">{this.state.front1.h1}</div>
                                  <div className="card__side-para card__side--front-para">{this.state.front1.p1}</div>
@@ -50,7 +50,7 @@
                               </div>
                      </div>
 
-                     <div data-aos-once={true} data-aos="fade-right" className="card" data-aos-delay={350}>
+                     <div className="card" >
                               <div  style={this.props.styles} className="card__side card__side--front">
                                  <div className="card__side-head card__side--front-head">{this.state.front2.h1}</div>
                                  <div className="card__side-para card__side--front-para">{this.state.front2.p1}</div>
@@ -61,7 +61,7 @@
                               </div>
                      </div>
 
-                     <div data-aos-once={true} data-aos="fade-right"  className="card" data-aos-delay={350}>
+                     <div className="card">
                               <div style={this.props.styles} className="card__side card__side--front">
                                  <div className="card__side-head card__side--front-head">{this.state.front3.h1}</div>
                                  <div className="card__side-para card__side--front-para">{this.state.front3.p1}</div>

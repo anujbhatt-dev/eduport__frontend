@@ -1,6 +1,6 @@
 .landingScreen7{
    margin: 5rem 1rem;
-   padding-bottom: 10rem;
+   padding-bottom: 5rem;
   &__container{
       margin: 5rem;
       // padding: 0 15rem;
@@ -9,7 +9,7 @@
       // align-items: center;
 
       background: $color-white;
-      box-shadow: 0rem 0rem 5rem rgba($color-secondary-blue,.2);
+      box-shadow: 3rem -3rem 12rem -5rem rgba($color-black,.5), -3rem 3rem 5rem -1rem rgba($color-black,.5);
       transform: skewX(-5deg);
       border-bottom: 1rem solid $color-secondary-blue;
       border-left: 1rem solid $color-secondary-blue;

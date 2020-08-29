@@ -2,7 +2,7 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  margin-bottom: 7rem;
+  margin-bottom: 3rem;
   @include respond(tab-port){
     flex-flow: column;
     align-items: center;
@@ -14,7 +14,7 @@
     -moz-perspective: 150rem;
     position: relative;
     // height: 90vh;
-    margin: 5rem 3rem;
+    margin: 3rem 3rem;
     width: 25%;
     @include respond(tab-land){
       // height: 90vh;

@@ -70,7 +70,7 @@ import Carousel from 'react-elastic-carousel';
          <div style={this.props.styles} className="landingScreen6">
          <div className="landingScreen6__head">Module ({this.state.moduleNo})</div>
          <Carousel >
-                 {this.state.items.map(item => <div  className="landingScreen6__Wrapper" key={item.id}>
+                 {this.state.items.map(item => <div data-aos="fade-down" data-aos-once={true} data-aos-anchor="#review" className="landingScreen6__Wrapper" key={item.id}>
                  {item.data.map(data=>{
                    return   <div  className="landingScreen6__Wrapper-card">
                                <div className="landingScreen6__Wrapper-card-iconWrapper"><i className={"landingScreen6__Wrapper-card-iconWrapper-icon fa fa-"+data.icon} aria-hidden="true"></i></div>

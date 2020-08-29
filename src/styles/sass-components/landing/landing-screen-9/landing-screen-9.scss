@@ -58,14 +58,26 @@
         border: none;
         padding: 1rem 2rem;
         align-self: center;
+        transition: all .5s;
+        cursor: pointer;
+        &:hover{
+          background: $color-cyan;
+          color: $color-black;
+          box-shadow: 0rem 0rem 1rem rgba($color-cyan,.5), 0rem 0rem 2rem rgba($color-cyan,.5) , 0rem 0rem 3rem rgba($color-cyan,.5) , 0rem 0rem 4rem rgba($color-cyan,.5);
+        }
       }
     }
   }
   &__message{
      flex-basis: 33%;
-     align-self: flex-end;
+     // align-self: center;
+     // justify-content: flex-end;
      display: flex;
-     justify-content: flex-end;
+     & img{
+       width: 100%;
+       padding: 3rem;
+
+     }
   }
 }
 
@@ -83,6 +95,11 @@
         &-input{
           text-align: center;
           padding: 0;
+          margin-bottom: 1rem;
+          padding: 1rem;
+          // padding-left: 3rem;
+          width: 100%;
+          font-size: 2rem;
         }
         &-btn{
           text-align: center;
@@ -137,7 +154,11 @@
       }
     }
     &__message{
+      & img{
+        width: 70%;
+        padding: 3rem;
 
+      }
     }
   }
 }
