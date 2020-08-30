@@ -3,33 +3,27 @@
   color: $color-white;
   display: flex;
   flex-wrap: wrap;
-  padding: 10rem;
-  min-height: 50vh;
+  padding: 2rem 5rem;
+  min-height: 30vh;
   justify-content: space-between;
   z-index: -10;
-  &__contact{
-    font-size: 2rem;
-    padding: 1rem 0;
-    padding-top: 5rem;
-  }
-  &__contactNo{
-    font-size: 1.5rem;
-    padding-bottom: .5rem;
-  }
   &__copyright{
-     padding-bottom: 5rem;
+     padding-bottom: 1rem;
+     letter-spacing: 1.5px;
+
     &-h1{
+      font-family: "PT Sarif",serif;
       font-size: 2.5rem;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
       & span{
          font-size: 2rem;
-         letter-spacing: 1.5px;
       }
     }
     &-text{
-      font-size: 1.3rem;
+      font-family: "PT Sams",sans-serif;
+      font-size: 1.5rem;
       line-height: 2;
-      margin-bottom: 2rem;
+      margin-bottom: 1rem;
     }
     &-copyrightText{
      font-size: 1.5rem;
@@ -37,7 +31,8 @@
     }
   }
   &__nav{
-    padding-bottom: 5rem;
+    font-family: "PT Sams",sans-serif;
+    padding-bottom: 2rem;
      display: flex;
     &-col{
       padding: 1rem 0;
@@ -49,6 +44,7 @@
     }
   }
   &__socialMedia{
+    font-family: "PT Sams",sans-serif;
     &-question{
          display: flex;
          flex-flow: column;
@@ -60,7 +56,7 @@
       }
       &-p2{
         padding:  .5rem 0;
-        margin-bottom: 5rem;
+        margin-bottom: 1rem;
         font-weight: bug;
       }
     }
@@ -74,7 +70,7 @@
 
         &-item{
           font-size: 2.5rem;
-          padding-right: 2rem;
+          padding-right: 1rem;
         }
         &-1{
 
@@ -224,7 +220,7 @@
 
 @include respond(phone){
   .footer{
-
+    padding: 2rem 2rem;
     &__copright{
 
       &-h1{
@@ -280,6 +276,84 @@
 
           }
         }
+      }
+    }
+  }
+}
+.contact___strip{
+  color: $color-white;
+  background:$color-grey-dark-3;
+  display: flex;
+  padding: 2rem 5rem ;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  flex-wrap: wrap;
+  &-contact{
+    width: 25rem;
+    &-icon{
+        font-size: 3rem;
+    }
+    &-text{
+       font-family: "PT Sans", sans-serif;
+       font-size: 2rem;
+    }
+  }
+  &-email{
+    width: 25rem;
+    &-icon{
+        font-size: 3rem;
+    }
+    &-text{
+      font-family: "PT Sans", sans-serif;
+      font-size: 2rem;
+    }
+  }
+  &-address{
+    width: 25rem;
+    &-icon{
+       font-size: 3rem;
+    }
+    &-text{
+      font-family: "PT Sans", sans-serif;
+      font-size: 2rem;
+    }
+  }
+}
+@include respond(phone){
+  .contact___strip{
+    padding: 1rem ;
+    & > *{
+      margin: 1rem;
+    }
+    &-contact{
+      width: 20rem;
+      &-icon{
+          font-size: 2.5rem;
+      }
+      &-text{
+         font-family: "PT Sans", sans-serif;
+         font-size: 1.5rem;
+      }
+    }
+    &-email{
+      width: 20rem;
+      &-icon{
+          font-size: 2.5rem;
+      }
+      &-text{
+        font-family: "PT Sans", sans-serif;
+        font-size: 1.5rem;
+      }
+    }
+    &-address{
+      width: 20rem;
+      &-icon{
+         font-size: 2.5rem;
+      }
+      &-text{
+        font-family: "PT Sans", sans-serif;
+        font-size: 1.5rem;
       }
     }
   }

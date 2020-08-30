@@ -12,21 +12,34 @@ import LandingScreen10 from "./landing-screen-10/landing-screen-10"
  class Landing extends Component{
 
    render(){
+     console.log(this.props);
+     // <input name="background" onChange={(e)=>this.props.styleHandler(e)} value={this.props.styles.background} type="color"/>
+     // <input name="fontColor" onChange={(e)=>this.props.styleHandler(e)} value={this.props.styles.background} type="color"/>
 
      return (
           <div className="landing">
-               <input name="background" onChange={(e)=>this.props.styleHandler(e)} value={this.props.styles.background} type="color"/>
-               <input name="fontColor" onChange={(e)=>this.props.styleHandler(e)} value={this.props.styles.background} type="color"/>
+              <hr  className="hr"/>
               <LandingScreen1 styles={this.props.styles}/>
+              <hr  className="hr"/>
               <LandingScreen2 styles={this.props.styles}/>
+              <hr  className="hr"/>
               <LandingScreen3 styles={this.props.styles}/>
+              <hr  className="hr"/>
               <LandingScreen4 styles={this.props.styles}/>
+              <hr  className="hr"/>
               <LandingScreen5 styles={this.props.styles}/>
+              <hr  className="hr"/>
               <LandingScreen6 styles={this.props.styles}/>
-              <LandingScreen7 styles={this.props.styles}/>
+
               <LandingScreen8 styles={this.props.styles}/>
+              <hr  className="hr"/>
+              <LandingScreen7 styles={this.props.styles}/>
+              <hr  className="hr"/>
               <LandingScreen9 styles={this.props.styles}/>
+              <hr  className="hr"/>
               <LandingScreen10 styles={this.props.styles}/>
+              <hr  className="hr"/>
+
           </div>
      )
    }

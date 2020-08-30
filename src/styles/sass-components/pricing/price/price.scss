@@ -12,7 +12,7 @@
     opacity: .5;
   }
   &__card{
-    // position: relative;
+    position: relative;
     z-index: 2;
     width:33.3%;
     transition: all .5s;
@@ -23,6 +23,20 @@
     padding-bottom: 1rem;
     // border-radius: 18px;
     overflow: hidden;
+    &-mostPopular{
+      position: absolute;
+      top:-2rem;
+      right:-2rem;
+      height: 12rem;
+      width: 12rem;
+      transform: rotate(35deg);
+      & img{
+        height: 100%;
+        width:100%;
+        animation: hue 1s linear infinite;
+
+      }
+    }
     @include respond(phone){
       font-size: 2.5rem;
       padding: 0rem 0rem;
@@ -174,4 +188,40 @@
       width: 80%;
     }
   }
+}
+@keyframes hue {
+  0%{
+    filter: hue-rotate(0deg);
+  }
+  10%{
+    filter: hue-rotate(18deg);
+  }
+  20%{
+    filter: hue-rotate(36deg);
+  }
+  30%{
+    filter: hue-rotate(54deg);
+  }
+  40%{
+    filter: hue-rotate(72deg);
+  }
+  50%{
+    filter: hue-rotate(90deg);
+  }
+  60%{
+    filter: hue-rotate(108deg);
+  }
+  70%{
+    filter: hue-rotate(126deg);
+  }
+  80%{
+    filter: hue-rotate(144deg);
+  }
+  90%{
+    filter: hue-rotate(162deg);
+  }
+  100%{
+    filter: hue-rotate(180deg);
+  }
+
 }

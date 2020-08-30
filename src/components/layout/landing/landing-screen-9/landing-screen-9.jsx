@@ -38,13 +38,13 @@ class LandingScreen9 extends Component{
 
   render(){
 
-    return (<><div style={{color:this.props.styles.color}} className="landingScreen6__head">Why Wait! <span >Get Started </span></div>
+    return (<><div style={{color:this.props.styles.color}} className="landingScreen9__head">Why Wait! <span >Get Started </span></div>
         <div style={this.props.styles} className="landingScreen9">
-                <div className="landingScreen9__details">
-                     <div className="landingScreen9__details-contact">Contact Us</div>
-                     <div className="landingScreen9__details-contactNo">+ 91 8889266799</div>
-                     <div className="landingScreen9__details-contactNo">+ 91 8080107744</div>
-                     <div className="landingScreen9__details-email">hello@eduports.in</div>
+                <div  className="landingScreen9__details">
+                     <div style={{display:"none"}} className="landingScreen9__details-contact">Contact Us</div>
+                     <div style={{display:"none"}} className="landingScreen9__details-contactNo">+ 91 8889266799</div>
+                     <div style={{display:"none"}} className="landingScreen9__details-contactNo">+ 91 8080107744</div>
+                     <div style={{display:"none"}} className="landingScreen9__details-email">hello@eduports.in</div>
                 </div>
                 <div className="landingScreen9__enquire">
                      {this.state.loading?<><Spinner/><Backdrop show={this.state.loading}/></>:<form onSubmit={(e)=>this.submitHandler(e)} className="landingScreen9__enquire-form" >
@@ -54,8 +54,8 @@ class LandingScreen9 extends Component{
                            <button type="submit"  className="landingScreen9__enquire-form-btn">Enquire Now</button>
                      </form>}
                 </div>
-                <div className="landingScreen9__message">
-                     <img src={enquire} alt=""/>
+                <div  className="landingScreen9__message">
+                     <img style={{display:"none"}} src={enquire} alt=""/>
                 </div>
 
         </div></>

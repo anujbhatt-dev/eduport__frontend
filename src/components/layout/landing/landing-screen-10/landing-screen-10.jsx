@@ -24,9 +24,9 @@ class LandingScreen10 extends Component{
 
     return (
         <div style={{color:this.props.styles.color}} className="landingScreen10">
-                <img className="landingScreen10__ashoka" src={ashoka} alt="ashoka"/>
-                <div data-aos="fade-in" data-aos-once={true} data-aos-offset="100px" data-aos-anchor="#footer" className="landingScreen10__thought"><i className="quote fa fa-quote-left" aria-hidden="true"></i> {this.state.thought} <i className="quote fa fa-quote-right" aria-hidden="true"></i></div>
-                <div data-aos="fade-in" data-aos-once={true} data-aos-offset="100px" data-aos-anchor="#footer" className="landingScreen10__by">-{this.state.by}-</div>
+
+                <div data-aos="fade-in" data-aos-once={true} data-aos-offset="100px" data-aos-delay={200} className="landingScreen10__thought"><i className="quote fa fa-quote-left" aria-hidden="true"></i> {this.state.thought} <i className="quote fa fa-quote-right" aria-hidden="true"></i></div>
+                <div data-aos="fade-in" data-aos-once={true} data-aos-offset="100px" data-aos-delay={200} className="landingScreen10__by">-{this.state.by}-</div>
 
         </div>
     )

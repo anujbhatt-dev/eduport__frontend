@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import screen1 from "../../../../assets/images/screen1.svg"
+import screen1Blue from "../../../../assets/images/screen1Blue.svg"
 import Aos from "aos"
 import "aos/dist/aos.css"
 
@@ -35,7 +36,7 @@ import "aos/dist/aos.css"
                </div>
             </div>
             <div className="landingScreen1__imageWrapper">
-              <img src={screen1} alt="" className="landingScreen1__imageWrapper-image"/>
+              <img src={screen1Blue} alt="" className="landingScreen1__imageWrapper-image"/>
             </div>
         </div>
      )

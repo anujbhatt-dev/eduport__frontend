@@ -6,22 +6,26 @@
   justify-content: flex-end;
   align-items: center;
   font-size: 1.5rem;
-  color: $color-black;
+  color: $color-white;
   position: sticky;
   top: 0;
   z-index: 2000;
   background: rgba($color-secondary-blue,1);
+  @include respond(phone){
+    display:none;
+  }
   & span{
-     color: $color-black;
+     padding-left: 1rem;
+     color: $color-white;
      animation: call .8s cubic-bezier(0.68, -0.55, 0.265, 1.55);}
 }
 .call{
   color: $color-white;
-  font-size: 2rem;
+  font-size: 3rem;
   padding:.5rem;
-  height: 3rem;
-  width: 3rem;
-  margin-right: 2rem;
+  height: 5rem;
+  width: 5rem;
+  margin-right: 0rem;
   border-radius: 100px;
   display: flex;
   justify-content: center;
@@ -32,10 +36,11 @@
   animation: vib 1s linear infinite;
   // animation-fill-mode: forwards;
   backface-visibility: hidden;
+  // display: none;
   @include respond(phone){
-    height: 3.5rem;
-    width: 3.5rem;
-    margin-top: .2rem;
+    height: 5rem;
+    width: 5rem;
+    display: flex;
   }
   &:hover{
     color: $color-Spring-green;
@@ -45,10 +50,8 @@
 }
 @keyframes call {
    from{
-     color: $color-black;
      transform: translateX(200%);
    }to{
-     color: $color-black;
      transform: translateX(0%);
    }
 }

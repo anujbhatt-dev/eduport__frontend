@@ -28,16 +28,16 @@
                </div>
                <div className="landingScreen2__courseDetails">
                     <div className="landingScreen2__courseDetails-head">Course details</div>
-                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-module">Modules: <span>{this.state.module.number}</span></div>
-                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-hours">Hours: <span>{this.state.module.hours}</span></div>
-                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-sundayZoomCall">sunday zoom call</div>
+                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-module"><i class="fa fa-bars landingScreen2__courseDetails-icon1" aria-hidden="true"></i> Modules: <span>{this.state.module.number}</span></div>
+                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-hours"><i class="fa fa-clock-o landingScreen2__courseDetails-icon1" aria-hidden="true"></i> Hours: <span>{this.state.module.hours}</span></div>
+                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-sundayZoomCall"><i class="fa fa-video-camera landingScreen2__courseDetails-icon1" aria-hidden="true"></i> sunday zoom call</div>
 
                </div>
                <div className="landingScreen2__courseDetails">
                     <div className="landingScreen2__courseDetails-head">Course features</div>
-                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-module">Mobile Courses</div>
-                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-hours">Video tutorial</div>
-                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-sundayZoomCall">support</div>
+                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-module"><i class="fa fa-mobile landingScreen2__courseDetails-icon2" aria-hidden="true"></i> Mobile Courses</div>
+                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-hours"><i class="fa fa-video-camera landingScreen2__courseDetails-icon2" aria-hidden="true"></i> Video tutorial</div>
+                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-sundayZoomCall"><i class="fa fa-phone landingScreen2__courseDetails-icon2" aria-hidden="true"></i> support</div>
 
                </div>
          </div>

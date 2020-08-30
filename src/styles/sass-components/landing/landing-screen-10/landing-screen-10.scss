@@ -10,7 +10,7 @@
 }
 .landingScreen10{
     position: relative;
-    padding: 5rem 25rem;
+    padding: 15rem 25rem;
     text-align: center;
     margin: 5rem 0rem;
   &__thought{
@@ -18,8 +18,11 @@
     font-size: 4rem;
     padding-bottom: 2rem;
     font-weight: 400;
+    font-family: "PT Sans", sans-serif;
+    color: $color-grey;
   }
   &__by{
+    // color: $color-grey;
     font-weight: 800;
     font-size: 4rem;
     font-family: 'Indie Flower', cursive;

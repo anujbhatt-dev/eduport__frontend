@@ -1,5 +1,8 @@
 import React, {Component} from "react"
-import s8p1 from "../../../../assets/images/screen8-pic1.svg"
+import s8p1 from "../../../../assets/images/screen8-pic1.jpeg"
+import cover from "../../../../assets/images/mobile-cover.png"
+import play from "../../../../assets/images/google-play.svg"
+import apple from "../../../../assets/images/apple.svg"
 import Aos from "aos"
 import "aos/dist/aos.css"
 
@@ -60,16 +63,16 @@ class LandingScreen8 extends Component{
                              <div className="landingScreen8__appLink-box-head">{this.state.head}</div>
                              <div className="landingScreen8__appLink-box-btns">
                                  <div className="landingScreen8__appLink-box-btns-apple">
-                                     apple
+                                    <i class="fa fa-apple" aria-hidden="true"></i>  apple
                                  </div>
                                  <div className="landingScreen8__appLink-box-btns-google">
-                                     google
+                                    <i class="fa fa-play" aria-hidden="true"></i>   google
                                  </div>
                              </div>
 
                 </div>
                 <div data-aos="fade-left" data-aos-offset="100px" data-aos-once={true} data-aos-anchor="#features" className="landingScreen8__appLink-mobile">
-                    <img  src={s8p1} alt="mobile"/>
+                    <img src={cover} alt="mobilecover"/>
                 </div>
              </div>
               <div id="features"  className="landingScreen8__features">

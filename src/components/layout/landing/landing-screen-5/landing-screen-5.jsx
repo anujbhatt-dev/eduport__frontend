@@ -23,7 +23,7 @@
    render(){
 
      return (
-         <div style={this.props.styles} className="landingScreen5">
+         <div id="screen5" style={this.props.styles} className="landingScreen5">
              <div style={this.props.styles} className="landingScreen5__head">How it Works</div>
              <div className="landingScreen5__body">
                {this.state.data.map((data,i)=>{

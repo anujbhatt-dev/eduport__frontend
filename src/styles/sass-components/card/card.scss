@@ -1,11 +1,18 @@
 .landingScreen3__cardWrapper{
   display: flex;
   width: 100%;
-  justify-content: center;
+  justify-content: space-between;
+  margin: 0 20rem;
   margin-bottom: 3rem;
+  @include respond(tab-land){
+    margin: 0 5rem;
+  }
   @include respond(tab-port){
     flex-flow: column;
     align-items: center;
+  }
+  @include respond(phone){
+    margin: 0 0rem;
   }
 }
 
@@ -56,13 +63,17 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    // justify-content: space-between;
+    // align-items: center;
+    justify-content: space-between;
     &-image{
-      width: 70%;
+      width: 100%;
+      height: 100%;
       // position: absolute;
+      object-fit: fill;
+      object-position: center;
       bottom: 0;
-      padding-bottom: 5rem;
+      margin: 0 auto;
+      // padding-bottom: 5rem;
     }
     &-head{
        font-size: 2.5rem;
@@ -78,14 +89,16 @@
       letter-spacing: 2px;
       padding: 1rem;
       padding-bottom:  1rem;
+      // align-self: flex-start;
     }
-    @include respond(phone){
+    @include respond(tab-port){
       border: none;
       &-image{
         width: 50%;
+        height: 60%;
         // position: absolute;
         bottom: 0;
-        padding-bottom: 5rem;
+        // padding-bottom: 5rem;
       }
       &-head{
          font-size: 2.5rem;
@@ -111,7 +124,19 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
+    flex-flow: column;
+    padding: 2rem;
+    text-align:center;
+    & .for{
+      color:$color-black;
+      font-size: 2.5rem;
+      font-family: "PT Sarif", serif;
+    }
+    &:last-child{
+      color:$color-grey;
+      font-size: 2rem;
+      font-family: "PT Sans", sans-serif;
+    }
 }
 
 .card:hover .card__side--front {

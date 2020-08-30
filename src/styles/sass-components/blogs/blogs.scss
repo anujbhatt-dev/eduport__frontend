@@ -1,0 +1,64 @@
+.blogs{
+  display: flex;
+  justify-content: center;
+  // align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem 20rem;
+
+  @include respond(tab-land){
+    padding: 2rem 10rem;
+  }
+  @include respond(tab-port){
+    padding: 2rem 5rem;
+  }
+  @include respond(phone){
+    padding: 2rem;
+  }
+  &__item{
+    transition: all .5s;
+    &:hover{
+      transform: scale(1.03);
+      background: rgba($color-orangered,.05);
+    }
+     flex-grow: 1;
+     margin: 3rem;
+     width: 30rem;
+     // height: 45rem;
+    &-title{
+      font-family: "Open Sans",sans-serif;
+      font-size: 2rem;
+      font-weight: bolder;
+      padding-bottom: 1rem;
+    }
+    &-info{
+      font-family: "Open Sans",sans-serif;
+      font-size: 1.5rem;
+      font-weight: 400;
+      padding-bottom: 1rem;
+      &-by{
+       color: $color-grey;
+      }
+      &-date{
+       color: $color-grey;
+      }
+    }
+    &-content{
+      color: $color-grey;
+      font-family: "Open Sans",sans-serif;
+      font-size: 1.8rem;
+      font-weight: 400;
+      padding-bottom: 1rem;
+    }
+    &-readMore{
+      ont-family: "Open Sans",sans-serif;
+      font-size: 1.8rem;
+      font-weight: 800;
+      padding-bottom: 1rem;
+      color: $color-primary-blue;
+      &:hover{
+        color: $color-orangered;
+        text-decoration: none;
+      }
+    }
+  }
+}
