@@ -1,5 +1,5 @@
 .studentList{
-
+  perspective: 1000px;
   &__nav{
     display: flex;
     justify-content: center;
@@ -105,7 +105,7 @@
    font-weight: bold;
    border-top-left-radius: 25px;
    border-top-right-radius: 25px;
-   transform: scale(1) rotateX(2deg);
+   transform: scale(1) rotateX(4deg);
    transform-origin: bottom;
    cursor: pointer;
    &-loading{
@@ -116,5 +116,8 @@
      border-top: 10px solid $color-orangered;
      transform: scale(1.1) rotateX(0deg);
      background: rgba($color-orangered,1);
+   }
+   &:focus{
+     outline: none;
    }
 }
