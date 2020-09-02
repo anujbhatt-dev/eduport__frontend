@@ -6,14 +6,14 @@ import {Helmet} from "react-helmet"
 
 
     state={
-     
+
       formData:{
         name:'',
         mobile:"",
         email:''
       },
-      loading:true,
-      loadinng:false
+      loading1:true,
+      loading:false
     }
 
 
@@ -33,14 +33,15 @@ import {Helmet} from "react-helmet"
 
     componentDidMount=()=>{
       window.scrollTo({top:0,behavior:"smooth"})
-      // this.setState({... this.props.content.contactPage});
-      // this.setState({loading:false});
+      if(this.props.content)
+     {  this.setState({... this.props.content.contactPage});
+       this.setState({loading1:false});}
     }
 
     componentDidUpdate=()=>{
-      if(this.state.loading)
+      if(this.state.loading1)
      {  this.setState({... this.props.content.contactPage});
-       this.setState({loading:false});}
+       this.setState({loading1:false})}
     }
 
    render(){

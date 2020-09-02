@@ -22,6 +22,7 @@ import AdminNavigation from "./admin/navigation/navigation"
 import AdminCallUsBar from "./admin/call-us-bar/call-us-bar"
 import AdminFooter from "./admin/footer/footer"
 import AdminFixed from "./admin/fixed/fixed"
+import AdminStudentList from "./admin/student-list/student-list"
 import LayoutContext from "../layout-context"
 import axios from "axios"
 
@@ -29,7 +30,7 @@ import axios from "axios"
 
  class Layout extends Component{
 
- 
+
     state={
         content:{},
     }
@@ -58,7 +59,7 @@ import axios from "axios"
 
      return (
         <div className="layout">
- 
+
         <Switch>
             <Route path="/admin">
                <AdminCallUsBar styles={this.props.styles}/>
@@ -123,8 +124,9 @@ import axios from "axios"
                   <Route exact path="/admin/blogs:id">
                       <AdminPost  styles={this.props.styles}/>
                   </Route>
-
-
+                  <Route exact path="/admin/studentList">
+                      <AdminStudentList  styles={this.props.styles}/>
+                  </Route>
              </Switch>
            </div>
            <Switch>

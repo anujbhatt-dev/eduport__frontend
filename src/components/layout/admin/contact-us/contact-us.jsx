@@ -37,12 +37,15 @@ import axios from "axios"
 
     componentDidMount=()=>{
       window.scrollTo({top:0,behavior:"smooth"})
-      
+      if(this.props.content)
+     {  this.setState({...this.props.content.contactPage});
+       this.setState({loading:false});}
+    
     }
 
     componentDidUpdate=()=>{
       if(this.state.loading)
-     {  this.setState({... this.props.content.contactPage});
+     {  this.setState({...this.props.content.contactPage});
        this.setState({loading:false});}
     }
 
@@ -55,7 +58,6 @@ import axios from "axios"
 
    render(){
 
-    console.log(this.state)
 
      return (<>
            <Helmet>
@@ -66,7 +68,7 @@ import axios from "axios"
           </Helmet>
           <div style={{color:this.props.styles.color}} className="contactUs">
                  <hr className="hr"/>
-                {!this.state.loading?<form onSubmit={(e)=>this.submitHandler(e)} className="contactUs__form">
+              <form onSubmit={(e)=>this.submitHandler(e)} className="contactUs__form">
                     <input name="h1" onChange={(e)=>this.inputHandler(e)} value={this.state.h1} className="contactUs__form-h1 contactUs__form-h1--mod"/>
                     <input name="h2" onChange={(e)=>this.inputHandler(e)} value={this.state.h2} className="contactUs__form-h1"/>
                     <input name="h3" onChange={(e)=>this.inputHandler(e)} value={this.state.h3} className="contactUs__form-h2"/>
@@ -84,7 +86,7 @@ import axios from "axios"
                     <input type="submit" className="contactUs__form-submit" value="SAVE"/>
                     <div className="contactUs__form-terms">By signing up, you agree to Eduport’s  <span>Privacy policy</span> and <span>Terms of Use.</span></div>
 
-                </form>:<Spinner />}
+                </form>
           </div>
           </>
      )
