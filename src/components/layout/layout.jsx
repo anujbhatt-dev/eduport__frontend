@@ -22,21 +22,43 @@ import AdminNavigation from "./admin/navigation/navigation"
 import AdminCallUsBar from "./admin/call-us-bar/call-us-bar"
 import AdminFooter from "./admin/footer/footer"
 import AdminFixed from "./admin/fixed/fixed"
+import LayoutContext from "../layout-context"
+import axios from "axios"
 
 
 
  class Layout extends Component{
 
- componentDidMount=()=>{
-   window.scrollTo({top:0,behavior:"smooth"})
- }
+ 
+    state={
+        content:{},
+    }
+
+
+    componentDidMount(){
+
+        console.log("13123");
+
+        axios.get("/v1/content").then(res=>{
+            console.log(res);
+            this.setState({content:res.data});
+        })
+        window.scrollTo({top:0,behavior:"smooth"})
+
+
+    }
+
 
 
    render(){
 
+    if(this.state.content.landingPage)
+    console.log("-->"+this.state.content.landingPage.r1h1);
+
+
      return (
         <div className="layout">
-
+ 
         <Switch>
             <Route path="/admin">
                <AdminCallUsBar styles={this.props.styles}/>
@@ -71,7 +93,7 @@ import AdminFixed from "./admin/fixed/fixed"
                     <Pricing   styles={this.props.styles}/>
                 </Route>
                 <Route exact path="/contactUs">
-                    <ContactUs  styles={this.props.styles}/>
+                    <ContactUs content={this.state.content} styles={this.props.styles}/>
                 </Route>
                 <Route exact path="/aboutUs">
                     <AboutUs  styles={this.props.styles}/>
@@ -90,7 +112,7 @@ import AdminFixed from "./admin/fixed/fixed"
                      <AdminPricing   styles={this.props.styles}/>
                  </Route>
                  <Route exact path="/admin/contactUs">
-                     <AdminContactUs  styles={this.props.styles}/>
+                     <AdminContactUs content={this.state.content} styles={this.props.styles}/>
                  </Route>
                  <Route exact path="/admin/aboutUs">
                      <AdminAboutUs  styles={this.props.styles}/>

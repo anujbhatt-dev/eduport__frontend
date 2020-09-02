@@ -6,16 +6,18 @@ import {Helmet} from "react-helmet"
 
 
     state={
-      h1:"get free",
-      h2:"EXPERT COUNSELLING",
-      h3:"We need a few details to reach you.",
+     
       formData:{
         name:'',
         mobile:"",
         email:''
       },
+      loading:true,
       loadinng:false
     }
+
+
+
 
     submitHandler=(e)=>{
       e.preventDefault();
@@ -31,6 +33,14 @@ import {Helmet} from "react-helmet"
 
     componentDidMount=()=>{
       window.scrollTo({top:0,behavior:"smooth"})
+      // this.setState({... this.props.content.contactPage});
+      // this.setState({loading:false});
+    }
+
+    componentDidUpdate=()=>{
+      if(this.state.loading)
+     {  this.setState({... this.props.content.contactPage});
+       this.setState({loading:false});}
     }
 
    render(){
@@ -57,9 +67,9 @@ import {Helmet} from "react-helmet"
                     <label htmlFor="contactUs__category">Preference</label>
                     <select required id="contactUs__category" name="category">
                       <option >choose you preference</option>
-                      <option value="standard">Standard</option>
-                      <option value="professional">Professional</option>
-                      <option value="premium">Premium</option>
+                      <option value="standard">{this.state.c1}</option>
+                      <option value="professional">{this.state.c2}</option>
+                      <option value="premium">{this.state.c3}</option>
                     </select>
                     <input type="submit" className="contactUs__form-submit" value="Proceed"/>
                     <div className="contactUs__form-terms">By signing up, you agree to Eduport’s  <span>Privacy policy</span> and <span>Terms of Use.</span></div>

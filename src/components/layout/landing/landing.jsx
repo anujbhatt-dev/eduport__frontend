@@ -20,7 +20,6 @@ class Landing extends Component{
 
 
    render(){
-     console.log(this.props);
      // <input name="background" onChange={(e)=>this.props.styleHandler(e)} value={this.props.styles.background} type="color"/>
      // <input name="fontColor" onChange={(e)=>this.props.styleHandler(e)} value={this.props.styles.background} type="color"/>
 
