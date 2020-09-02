@@ -22,7 +22,7 @@ import AdminNavigation from "./admin/navigation/navigation"
 import AdminCallUsBar from "./admin/call-us-bar/call-us-bar"
 import AdminFooter from "./admin/footer/footer"
 import AdminFixed from "./admin/fixed/fixed"
-
+import AdminStudentList from "./admin/student-list/student-list"
 
 
  class Layout extends Component{
@@ -101,8 +101,9 @@ import AdminFixed from "./admin/fixed/fixed"
                   <Route exact path="/admin/blogs:id">
                       <AdminPost  styles={this.props.styles}/>
                   </Route>
-
-
+                  <Route exact path="/admin/studentList">
+                      <AdminStudentList  styles={this.props.styles}/>
+                  </Route>
              </Switch>
            </div>
            <Switch>
