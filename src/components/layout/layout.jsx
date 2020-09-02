@@ -53,9 +53,6 @@ import axios from "axios"
 
    render(){
 
-    if(this.state.content.landingPage)
-    console.log("-->"+this.state.content.landingPage.r1h1);
-
 
      return (
         <div className="layout">

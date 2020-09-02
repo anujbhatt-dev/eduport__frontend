@@ -1,6 +1,8 @@
 import React, {Component} from "react"
 import Spinner from "../../../UI/spinner/spinner"
 import {Helmet} from "react-helmet"
+import axios from "axios"
+
 
  class ContactUs extends Component{
 
@@ -9,8 +11,10 @@ import {Helmet} from "react-helmet"
 
       formData:{
         name:'',
-        mobile:"",
-        email:''
+        phone:"",
+        email:'',
+        preference:null,
+        counselling:true,
       },
       loading1:true,
       loading:false
@@ -22,26 +26,47 @@ import {Helmet} from "react-helmet"
     submitHandler=(e)=>{
       e.preventDefault();
       this.setState({
-        loading:true
+        loading:true,
       })
-      setTimeout(()=>{
-        this.setState({
-              loading:false
-            })
-       }, 3000);
+
+
+      //console.log(this.state.formData)
+      
+      axios.post("/v1/client",this.state.formData).then(res=>{
+        setTimeout(()=>{
+          this.setState({
+                loading:false
+              });
+              window.location="http://localhost:3000"
+         }, 3000);
+
+      })
+
+      
     }
 
     componentDidMount=()=>{
+      console.log("Mounting")
+
       window.scrollTo({top:0,behavior:"smooth"})
       if(this.props.content)
-     {  this.setState({... this.props.content.contactPage});
-       this.setState({loading1:false});}
+      this.setState({... this.props.content.contactPage});
+      
     }
 
     componentDidUpdate=()=>{
-      if(this.state.loading1)
+      if(this.state.loading1 && this.props.content.contactPage)
      {  this.setState({... this.props.content.contactPage});
        this.setState({loading1:false})}
+    }
+
+
+    inputHandler=(e)=>{
+    
+      let formData={...this.state.formData}
+      formData[e.target.name]=e.target.value;
+
+      this.setState({formData:formData})
     }
 
    render(){
@@ -60,17 +85,17 @@ import {Helmet} from "react-helmet"
                     <h2 className="contactUs__form-h1">{this.state.h2}</h2>
                     <h2 className="contactUs__form-h2">{this.state.h3}</h2>
                     <label htmlFor="contactUs__name">Name</label>
-                    <input required id="contactUs__name" name="name" placeholder="Name" className="contactUs__form-input" type="text"/>
+                    <input onChange={(e)=>this.inputHandler(e)}  value={this.state.name} required id="contactUs__name" name="name" placeholder="Name" className="contactUs__form-input" type="text"/>
                     <label htmlFor="contactUs__number">Mobile</label>
-                    <input required id="contactUs__number" name="number" placeholder="Mobile" className="contactUs__form-input" type="tel"/>
+                    <input onChange={(e)=>this.inputHandler(e)} value={this.state.phone} required id="contactUs__number" name="phone" placeholder="Mobile" className="contactUs__form-input" type="tel"/>
                     <label htmlFor="contactUs__email">Email</label>
-                    <input  id="contactUs__email" name="email" placeholder="Email" className="contactUs__form-input contactUs__form-input-email" type="email"/>
+                    <input  onChange={(e)=>this.inputHandler(e)} value={this.state.email} id="contactUs__email" name="email" placeholder="Email" className="contactUs__form-input contactUs__form-input-email" type="email"/>
                     <label htmlFor="contactUs__category">Preference</label>
-                    <select required id="contactUs__category" name="category">
-                      <option >choose you preference</option>
-                      <option value="standard">{this.state.c1}</option>
-                      <option value="professional">{this.state.c2}</option>
-                      <option value="premium">{this.state.c3}</option>
+                    <select placeholder="choose you preference" name="preference" onChange={(e)=>this.inputHandler(e)} value={this.state.formData.preference} required id="contactUs__category" >
+                      {/* <option >choose you preference</option> */}
+                      <option value={this.state.c3}>{this.state.c3}</option>
+                      <option value={this.state.c1}>{this.state.c1}</option>
+                      <option value={this.state.c2}>{this.state.c2}</option>
                     </select>
                     <input type="submit" className="contactUs__form-submit" value="Proceed"/>
                     <div className="contactUs__form-terms">By signing up, you agree to Eduport’s  <span>Privacy policy</span> and <span>Terms of Use.</span></div>
