@@ -37,16 +37,16 @@ import axios from "axios"
 
     componentDidMount=()=>{
       window.scrollTo({top:0,behavior:"smooth"})
-      if(this.props.content)
-     {  this.setState({...this.props.content.contactPage});
-       this.setState({loading:false});}
+     // if(this.props.content)
+     this.setState({...this.props.content.contactPage});
+       //this.setState({loading:false});}
     
     }
 
     componentDidUpdate=()=>{
-      if(this.state.loading)
-     {  this.setState({...this.props.content.contactPage});
-       this.setState({loading:false});}
+      if(this.state.loading && this.props.content.contactPage)
+      {  this.setState({... this.props.content.contactPage});
+        this.setState({loading:false})}
     }
 
     inputHandler=(e)=>{
@@ -58,6 +58,7 @@ import axios from "axios"
 
    render(){
 
+    console.log("Con")
 
      return (<>
            <Helmet>
