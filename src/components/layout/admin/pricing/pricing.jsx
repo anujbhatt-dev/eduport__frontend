@@ -22,6 +22,7 @@ import {Helmet} from "react-helmet"
           <div styles={this.props.styles} className="pricing">
               <AdminPrice  styles={this.props.styles}/>
               <AdminFaq styles={this.props.styles}/>
+                      <button className="load__btn" onClick={this.onSubmitHandler}>Save</button>
           </div>
           </>
      )

@@ -7,27 +7,33 @@
    state={
      data:[
        {
-         type:"Standard",
-         typeDetail:"All basic things for businesses that are just getting started.",
+         h1:"Standard",
+         p1:"All basic things for businesses that are just getting started.",
          price:"$10",
+         p2:"user per month",
          list:[
-           "Unlimited Terms & Users","Supported Object: Leads & Cases","Unlimited Filters and workflow","Round robin assignment","Pause & Play assignment"
-         ]
+
+         ],
+         listItem:""
        },
        {
-         type:"Professional",
-         typeDetail:"Better insights for growing business that more customers.",
+         h1:"Professional",
+         p1:"Better insights for growing business that more customers.",
          price:"$15",
+         p2:"custom",
          list:[
-           "Unlimited Terms & Users","Supported Object: Leads & Cases","Unlimited Filters and workflow","Round robin assignment","Pause & Play assignment"
-         ]
+
+         ],
+         listItem:""
        },{
-         type:"Premium",
-         typeDetail:"Advanced features for pros who need more customization.",
+         h1:"Premium",
+         p1:"Advanced features for pros who need more customization.",
          price:"Custom",
+         p2:"custom",
          list:[
-           "Unlimited Terms & Users","Supported Object: Leads & Cases","Unlimited Filters and workflow","Round robin assignment","Pause & Play assignment"
-         ]
+
+         ],
+         listItem:""
        },
      ]
    }
@@ -40,6 +46,44 @@
      Aos.init({duration:1000});
    }
 
+
+   onChangeHandler=(e,id)=>{
+     let newState =  this.state.data
+     newState[id][e.target.name] = newState[id][e.target.value]
+     this.setState({
+       data:[...newState]
+     })
+   }
+
+   onItemListChangeHandler=(e,i)=>{
+         let newState = this.state.data
+         console.log(newState[i].listItem);
+         newState[i].listItem = e.target.value
+         this.setState({
+             data:[...newState]
+         })
+   }
+
+   addListItemHandler=(i)=>{
+      let newState= this.state
+      if(newState.data[i].listItem.length!==0 ){
+        newState.data[i].list.push(newState.data[i].listItem);
+        newState.data[i].listItem="";
+        this.setState({
+          ...newState
+        })
+      }
+    }
+
+
+    removeListItemHandler=(i,ii)=>{
+     let newState= this.state
+     newState.data[i].list.splice(ii,1);
+     this.setState({
+        ...newState
+     })
+   }
+
    render(){
 
      return (
@@ -47,17 +91,25 @@
               {this.state.data.map((data,i)=>{
                 return <div  className={"price__card "+"price__card-"+(i+1)}>
                            {i===1?<div className="price__card-mostPopular">-Most Popular-</div>:null}
-                          <div data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-type">{data.type}</div>
-                          <div data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-typeDetail">{data.typeDetail}</div>
-                          <div data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-price">{data.price}</div>
-                          {data.type==="Premium"? <div data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-time">pricing</div>:<div data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-time">User per month</div>}
-                          {data.list.map(item=>{
+                          <input onChange={(e)=>this.onChangeHandler(e,i)} name="h1" value={data.h1} data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-type" />
+                          <input onChange={(e)=>this.onChangeHandler(e,i)} name="p1" value={data.p1} data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-typeDetail"/>
+                          <input onChange={(e)=>this.onChangeHandler(e,i)} name="price" value={data.price} data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-price"/>
+                          <input onChange={(e)=>this.onChangeHandler(e,i)} name="p2" value={data.p2} data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-time" />
+                          {data.list.map((item,ii)=>{
                             return <div data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-list">
                                         <div className="price__card-list-tick"><i className="fa fa-check" aria-hidden="true"></i></div>
                                         <div className="price__card-list-item">{item}</div>
+                                        <i onClick={()=>this.removeListItemHandler(i,ii)} className="fa fa-remove fa-1x removeIcon" aria-hidden="true"></i>
                                    </div>
                           })}
-                          <button data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className={i===1?"btn btn-blue price__card--btn btn-blue-2":"btn btn-blue price__card--btn"}>Start Free Trial</button>
+                          <div data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-list">
+                                      <div className="price__card-list-tick"><i className="fa fa-check" aria-hidden="true"></i></div>
+                                      <input name="listItem" value={this.state.data[i].listItem} onChange={(e)=>this.onItemListChangeHandler(e,i)} className="price__card-list-item"/><br/>
+                                      <i onClick={()=>this.addListItemHandler(i)}  className="fa fa-plus fa-1x addIcon addIcon1" aria-hidden="true"></i>
+                          </div>
+
+
+
                        </div>
               })}
          </div>
