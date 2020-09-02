@@ -23,7 +23,6 @@ import AdminCallUsBar from "./admin/call-us-bar/call-us-bar"
 import AdminFooter from "./admin/footer/footer"
 import AdminFixed from "./admin/fixed/fixed"
 import AdminStudentList from "./admin/student-list/student-list"
-import LayoutContext from "../layout-context"
 import axios from "axios"
 
 
@@ -38,8 +37,7 @@ import axios from "axios"
 
     componentDidMount(){
 
-        console.log("13123");
-
+       
         axios.get("/v1/content").then(res=>{
             console.log(res);
             this.setState({content:res.data});
@@ -85,44 +83,44 @@ import axios from "axios"
              </Switch>
              <Switch>
                 <Route exact path="/">
-                    <Landing styleHandler={this.props.styleHandler}  styles={this.props.styles}/>
+                    <Landing content={this.state.content} styleHandler={this.props.styleHandler}  styles={this.props.styles}/>
                 </Route>
                 <Route exact path="/pricing">
-                    <Pricing   styles={this.props.styles}/>
+                    <Pricing content={this.state.content}  styles={this.props.styles}/>
                 </Route>
                 <Route exact path="/contactUs">
                     <ContactUs content={this.state.content} styles={this.props.styles}/>
                 </Route>
                 <Route exact path="/aboutUs">
-                    <AboutUs  styles={this.props.styles}/>
+                    <AboutUs content={this.state.content}  styles={this.props.styles}/>
                  </Route>
                  <Route exact path="/blogs">
-                     <Blogs  styles={this.props.styles}/>
+                     <Blogs content={this.state.content}  styles={this.props.styles}/>
                  </Route>
                  <Route exact path="/blogs:id">
-                     <Post  styles={this.props.styles}/>
+                     <Post content={this.state.content} styles={this.props.styles}/>
                  </Route>
 
                  <Route exact path="/admin">
-                     <AdminLanding styleHandler={this.props.styleHandler}  styles={this.props.styles}/>
+                     <AdminLanding content={this.state.content} styleHandler={this.props.styleHandler}  styles={this.props.styles}/>
                  </Route>
                  <Route exact path="/admin/pricing">
-                     <AdminPricing   styles={this.props.styles}/>
+                     <AdminPricing content={this.state.content}  styles={this.props.styles}/>
                  </Route>
                  <Route exact path="/admin/contactUs">
                      <AdminContactUs content={this.state.content} styles={this.props.styles}/>
                  </Route>
                  <Route exact path="/admin/aboutUs">
-                     <AdminAboutUs  styles={this.props.styles}/>
+                     <AdminAboutUs content={this.state.content}  styles={this.props.styles}/>
                   </Route>
                   <Route exact path="/admin/blogs">
-                      <AdminBlogs  styles={this.props.styles}/>
+                      <AdminBlogs content={this.state.content}  styles={this.props.styles}/>
                   </Route>
                   <Route exact path="/admin/blogs:id">
-                      <AdminPost  styles={this.props.styles}/>
+                      <AdminPost content={this.state.content} styles={this.props.styles}/>
                   </Route>
                   <Route exact path="/admin/studentList">
-                      <AdminStudentList  styles={this.props.styles}/>
+                      <AdminStudentList content={this.state.content} styles={this.props.styles}/>
                   </Route>
              </Switch>
            </div>

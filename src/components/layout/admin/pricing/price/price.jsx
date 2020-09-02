@@ -38,8 +38,13 @@
      ]
    }
 
+   updateParentPricings(){
+     this.props.pricingsHandler(this.state.data);
+   }
+
    componentDidMount=()=>{
      Aos.init({duration:1000});
+     this.setState({data:this.props.pricings});
    }
 
    componentDidUpdate=()=>{
@@ -48,11 +53,14 @@
 
 
    onChangeHandler=(e,id)=>{
-     let newState =  this.state.data
-     newState[id][e.target.name] = newState[id][e.target.value]
+     let newState = [... this.state.data]
+     newState[id][e.target.name] = e.target.value
      this.setState({
        data:[...newState]
      })
+
+     console.log(this.state.data)
+     this.updateParentPricings();
    }
 
    onItemListChangeHandler=(e,i)=>{
@@ -72,6 +80,8 @@
         this.setState({
           ...newState
         })
+        this.updateParentPricings();
+
       }
     }
 
@@ -82,6 +92,8 @@
      this.setState({
         ...newState
      })
+     this.updateParentPricings();
+
    }
 
    render(){

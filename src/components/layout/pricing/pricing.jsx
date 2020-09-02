@@ -6,10 +6,25 @@ import {Helmet} from "react-helmet"
 
  class Pricing extends Component{
 
-   componentDidMount=()=>{
-     window.scrollTo({top:0,behavior:"smooth"})
+
+  state={
+    loading:true,
+     content:{},
    }
 
+   componentDidMount=()=>{
+    window.scrollTo({top:0,behavior:"smooth"})
+   
+    if(this.props.content.pricingPage)
+    this.setState({content:{...this.props.content.pricingPage }});
+   
+  }
+
+  componentDidUpdate=()=>{
+   if(this.state.loading && this.props.content.pricingPage)
+   this.setState({content:{...this.props.content.pricingPage },loading:false})
+
+  }
    render(){
 
      return (<>
@@ -20,8 +35,8 @@ import {Helmet} from "react-helmet"
              <meta name="description" content={"making india world's factory"} />
          </Helmet>
           <div styles={this.props.styles} className="pricing">
-              <Price  styles={this.props.styles}/>
-              <Faq styles={this.props.styles}/>
+          {this.state.content.pricings?<Price pricings={this.state.content.pricings} styles={this.props.styles}/>:null}
+          {this.state.content.faqs? <Faq faqs={this.state.content.faqs} styles={this.props.styles}/>:null}
           </div>
           </>
      )

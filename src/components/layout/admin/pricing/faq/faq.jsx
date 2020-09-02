@@ -19,9 +19,17 @@ import axios from "axios"
 
    componentDidMount=()=>{
 
+    this.setState({faqs:this.props.faqs})
+
    }
 
    onSubmitHandler=()=>{
+
+   }
+
+   updateParentFaq=()=>{
+
+    this.props.faqsHandler(this.state.faqs);
 
    }
 
@@ -51,6 +59,7 @@ import axios from "axios"
         this.setState({
           ...newState
         })
+        this.updateParentFaq();
       }
     }
 
@@ -61,10 +70,10 @@ import axios from "axios"
      this.setState({
         ...newState
      })
+     this.updateParentFaq();
    }
 
    render(){
-
      return (
          <div className="faq faq__fix">
              <div style={{color:this.props.styles.color}} className="faq__head">{this.state.head}</div>
