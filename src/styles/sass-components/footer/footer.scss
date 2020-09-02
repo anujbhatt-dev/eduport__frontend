@@ -7,10 +7,21 @@
   min-height: 30vh;
   justify-content: space-between;
   z-index: -10;
+  & > *:not(.footer__socialmedia){
+    width:50rem;
+    & > *{
+      margin: 0 auto;
+      @include respond(tab-land){
+        margin: 0;
+      }
+      @include respond(tab-land){
+        width: auto;
+      }
+    }
+  }
   &__copyright{
      padding-bottom: 1rem;
      letter-spacing: 1.5px;
-
     &-h1{
       font-family: "PT Sarif",serif;
       font-size: 2.5rem;
@@ -45,6 +56,13 @@
   }
   &__socialMedia{
     font-family: "PT Sams",sans-serif;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-flow: column;
+    @include respond(tab-land){
+      align-items:flex-start;
+    }
     &-question{
          display: flex;
          flex-flow: column;
@@ -70,7 +88,7 @@
 
         &-item{
           font-size: 2.5rem;
-          padding-right: 1rem;
+          padding-right: 3rem;
         }
         &-1{
 
@@ -88,133 +106,9 @@
     }
   }
 }
-@include respond(tab-land){
-  .footer{
-
-    &__copright{
-
-      &-h1{
-
-      }
-      &-text{
-
-      }
-      &-copyrightText{
-
-      }
-    }
-    &__nav{
-
-      &-col{
-
-        &-link{
-
-        }
-      }
-    }
-    &__socialmedia{
-
-      &-question{
-
-        &-p1{
-
-        }
-        &-p2{
-
-        }
-      }
-      &-links{
-
-        &-head{
-
-        }
-        &-row{
-
-          &-item{
-
-          }
-          &-1{
-
-          }
-          &-2{
-
-          }
-          &-3{
-
-          }
-          &-4{
-
-          }
-        }
-      }
-    }
-  }
-}
 
 
 
-@include respond(tab-port){
-  .footer{
-
-    &__copright{
-
-      &-h1{
-
-      }
-      &-text{
-
-      }
-      &-copyrightText{
-
-      }
-    }
-    &__nav{
-
-      &-col{
-
-        &-link{
-
-        }
-      }
-    }
-    &__socialmedia{
-
-      &-question{
-
-        &-p1{
-
-        }
-        &-p2{
-
-        }
-      }
-      &-links{
-
-        &-head{
-
-        }
-        &-row{
-
-          &-item{
-
-          }
-          &-1{
-
-          }
-          &-2{
-
-          }
-          &-3{
-
-          }
-          &-4{
-
-          }
-        }
-      }
-    }
-  }
-}
 
 
 
@@ -282,7 +176,7 @@
 }
 .contact___strip{
   color: $color-white;
-  background:$color-grey-dark-3;
+  background:$color-black;
   display: flex;
   padding: 2rem 5rem ;
   justify-content: space-around;

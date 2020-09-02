@@ -48,9 +48,9 @@ class LandingScreen9 extends Component{
                 </div>
                 <div className="landingScreen9__enquire">
                      {this.state.loading?<><Spinner/><Backdrop show={this.state.loading}/></>:<form onSubmit={(e)=>this.submitHandler(e)} className="landingScreen9__enquire-form" >
-                           <input required className="landingScreen9__enquire-form-input" placeholder="Your Name" type="text"/>
-                           <input required className="landingScreen9__enquire-form-input" placeholder="Your Number" type="tel"/>
-                           <input className="landingScreen9__enquire-form-input" placeholder="Your Email" type="email"/>
+                           <input required className="landingScreen9__enquire-form-input" placeholder="Your Name *" type="text"/>
+                           <input required className="landingScreen9__enquire-form-input" placeholder="Your Number *" type="tel"/>
+                           <input className="landingScreen9__enquire-form-input" placeholder="Your Email *" type="email"/>
                            <button type="submit"  className="landingScreen9__enquire-form-btn">Enquire Now</button>
                      </form>}
                 </div>

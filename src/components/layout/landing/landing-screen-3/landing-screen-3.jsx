@@ -50,7 +50,7 @@
      return (<>
          <div style={{color:this.props.styles.color}} className="landingScreen3__head">{this.state.h3}</div>
          <div className="landingScreen3">
-               <div data-aos="fade-right" data-aos-delay={150} data-aos-once={true} className="landingScreen3__cardWrapper">
+               <div data-aos="flip-right" data-aos-delay={150} data-aos-once={true} className="landingScreen3__cardWrapper">
                      <div  className="card">
                               <div style={this.props.styles} className="card__side card__side--front">
                                  <div className="card__side-head card__side--front-head">{this.state.front1.h1}</div>

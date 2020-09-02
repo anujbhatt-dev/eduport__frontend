@@ -4,6 +4,8 @@ import ErrorBoundary from "./error-boundary/error-boundary"
 import Layout from "./components/layout/layout"
 import "aos/dist/aos.css"
 import Aos from "aos"
+import {Helmet} from "react-helmet"
+
 
 class App extends React.Component {
 
@@ -45,6 +47,12 @@ class App extends React.Component {
 
     return (
       <ErrorBoundary>
+      <Helmet>
+            <meta charSet="utf-8" />
+            <title>{"Eduport By IndiaPort"}</title>
+            <link rel="canonical" href={"http://localhost:3000/"} />
+            <meta name="description" content={"making india world's factory"} />
+        </Helmet>
       <div style={{color:this.state.color}} className="App">
       <Layout styleHandler={this.styleHandler} styles={styles}/>
 

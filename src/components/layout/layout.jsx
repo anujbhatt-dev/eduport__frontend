@@ -11,22 +11,58 @@ import {Switch,Route} from "react-router-dom"
 import Footer from "./footer/footer"
 import Fixed from "./fixed/fixed"
 
+// Admin
+import AdminLanding from "./admin/landing/landing"
+import AdminPricing from "./admin/pricing/pricing"
+import AdminBlogs from "./admin/blogs/blogs"
+import AdminPost from "./admin/blogs/post/post"
+import AdminAboutUs from "./admin/about-us/about-us"
+import AdminContactUs from "./admin/contact-us/contact-us"
+import AdminNavigation from "./admin/navigation/navigation"
+import AdminCallUsBar from "./admin/call-us-bar/call-us-bar"
+import AdminFooter from "./admin/footer/footer"
+import AdminFixed from "./admin/fixed/fixed"
 
 
 
  class Layout extends Component{
 
+ componentDidMount=()=>{
+   window.scrollTo({top:0,behavior:"smooth"})
+ }
 
 
    render(){
 
      return (
         <div className="layout">
-           <CallUsBar />
+
+        <Switch>
+            <Route path="/admin">
+               <AdminCallUsBar styles={this.props.styles}/>
+            </Route>
+            <Route path="/">
+               <CallUsBar styles={this.props.styles}/>
+            </Route>
+        </Switch>
            <hr className="hr"/>
-           <Fixed />
+           <Switch>
+               <Route path="/admin">
+                  <AdminFixed styles={this.props.styles}/>
+               </Route>
+               <Route path="/">
+                  <Fixed styles={this.props.styles}/>
+               </Route>
+           </Switch>
            <div className="main">
-             <Navigation styles={this.props.styles}/>
+             <Switch>
+                 <Route path="/admin">
+                    <AdminNavigation styles={this.props.styles}/>
+                 </Route>
+                 <Route path="/">
+                    <Navigation styles={this.props.styles}/>
+                 </Route>
+             </Switch>
              <Switch>
                 <Route exact path="/">
                     <Landing styleHandler={this.props.styleHandler}  styles={this.props.styles}/>
@@ -46,9 +82,37 @@ import Fixed from "./fixed/fixed"
                  <Route exact path="/blogs:id">
                      <Post  styles={this.props.styles}/>
                  </Route>
+
+                 <Route exact path="/admin">
+                     <AdminLanding styleHandler={this.props.styleHandler}  styles={this.props.styles}/>
+                 </Route>
+                 <Route exact path="/admin/pricing">
+                     <AdminPricing   styles={this.props.styles}/>
+                 </Route>
+                 <Route exact path="/admin/contactUs">
+                     <AdminContactUs  styles={this.props.styles}/>
+                 </Route>
+                 <Route exact path="/admin/aboutUs">
+                     <AdminAboutUs  styles={this.props.styles}/>
+                  </Route>
+                  <Route exact path="/admin/blogs">
+                      <AdminBlogs  styles={this.props.styles}/>
+                  </Route>
+                  <Route exact path="/admin/blogs:id">
+                      <AdminPost  styles={this.props.styles}/>
+                  </Route>
+
+
              </Switch>
            </div>
-            <Footer/>
+           <Switch>
+               <Route path="/admin">
+                  <AdminFooter styles={this.props.styles}/>
+               </Route>
+               <Route path="/">
+                  <Footer styles={this.props.styles}/>
+               </Route>
+           </Switch>
         </div>
      )
    }

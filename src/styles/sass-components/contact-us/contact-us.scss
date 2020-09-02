@@ -8,9 +8,9 @@
      border: 1px solid rgba($color-black,.1);
      box-shadow: 0 0 2rem rgba($color-black,.1);
      border-radius: 20px;
-     width: 38rem;
+     width: 60rem;
      margin: 5rem auto;
-     padding: 1rem;
+     padding: 5rem 8rem;
      &-h1{
        text-transform: uppercase;
        font-size: 2rem;
@@ -19,6 +19,7 @@
        font-family: "PT Sarif", serif;
        &--mod{
         padding-top: 2rem;
+        font-size: 3rem;
         color: $color-orangered;
        }
      }
@@ -36,17 +37,17 @@
      flex-flow: column;
      justify-content: center;
      // align-items: center;
-     &-input, #category{
+     &-input, #contactUs__category{
        // border-radius: 30px;
-        margin-bottom: 3.5rem;
+        margin-bottom: 3rem;
         // height: 2rem;
         color: $color-grey;
         font-family: "PT Sans", sans-serif;
-        padding: 1rem;
+        padding: 1.5rem;
         padding-left: 1rem;
         font-size: 2rem;
-        border: none;
-        border-bottom:  1px solid rgba($color-black,.5);
+        // border: none;
+        border:  1px solid rgba($color-black,.2);
         // width: 30%;
         @include respond(tab-port){
            // width: 60%;
@@ -54,27 +55,35 @@
         @include respond(phone){
            // width: 90%;
         }
+
         &:focus{
           outline: none;
           border: 1px solid rgba($color-black,1);
         }
+     }
+     & label{
+       font-size: 2rem;
+       font-weight: 600;
+       font-family: "PT Sans", sans-serif;
+       padding-bottom: .5rem;
+       color: $color-grey;
      }
      &-submit{
        color:$color-white;
        // border-radius: 12px;
        text-transform: uppercase;
        font-size: 2rem;
-       background:  $color-orangered;;
        border: none;
        margin: 2rem auto;
-       margin-bottom: 5rem;
+       // margin-bottom: 5rem;
        padding: 1rem 2rem;
        transition: all .5s;
        display: inline-block;
        width: 60%;
+       background: rgba($color-orangered,.8);
        cursor: pointer;
        &:hover{
-         background: rgba($color-orangered,.8);
+         background:  $color-orangered;;
          // color: $color-black;
          box-shadow: 0rem 0rem 1rem rgba($color-black,.5);
        }
@@ -141,6 +150,9 @@
     }
     &__h2{
       font-size: 2rem;
+    }
+    &__form{
+      width: 95%;
     }
      &__benefits{
        flex-wrap: wrap;

@@ -11,7 +11,8 @@
      font-size: 4rem;
      padding: 3rem 0;
      // padding-top: 5rem;
-     font-family:"PT Sarif",serif;
+     font-family:"Open Sans",serif;
+     font-weight: 800;
   }
   &__details{
     // flex-grow: 1;
@@ -51,12 +52,12 @@
       flex-flow: column;
       &-input{
          margin-bottom: 3rem;
-         padding: 1rem;
+         padding: 2rem;
          padding-left: 1rem;
          font-family:"PT Sans",sans-serif;
          font-size: 2rem;
-         border: none;
-         border-bottom: 1px solid $color-black;
+         // border: none;
+         border: 1px solid rgba($color-black,.2);
          &:last-of-type{
            margin-bottom: 5rem;
          }
@@ -110,7 +111,7 @@
       &-form{
         &-input{
           text-align: center;
-          padding: 0;
+          padding: 2rem;
           margin-bottom: 1rem;
           padding: 1rem;
           // padding-left: 3rem;
@@ -119,7 +120,7 @@
         }
         &-btn{
           text-align: center;
-          padding: 0;
+          padding: 1rem 2rem;
         }
 
       }
@@ -153,19 +154,19 @@
 
     }
     &__enquire{
-      width: 80%;
+      width: 90%;
       &-form{
         &-input{
-          padding: .5rem;
+          padding: 2rem;
           margin: .2rem 0;
-          font-size: 1.3rem;
+          font-size: 2rem;
           &:last-of-type{
-            margin-bottom: .5rem;
+            margin-bottom: 2rem;
           }
         }
         &-btn{
-          padding: .5rem;
-          font-size: 1.3rem;
+          padding: 2rem 3rem;
+          font-size: 1.5rem;
         }
       }
     }
@@ -179,5 +180,6 @@
   }
 }
 ::placeholder{
-  color: $color-black;
+  color: $color-grey;
+  opacity: .5;
 }

@@ -6,6 +6,22 @@ import {Link} from "react-router-dom"
    render(){
 
      return (<>
+       <div className="contact___strip">
+           <div className="contact___strip-contact">
+                <div className="contact___strip-contact-icon"><i className="fa fa-volume-control-phone" aria-hidden="true"></i></div>
+                <div className="contact___strip-contact-text">+ 91 8889266799 <br/> + 91 8080107744</div>
+           </div>
+           <hr className="hv"/>
+           <div className="contact___strip-email">
+                <div className="contact___strip-email-icon"><i className="fa fa-envelope-open-o" aria-hidden="true"></i></div>
+                <div className="contact___strip-email-text">hello@eduports.in</div>
+           </div>
+           <hr className="hv"/>
+           <div className="contact___strip-address">
+                <div className="contact___strip-address-icon"><i className="fa fa-globe" aria-hidden="true"></i></div>
+                <div className="contact___strip-address-text">406B, Glitz Mall Marine Line <br/> Mumbai 400002</div>
+           </div>
+       </div>
         <footer id="footer" className="footer">
             <div className="footer__copyright">
                 <h1 className="footer__copyright-h1">EDUPORT <br/> <span>By IndiaPort</span></h1>
@@ -50,22 +66,7 @@ import {Link} from "react-router-dom"
                 </div>
             </div>
         </footer>
-        <div className="contact___strip">
-            <div className="contact___strip-contact">
-                 <div className="contact___strip-contact-icon"><i className="fa fa-volume-control-phone" aria-hidden="true"></i></div>
-                 <div className="contact___strip-contact-text">+ 91 8889266799 <br/> + 91 8080107744</div>
-            </div>
-            <hr className="hv"/>
-            <div className="contact___strip-email">
-                 <div className="contact___strip-email-icon"><i className="fa fa-envelope-open-o" aria-hidden="true"></i></div>
-                 <div className="contact___strip-email-text">hello@eduports.in</div>
-            </div>
-            <hr className="hv"/>
-            <div className="contact___strip-address">
-                 <div className="contact___strip-address-icon"><i className="fa fa-globe" aria-hidden="true"></i></div>
-                 <div className="contact___strip-address-text">406B, Glitz Mall Marine Line <br/> Mumbai 400002</div>
-            </div>
-        </div>
+
         </>
      )
    }

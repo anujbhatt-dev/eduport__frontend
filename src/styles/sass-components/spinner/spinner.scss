@@ -8,8 +8,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-flow: column;
   z-index: 100000;
   &__text{
+    width: 50rem;
     text-align: center;
     font-size: 4rem;
     font-weight: bold;
@@ -19,9 +21,20 @@
     @include respond(tab-port){
          font-size: 2rem;
     }
+
   }
 
 }
+
+#spinner__quote{
+  color: $color-grey;
+  font-size: 2rem;
+  font-weight:lighter;
+  @include respond(tab-port){
+    font-size: 1.5rem;
+  }
+}
+
 @keyframes fade {
   from{
       opacity: 1;
