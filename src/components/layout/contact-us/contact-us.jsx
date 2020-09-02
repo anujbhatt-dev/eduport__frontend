@@ -33,14 +33,15 @@ import {Helmet} from "react-helmet"
 
     componentDidMount=()=>{
       window.scrollTo({top:0,behavior:"smooth"})
-      this.setState({... this.props.content.contactPage});
-      this.setState({loading1:false});
+      if(this.props.content)
+     {  this.setState({... this.props.content.contactPage});
+       this.setState({loading1:false});}
     }
 
     componentDidUpdate=()=>{
       if(this.state.loading1)
      {  this.setState({... this.props.content.contactPage});
-       this.setState({loading1:false});}
+       this.setState({loading1:false})}
     }
 
    render(){

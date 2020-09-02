@@ -37,12 +37,15 @@ import axios from "axios"
 
     componentDidMount=()=>{
       window.scrollTo({top:0,behavior:"smooth"})
-
+      if(this.props.content)
+     {  this.setState({...this.props.content.contactPage});
+       this.setState({loading:false});}
+    
     }
 
     componentDidUpdate=()=>{
       if(this.state.loading)
-     {  this.setState({... this.props.content.contactPage});
+     {  this.setState({...this.props.content.contactPage});
        this.setState({loading:false});}
     }
 
