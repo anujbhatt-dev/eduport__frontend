@@ -121,3 +121,19 @@
      outline: none;
    }
 }
+.studentList__search{
+  text-align: center;
+  height: 4rem;
+  width: 55rem;
+  padding-left: 2rem;
+  border: 2px solid $color-black;
+  background: $color-white;
+  margin: 0 auto;
+  display: block;
+  font-size: 2rem;
+  &::placeholder{
+    color: $color-black;
+    font-weight: bold;
+    font-size: 2rem;
+  }
+}

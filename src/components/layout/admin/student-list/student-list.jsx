@@ -16,7 +16,7 @@ import axios from "axios"
 
 
    componentDidMount(){
-   
+
     axios.get("/v1/admin/client/false/false/all/0").then(res=>{
        this.setState({data:res.data.content,totalPages:res.data.totalPages});
     })
@@ -43,7 +43,7 @@ import axios from "axios"
 
     })
 
-    
+
    }
 
     pageHandler=()=>{
@@ -51,9 +51,9 @@ import axios from "axios"
            return {loading:true,
             page:state.page+1}
         })
-        
+
     }
-   
+
 
    render(){
 
@@ -65,7 +65,7 @@ import axios from "axios"
                  <button className="studentList__nav-item" onClick={()=>this.setState({loading:true,page:0,search:"",data:[],councelling:false,done:true})}>enquiry done</button>
                  <button className="studentList__nav-item" onClick={()=>this.setState({loading:true,page:0,search:"",data:[],councelling:false,done:false})}>enquiry not done</button>
             </nav>
-           <input type="text" name="search" value={this.state.search}  onChange={(e)=>this.setState({data:[],search:e.target.value,loading:true,page:0})}/>
+           <input placeholder="search" type="text" name="search" value={this.state.search} className="studentList__search"  onChange={(e)=>this.setState({data:[],search:e.target.value,loading:true,page:0})}/>
             <table className="studentList__table">
                  <thead className="studentList__table-head">
                      <tr className="studentList__table-head-row">

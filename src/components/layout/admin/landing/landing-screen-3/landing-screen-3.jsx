@@ -48,42 +48,42 @@
    render(){
 
      return (<>
-         <div style={{color:this.props.styles.color}} className="landingScreen3__head">{this.state.h3}</div>
+         <textarea cols={50} row={5} value={this.state.h3} style={{color:this.props.styles.color}} className="landingScreen3__head"></textarea>
          <div className="landingScreen3">
                <div data-aos="flip-right" data-aos-delay={150} data-aos-once={true} className="landingScreen3__cardWrapper">
-                     <div  className="card">
+                     <div  className="">
                               <div style={this.props.styles} className="card__side card__side--front">
-                                 <div className="card__side-head card__side--front-head">{this.state.front1.h1}</div>
-                                 <div className="card__side-para card__side--front-para">{this.state.front1.p1}</div>
+                                 <textarea cols={50} row={5} value={this.state.front1.h1} className="card__side-head card__side--front-head"></textarea>
+                                 <textarea cols={50} row={5} vslue={this.state.front1.p1} className="card__side-para card__side--front-para"></textarea>
                                  <img className="card__side-image card__side--front-image" src={s3p1} alt=""/>
                               </div>
-                              <div className="card__side card__side--back card__side--back-1">
-                                  <div className="for">{this.state.back1.for}</div>
-                                  <div>{this.state.back1.detail}</div>
+                              <div className="">
+                                  <textarea cols={50} row={5} value={this.state.back1.for} className="for"></textarea><br/>
+                                  <textarea cols={50} row={5} value={this.state.back1.detail}></textarea>
                               </div>
                      </div>
 
-                     <div className="card" >
+                     <div className="" >
                               <div  style={this.props.styles} className="card__side card__side--front">
-                                 <div className="card__side-head card__side--front-head">{this.state.front2.h1}</div>
-                                 <div className="card__side-para card__side--front-para">{this.state.front2.p1}</div>
+                                 <textarea cols={50} row={5} value={this.state.front2.h1} className="card__side-head card__side--front-head"></textarea>
+                                 <textarea cols={50} row={5} value={this.state.front2.p1} className="card__side-para card__side--front-para"></textarea>
                                  <img className="card__side-image card__side--front-image" src={s3p2} alt=""/>
                               </div>
-                              <div className="card__side card__side--back card__side--back-1">
-                                  <div className="for">{this.state.back2.for}</div>
-                                  <div>{this.state.back2.detail}</div>
+                              <div className="">
+                                  <textarea cols={50} row={5} value={this.state.back2.for} className="for"></textarea><br/>
+                                  <textarea cols={50} row={5} value={this.state.back2.detail}></textarea>
                               </div>
                      </div>
 
-                     <div className="card">
+                     <div className="">
                               <div style={this.props.styles} className="card__side card__side--front">
-                                 <div className="card__side-head card__side--front-head">{this.state.front3.h1}</div>
-                                 <div className="card__side-para card__side--front-para">{this.state.front3.p1}</div>
+                                 <textarea cols={50} row={5} value={this.state.front3.h1} className="card__side-head card__side--front-head"></textarea>
+                                 <textarea cols={50} row={5} value={this.state.front3.p1} className="card__side-para card__side--front-para"></textarea>
                                  <img className="card__side-image card__side--front-image" src={s3p3} alt=""/>
                               </div>
-                              <div className="card__side card__side--back card__side--back-1">
-                                  <div className="for">{this.state.back3.for}</div>
-                                  <div>{this.state.back3.detail}</div>
+                              <div className="">
+                                  <textarea cols={50} row={5} value={this.state.back3.for} className="for"></textarea><br/>
+                                  <textarea cols={50} row={5} value={this.state.back3.detail}></textarea>
                               </div>
                      </div>
                </div>

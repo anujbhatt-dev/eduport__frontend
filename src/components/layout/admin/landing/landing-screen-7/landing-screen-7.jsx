@@ -74,7 +74,7 @@ class AdminLandingScreen7 extends Component{
   render(){
 
     return (<>
-      <div className="landingScreen6__head landingScreen7__head">Reviews</div>
+      <textarea value={"Reviews"} className="landingScreen6__head landingScreen7__head"></textarea>
         <div style={this.props.styles} className="landingScreen6 landingScreen7">
             <div  id="landingScreen6__carousel2" className="landingScreen6__carousel landingScreen7__carousel">
                 <i onClick={()=>{this.sideScroll(document.getElementById('landingScreen6__carousel2'),"left",5,275,5)}} id="slide" className="fa fa-angle-left landingScreen6__arrow landingScreen6__arrow--left" aria-hidden="true"></i>

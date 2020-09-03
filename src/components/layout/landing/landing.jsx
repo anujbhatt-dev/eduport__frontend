@@ -14,10 +14,12 @@ import {Helmet} from "react-helmet"
 
 class Landing extends Component{
 
+
+
+
   componentDidMount=()=>{
     window.scrollTo({top:0,behavior:"smooth"})
   }
-
 
    render(){
      // <input name="background" onChange={(e)=>this.props.styleHandler(e)} value={this.props.styles.background} type="color"/>

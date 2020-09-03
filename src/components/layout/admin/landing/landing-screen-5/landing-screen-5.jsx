@@ -20,16 +20,18 @@
      ]
    }
 
+
+
    render(){
 
      return (
          <div id="screen5" style={this.props.styles} className="landingScreen5">
-             <div style={this.props.styles} className="landingScreen5__head">How it Works</div>
+             <textarea  className="landingScreen5__head" value={"How it Works"}></textarea>
              <div className="landingScreen5__body">
                {this.state.data.map((data,i)=>{
-                 return <><div className="landingScreen5__body-box">
-                            <div className="landingScreen5__body-box-head">{data.for}</div>
-                            <div className="landingScreen5__body-box-detail">{data.detail}</div>
+                 return <><div style={{position:"relative"}} className="landingScreen5__body-box">
+                            <textarea className="landingScreen5__body-box-head" value={data.for}></textarea>
+                            <textarea className="landingScreen5__body-box-detail" value={data.detail}></textarea>
                         </div>
                          {i!=2?<div className="landingScreen5__body-arrow"><i className="fa fa-angle-right" aria-hidden="true"></i></div>:null}
                          {i!=2?<div className="landingScreen5__body-arrowDown"><i className="fa fa-angle-down" aria-hidden="true"></i></div>:null}

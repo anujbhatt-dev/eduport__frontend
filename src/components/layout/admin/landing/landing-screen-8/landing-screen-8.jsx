@@ -60,7 +60,7 @@ class AdminLandingScreen8 extends Component{
              <div className="landingScreen8__appLink" >
                 <div className="landingScreen8__appLink-box">
 
-                             <div className="landingScreen8__appLink-box-head">{this.state.head}</div>
+                             <textarea cols={50} rows={1} value={this.state.head} className="landingScreen8__appLink-box-head"></textarea>
                              <div className="landingScreen8__appLink-box-btns">
                                  <div className="landingScreen8__appLink-box-btns-apple">
                                     <i class="fa fa-apple" aria-hidden="true"></i>  apple
@@ -82,8 +82,8 @@ class AdminLandingScreen8 extends Component{
                                       {i===0?icon0:i===1?icon1:i===2?icon2:i===3?icon3:i===4?icon4:icon5}
                                  </div>
                                  <div className="landingScreen8__features-items-item">
-                                    <div className="landingScreen8__features-items-item-head">{data.for}</div>
-                                    <div className="landingScreen8__features-items-item-detail">{data.detail}</div>
+                                    <textarea cols={30} rows={1} value={data.for} className="landingScreen8__features-items-item-head"></textarea><br/>
+                                    <textarea cols={30} rows={5} value={data.detail} className="landingScreen8__features-items-item-detail"></textarea>
                                 </div>
                         </div>
                 })}
