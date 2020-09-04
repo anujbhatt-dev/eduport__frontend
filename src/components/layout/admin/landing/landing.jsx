@@ -11,6 +11,7 @@ import AdminLandingScreen9 from "./landing-screen-9/landing-screen-9"
 import AdminLandingScreen10 from "./landing-screen-10/landing-screen-10"
 import {Helmet} from "react-helmet"
 import axios from "axios"
+import { withRouter } from "react-router-dom"
 
 
 class AdminLanding extends Component{
@@ -67,6 +68,10 @@ class AdminLanding extends Component{
 
 
    render(){
+
+    if(!this.props.authenticated)
+       window.location="http://localhost:3000/admin/verify";
+
      return (<>
            <Helmet>
               <meta charSet="utf-8" />
@@ -104,4 +109,4 @@ class AdminLanding extends Component{
  }
 
 
-export default AdminLanding;
+export default  AdminLanding;

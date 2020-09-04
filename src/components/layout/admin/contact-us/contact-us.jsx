@@ -58,8 +58,8 @@ import axios from "axios"
 
    render(){
 
-    console.log("Con")
-
+    if(!this.props.authenticated)
+    window.location="http://localhost:3000/admin/verify";
      return (<>
            <Helmet>
               <meta charSet="utf-8" />

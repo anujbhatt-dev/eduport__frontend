@@ -13,7 +13,8 @@ import {Helmet} from "react-helmet";
      // <div className="Post__date">{this.props.history.location.state.state.date}</div>
      // <div className="Post__title">{this.props.history.location.state.state.title}</div>
      // <div className="Post__content">{this.props.history.location.state.state.content}</div>
-
+     if(!this.props.authenticated)
+     window.location="http://localhost:3000/admin/verify";
 
      return (<>
 

@@ -33,6 +33,7 @@ import axios from "axios"
 
     state={
         content:{},
+        loading:true,
     }
 
 
@@ -41,7 +42,7 @@ import axios from "axios"
 
         axios.get("/v1/content").then(res=>{
             console.log(res);
-            this.setState({content:res.data});
+            this.setState({content:res.data,loading:false});
         })
         window.scrollTo({top:0,behavior:"smooth"})
 
@@ -53,30 +54,33 @@ import axios from "axios"
    render(){
 
 
+    if(this.state.loading)
+     return "Loading..."
+
      return (
         <div className="layout">
 
         <Switch>
             <Route path="/admin">
-               <AdminCallUsBar styles={this.props.styles}/>
+               <AdminCallUsBar authenticated={this.props.authenticated} styles={this.props.styles}/>
             </Route>
             <Route path="/">
-               <CallUsBar styles={this.props.styles}/>
+               <CallUsBar authenticated={this.props.authenticated} styles={this.props.styles}/>
             </Route>
         </Switch>
            <hr className="hr"/>
            <Switch>
                <Route path="/admin">
-                  <AdminFixed styles={this.props.styles}/>
+                  <AdminFixed authenticated={this.props.authenticated} styles={this.props.styles}/>
                </Route>
                <Route path="/">
-                  <Fixed styles={this.props.styles}/>
+                  <Fixed authenticated={this.props.authenticated} styles={this.props.styles}/>
                </Route>
            </Switch>
            <div className="main">
              <Switch>
                  <Route path="/admin">
-                    <AdminNavigation styles={this.props.styles}/>
+                    <AdminNavigation authenticated={this.props.authenticated} styles={this.props.styles}/>
                  </Route>
                  <Route path="/">
                     <Navigation styles={this.props.styles}/>
@@ -107,25 +111,25 @@ import axios from "axios"
                      <Verify />
                  </Route>
                  <Route exact path="/admin">
-                     <AdminLanding content={this.state.content} styleHandler={this.props.styleHandler}  styles={this.props.styles}/>
+                     <AdminLanding authenticated={this.props.authenticated} content={this.state.content} styleHandler={this.props.styleHandler}  styles={this.props.styles}/>
                  </Route>
                  <Route exact path="/admin/pricing">
-                     <AdminPricing content={this.state.content}  styles={this.props.styles}/>
+                     <AdminPricing authenticated={this.props.authenticated} content={this.state.content}  styles={this.props.styles}/>
                  </Route>
                  <Route exact path="/admin/contactUs">
-                     <AdminContactUs content={this.state.content} styles={this.props.styles}/>
+                     <AdminContactUs authenticated={this.props.authenticated} content={this.state.content} styles={this.props.styles}/>
                  </Route>
                  <Route exact path="/admin/aboutUs">
-                     <AdminAboutUs content={this.state.content}  styles={this.props.styles}/>
+                     <AdminAboutUs authenticated={this.props.authenticated} content={this.state.content}  styles={this.props.styles}/>
                   </Route>
                   <Route exact path="/admin/blogs">
-                      <AdminBlogs content={this.state.content}  styles={this.props.styles}/>
+                      <AdminBlogs authenticated={this.props.authenticated} content={this.state.content}  styles={this.props.styles}/>
                   </Route>
                   <Route exact path="/admin/blogs:id">
-                      <AdminPost content={this.state.content} styles={this.props.styles}/>
+                      <AdminPost authenticated={this.props.authenticated} content={this.state.content} styles={this.props.styles}/>
                   </Route>
                   <Route exact path="/admin/studentList">
-                      <AdminStudentList content={this.state.content} styles={this.props.styles}/>
+                      <AdminStudentList authenticated={this.props.authenticated} content={this.state.content} styles={this.props.styles}/>
                   </Route>
              </Switch>
            </div>

@@ -52,7 +52,7 @@ class LandingScreen7 extends Component{
                  {this.state.reviews.map((data,i)=>{
                    return (
                      <div data-aos="slide-left" data-aos-once={true} data-aos-delay={100} key={i} id={"landingScreen6__"+i} className="landingScreen6__carousel-card landingScreen7__carousel-card">
-                         <div className="landingScreen7__carousel-card-review">{data.review} </div>
+                         <div className="landingScreen7__carousel-card-review">{data.comment} </div>
                          <div className="landingScreen7__carousel-card-name">{"-"+data.name}</div>
                          <div className="landingScreen7__carousel-card-rating">{data.rating} ⭐</div>
                      </div>

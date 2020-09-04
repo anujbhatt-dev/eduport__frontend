@@ -5,6 +5,7 @@ import Layout from "./components/layout/layout"
 import "aos/dist/aos.css"
 import Aos from "aos"
 import {Helmet} from "react-helmet"
+import axios from 'axios';
 
 
 class App extends React.Component {
@@ -12,22 +13,26 @@ class App extends React.Component {
    state={
      background1:"#fff",
      background2:"#DCDCDC",
-     fontColor:"#000"
+     fontColor:"#000",
+     authenticated:false
    }
 
 
-
    styleHandler=(e)=>{
-
-    //alert( e.target.name )
-
     this.setState({[e.target.name]:e.target.value});
   }
 
 
   componentDidMount=()=>{
     Aos.init({duration:1000});
-    window.scrollTo({top:0,behavior:"smooth"})
+    window.scrollTo({top:0,behavior:"smooth"});
+    axios.interceptors.response.use(response =>{
+      let authorization=response.headers.authorization;
+      if(authorization){
+      axios.defaults.headers.common['authorization'] = authorization;
+    this.setState({authenticated:true});
+    }
+      return response;});
   }
 
 
@@ -54,7 +59,7 @@ class App extends React.Component {
             <meta name="description" content={"making india world's factory"} />
         </Helmet>
       <div style={{color:this.state.color}} className="App">
-      <Layout styleHandler={this.styleHandler} styles={styles}/>
+      <Layout authenticated={this.state.authenticated} styleHandler={this.styleHandler} styles={styles}/>
 
       </div>
       </ErrorBoundary>
