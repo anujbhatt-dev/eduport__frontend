@@ -6,17 +6,36 @@ import ashoka from "../../../../../assets/images/ashoka.svg"
 class LandingScreen10 extends Component{
 
   state={
-    by:"Narendra modi",
-    thought:"Let us come together and think of ways India does not have to import but we export to the world."
+    r8h1:"Narendra modi",
+    r8h2:"Let us come together and think of ways India does not have to import but we export to the world.",
+    loading:true,
   }
 
 
-  componentDidMount=()=>{
+
+ componentDidMount=()=>{
     Aos.init({duration:1000});
+    console.log(this.state.content);
+
+    if(this.props.content)
+    this.setState({...this.props.content});
+
   }
 
   componentDidUpdate=()=>{
     Aos.init({duration:1000});
+console.log(this.props.content);
+   if(this.state.loading && this.props.content)
+   this.setState({...this.props.content,loading:false})
+  }
+
+  parentHandler=()=>{
+    this.props.parentLandingScreen(this.state);
+  }
+
+
+  inputHandler=(e)=>{
+    this.setState({[e.target.name]:e.target.value})
   }
 
 
@@ -25,8 +44,8 @@ class LandingScreen10 extends Component{
     return (
         <div style={{color:this.props.styles.color}} className="landingScreen10">
 
-                <textarea value={this.state.thought} data-aos="fade-in" data-aos-once={true} data-aos-offset="100px" data-aos-delay={200} className="landingScreen10__thought"><i className="quote fa fa-quote-left" aria-hidden="true"></i>  <i className="quote fa fa-quote-right" aria-hidden="true"></i></textarea><br/>
-                <textarea value={this.state.by} data-aos="fade-in" data-aos-once={true} data-aos-offset="100px" data-aos-delay={200} className="landingScreen10__by"></textarea>
+                <textarea value={this.state.r8h1} onChange={(e)=>this.inputHandler(e)} name="r8h1" data-aos="fade-in" data-aos-once={true} data-aos-offset="100px" data-aos-delay={200} className="landingScreen10__thought"><i className="quote fa fa-quote-left" aria-hidden="true"></i>  <i className="quote fa fa-quote-right" aria-hidden="true"></i></textarea><br/>
+                <textarea value={this.state.r8h2} onChange={(e)=>this.inputHandler(e)} name="r8h2" data-aos="fade-in" data-aos-once={true} data-aos-offset="100px" data-aos-delay={200} className="landingScreen10__by"></textarea>
 
         </div>
     )

@@ -1,38 +1,45 @@
- import React, {Component} from "react"
+//  import React, {Component} from "react"
 
 
- class AdminLandingScreen4 extends Component{
+//  class AdminLandingScreen4 extends Component{
 
-   state={
-     data:[
-       {
-         for:"Students",
-         detail:"International trade is one of the top industries of the new millennium. One can not just help in the growth of nations economy but, largely contribute to its profit."
-       },
-       {
-         for:"Professionals",
-         detail:"while importing products can reduce costs, exporting products guarantee an increase in sale. Exporting product or working as an import-export agent, this industry offers exciting and fulfilling opportunities."
-       },
-       {
-         for:"Entrepreneurs",
-         detail:"Exporting products is good to increase business. Instead of earning finance by selling products only in the local market, an entrepreneur can take its business abroad and discover new opportunities, diversify risk and make money internationally"
-       }
-     ]
-   }
+//    state={
+//     r4h1:"",
+//     r4h2:"",
+//     r4h3:"",
+//     r4h4:"",
+//     r4p1:"",
+//     r4p2:"",
+//     r4p3:"",
+//     loading:true,
+//    }
 
+//    componentDidMount=()=>{
+   
+//     if(this.props.content)
+//     this.setState({...this.props.content });
+   
+//   }
 
-   render(){
+//   componentDidUpdate=()=>{
+//    if(this.state.loading && this.props.content)
+//    this.setState({...this.props.content,loading:false})
 
-     return (
-         <div id="screen4" style={this.props.styles} className="landingScreen4">
-                <div className="landingScreen3__head">Who can Enroll!</div>
-                {this.state.data.map(data=>{
-                  return <div className="landingScreen4__data"><strong>{data.for}</strong> - {data.detail}</div>
-                })}
-         </div>
-     )
-   }
- }
+//   }
 
 
-export default AdminLandingScreen4;
+//    render(){
+
+//      return (
+//          <div id="screen4" style={this.props.styles} className="landingScreen4">
+//                 <div className="landingScreen3__head">Who can Enroll!</div>
+               
+//                  <div className="landingScreen4__data"><strong>{this.state.r4h1}</strong> - {this.state.r4h1}</div>
+               
+//          </div>
+//      )
+//    }
+//  }
+
+
+// export default AdminLandingScreen4;

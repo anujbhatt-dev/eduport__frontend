@@ -9,41 +9,45 @@ import "aos/dist/aos.css"
 class AdminLandingScreen8 extends Component{
 
   state={
-    head:"Designed for your busy life.",
-    data:[
-      {
-        for:"Complete all 26 modules",
-        detail:"Learn new skills with our bite-sized video tutorials, then test your knowledge with a quick quiz."
-      },
-      {
-        for:"Take the final exam",
-        detail:"Pass the final 40-question exam and get certified."
-      },
-      {
-        for:"Share your certificate",
-        detail:"Download the showcase your new qualification on LinkedIn and your CV."
-      },
-      {
-        for:"Complete all 26 modules",
-        detail:"Learn new skills with our bite-sized video tutorials, then test your knowledge with a quick quiz."
-      },
-      {
-        for:"Take the final exam",
-        detail:"Pass the final 40-question exam and get certified."
-      },
-      {
-        for:"Share your certificate",
-        detail:"Download the showcase your new qualification on LinkedIn and your CV."
-      }
-    ]
+    r9h1:"Designed for your busy life.",
+    r9:[],
+    loading:true,
+    
   }
 
   componentDidMount=()=>{
     Aos.init({duration:1000});
+    console.log(this.state.content);
+
+    if(this.props.content)
+    this.setState({...this.props.content });
+
   }
 
   componentDidUpdate=()=>{
     Aos.init({duration:1000});
+   if(this.state.loading && this.props.content)
+   this.setState({...this.props.content,loading:false})
+  }
+
+
+ 
+
+  inputHandler2=(e)=>{
+    this.setState({r9h1:e.target.value})
+  }
+
+
+  inputHandler=(e,i)=>{
+
+    let r9=[...this.state.r4];
+    r9[i][e.target.name]=e.target.value;
+    this.setState({r9:r9});
+  this.parentHandler();
+  }
+
+  parentHandler=()=>{
+    this.props.parentLandingScreen(this.state);
   }
 
   render(){
@@ -60,7 +64,7 @@ class AdminLandingScreen8 extends Component{
              <div className="landingScreen8__appLink" >
                 <div className="landingScreen8__appLink-box">
 
-                             <textarea cols={50} rows={1} value={this.state.head} className="landingScreen8__appLink-box-head"></textarea>
+                             <textarea cols={50} rows={1} value={this.state.r9h1} onChange={e=>this.inputHandler2(e)} className="landingScreen8__appLink-box-head"></textarea>
                              <div className="landingScreen8__appLink-box-btns">
                                  <div className="landingScreen8__appLink-box-btns-apple">
                                     <i class="fa fa-apple" aria-hidden="true"></i>  apple
@@ -76,14 +80,14 @@ class AdminLandingScreen8 extends Component{
                 </div>
              </div>
               <div id="features"  className="landingScreen8__features">
-                {this.state.data.map((data,i)=>{
+                {this.state.r9.map((data,i)=>{
                   return <div className="landingScreen8__features-items">
                                  <div className="landingScreen8__features-items-iconWrapper">
                                       {i===0?icon0:i===1?icon1:i===2?icon2:i===3?icon3:i===4?icon4:icon5}
                                  </div>
                                  <div className="landingScreen8__features-items-item">
-                                    <textarea cols={30} rows={1} value={data.for} className="landingScreen8__features-items-item-head"></textarea><br/>
-                                    <textarea cols={30} rows={5} value={data.detail} className="landingScreen8__features-items-item-detail"></textarea>
+                                    <textarea cols={30} rows={1} name="h1" onChange={(e)=>this.inputHandler(e,i)} value={data.h1} className="landingScreen8__features-items-item-head"></textarea><br/>
+                                    <textarea cols={30} rows={5} name="p1" onChange={(e)=>this.inputHandler(e,i)} value={data.p1} className="landingScreen8__features-items-item-detail"></textarea>
                                 </div>
                         </div>
                 })}

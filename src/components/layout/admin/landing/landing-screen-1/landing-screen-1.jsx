@@ -8,31 +8,45 @@ import "aos/dist/aos.css"
  class AdminLandingScreen1 extends Component{
 
    state= {
-     screen1:{
-      h1:"A platform created toease global trade.",
-      p1:"Online video classes with in-depth & practical skills. Education made easy, affordable and fun!",
-     }
+   
+      r1h1:"A platform created toease global trade.",
+      r1p1:"Online video classes with in-depth & practical skills. Education made easy, affordable and fun!",
+      loading:true,
+     
    }
 
    componentDidMount=()=>{
      Aos.init({duration:1000});
+     console.log(this.props.r1h1)
+     this.setState({r1h1:this.props.content.r1h1,r1p1:this.props.content.r1p1})
    }
 
-   componentDidUpdate=()=>{
+   componentDidUpdate=(prevState,prevProps)=>{
      Aos.init({duration:1000});
+     if(this.state.loading && this.props.content.r1h1)
+     this.setState({r1h1:this.props.content.r1h1,r1p1:this.props.content.r1p1,loading:false})
+
+    //  if(prevProps.)
+    //  this.props.parentLandingScreen1(this.state);
+
+   }
+
+   inputHandler=(e)=>{
+    
+    this.setState({[e.target.name]:e.target.value})
+    this.props.parentLandingScreen1(this.state);
    }
 
 
    render(){
-
      return (
         <div data-aos="zoom-out" data-aos-once={true}  style={{color:this.props.styles.color}} className="landingScreen1">
             <div className="landingScreen1__text">
-               <textarea value={this.state.screen1.h1} cols={50} rows={5} className="landingScreen1__text-head">
-
-               </textarea><br/>
-               <textarea value={this.state.screen1.p1} cols={50} rows={5} className="landingScreen1__text-para">
-
+               <textarea value={this.state.r1h1} name="r1h1" onChange={(e)=>this.inputHandler(e)} value={this.state.r1h1} cols={50} rows={5} className="landingScreen1__text-head">
+ 
+               </textarea><br/> 
+               <textarea value={this.state.r1p1}  name="r1p1"  onChange={(e)=>this.inputHandler(e)} value={this.state.r1p1} cols={50} rows={5} className="landingScreen1__text-para">
+ 
                </textarea>
             </div>
             <div className="landingScreen1__imageWrapper">
