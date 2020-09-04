@@ -12,6 +12,7 @@ import Footer from "./footer/footer"
 import Fixed from "./fixed/fixed"
 
 // Admin
+import Verify from "./admin/verify/verify"
 import AdminLanding from "./admin/landing/landing"
 import AdminPricing from "./admin/pricing/pricing"
 import AdminBlogs from "./admin/blogs/blogs"
@@ -37,7 +38,7 @@ import axios from "axios"
 
     componentDidMount(){
 
-       
+
         axios.get("/v1/content").then(res=>{
             console.log(res);
             this.setState({content:res.data});
@@ -101,6 +102,10 @@ import axios from "axios"
                      <Post content={this.state.content} styles={this.props.styles}/>
                  </Route>
 
+
+                 <Route exact path="/admin/verify">
+                     <Verify />
+                 </Route>
                  <Route exact path="/admin">
                      <AdminLanding content={this.state.content} styleHandler={this.props.styleHandler}  styles={this.props.styles}/>
                  </Route>
