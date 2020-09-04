@@ -14,11 +14,22 @@ import {Helmet} from "react-helmet"
 
 class Landing extends Component{
 
-
-
+  state={
+    content:{},
+    loading:true,
+  }
 
   componentDidMount=()=>{
     window.scrollTo({top:0,behavior:"smooth"})
+   
+    if(this.props.content.landingPage)
+    this.setState({content:{...this.props.content.landingPage }});
+   
+  }
+
+  componentDidUpdate=()=>{
+   if(this.state.loading && this.props.content.landingPage)
+   this.setState({content:{...this.props.content.landingPage },loading:false})
   }
 
    render(){
@@ -32,29 +43,29 @@ class Landing extends Component{
               <link rel="canonical" href={"http://localhost:3000/pricing"} />
               <meta name="description" content={"making india world's factory"} />
           </Helmet>
-          <div className="landing">
-              <LandingScreen1 styles={this.props.styles}/>
+          { !this.state.content.r1h1?null: <div className="landing">
+              <LandingScreen1 content={this.state.content}  styles={this.props.styles}/>
               <hr  className="hr"/>
-              <LandingScreen2 styles={this.props.styles}/>
+              <LandingScreen2 content={this.state.content}  styles={this.props.styles}/>
               <hr  className="hr"/>
-              <LandingScreen3 styles={this.props.styles}/>
+              <LandingScreen3 content={this.state.content}  styles={this.props.styles}/>
               <hr  className="hr"/>
-              <LandingScreen4 styles={this.props.styles}/>
+              <LandingScreen4 content={this.state.content}  styles={this.props.styles}/>
               <hr  className="hr"/>
-              <LandingScreen5 styles={this.props.styles}/>
+              <LandingScreen5 content={this.state.content}  styles={this.props.styles}/>
               <hr  className="hr"/>
-              <LandingScreen6 styles={this.props.styles}/>
+              <LandingScreen6 content={this.state.content}  styles={this.props.styles}/>
 
-              <LandingScreen8 styles={this.props.styles}/>
+              <LandingScreen8 content={this.state.content}  styles={this.props.styles}/>
               <hr  className="hr"/>
-              <LandingScreen7 styles={this.props.styles}/>
+              <LandingScreen7 content={this.state.content}  styles={this.props.styles}/>
               <hr  className="hr"/>
-              <LandingScreen9 styles={this.props.styles}/>
+              <LandingScreen9 content={this.state.content}  styles={this.props.styles}/>
               <hr  className="hr"/>
-              <LandingScreen10 styles={this.props.styles}/>
+              <LandingScreen10 content={this.state.content}  styles={this.props.styles}/>
               <hr  className="hr"/>
 
-          </div>
+          </div>}
           </>
      )
    }

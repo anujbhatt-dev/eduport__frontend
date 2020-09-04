@@ -43,7 +43,6 @@
   }
 
   componentDidUpdate=()=>{
-    console.log(this.state.content )
    if(this.state.loading && this.props.content)
    this.setState({...this.props.content,loading:false})
 
@@ -56,6 +55,8 @@
      this.setState({
        ...newState
      })
+     this.parentHadler();
+
    }
 
    addDetailHandler=()=>{
@@ -88,6 +89,8 @@
      this.setState({
        ...newState
      })
+     this.parentHadler();
+
    }
 
    addDetailHandler2=()=>{

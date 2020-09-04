@@ -36,23 +36,25 @@ class AdminLanding extends Component{
 
 
   parentLandingScreen1=(data)=>{
+
     this.setState({content:{... data}});
   }
 
   parentLandingScreen2=(data)=>{
    
- let   r2h1=data.r2h1 ;  
- let   r2p1=data.r2p1 ;  
- let   r2h2=data.r2h2 ;     
- let r2list1=data.r2list1;
- let r2list2=data.r2list2;
+//  let   r2h1=data.r2h1 ;  
+//  let   r2p1=data.r2p1 ;  
+//  let   r2h2=data.r2h2 ;     
+//  let r2list1=data.r2list1;
+//  let r2list2=data.r2list2;
  this.setState({content:{... data}});
+ console.log(data)
 
   }
 
   parentLandingScreen=(data)=>{
     this.setState({content:{... data}});
-    //console.log("u")
+    console.log(data)
   }
 
   saveHandler=(e)=>{
@@ -89,9 +91,9 @@ class AdminLanding extends Component{
               <hr  className="hr"/>     
               <AdminLandingScreen7    content={this.state.content}  styles={this.props.styles}/>
               <hr  className="hr"/>     
-              <AdminLandingScreen9    content={this.state.content}  styles={this.props.styles}/>
+              <AdminLandingScreen9  parentLandingScreen={this.parentLandingScreen}   content={this.state.content}  styles={this.props.styles}/>
               <hr  className="hr"/>     
-              <AdminLandingScreen10   content={this.state.content}   styles={this.props.styles}/>
+              <AdminLandingScreen10  parentLandingScreen={this.parentLandingScreen}  content={this.state.content}   styles={this.props.styles}/>
               <hr  className="hr"/>
               <button className="load__btn" onClick={this.saveHandler}>Save</button>
 

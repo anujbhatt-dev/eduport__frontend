@@ -17,7 +17,6 @@ import "aos/dist/aos.css"
 
    componentDidMount=()=>{
      Aos.init({duration:1000});
-     console.log(this.props.r1h1)
      this.setState({r1h1:this.props.content.r1h1,r1p1:this.props.content.r1p1})
    }
 

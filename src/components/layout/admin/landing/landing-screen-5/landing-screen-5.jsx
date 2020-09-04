@@ -9,6 +9,7 @@
          p1:"Learn new skills with our bite-sized video tutorials, then test your knowledge with a quick quiz."
        }
      ],
+     r4h1:"",
      loading:true,
    }
 
@@ -42,7 +43,7 @@
 
      return (
          <div id="screen5" style={this.props.styles} className="landingScreen5">
-             <textarea  className="landingScreen5__head" value={"How it Works"}></textarea>
+             <textarea  className="landingScreen5__head" value={this.state.r4h1} name="r4h1" onChange={(e)=>{this.setState({[e.target.name]:e.target.value});this.parentHandler();}} ></textarea>
              <div className="landingScreen5__body">
                {this.state.r4.map((data,i)=>{
                  return <><div style={{position:"relative"}} className="landingScreen5__body-box">

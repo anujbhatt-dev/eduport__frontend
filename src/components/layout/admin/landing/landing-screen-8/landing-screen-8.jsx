@@ -17,8 +17,6 @@ class AdminLandingScreen8 extends Component{
 
   componentDidMount=()=>{
     Aos.init({duration:1000});
-    console.log(this.state.content);
-
     if(this.props.content)
     this.setState({...this.props.content });
 
@@ -34,13 +32,15 @@ class AdminLandingScreen8 extends Component{
  
 
   inputHandler2=(e)=>{
-    this.setState({r9h1:e.target.value})
+    this.setState({r9h1:e.target.value});
+    this.parentHandler();
+
   }
 
 
   inputHandler=(e,i)=>{
 
-    let r9=[...this.state.r4];
+    let r9=[...this.state.r9];
     r9[i][e.target.name]=e.target.value;
     this.setState({r9:r9});
   this.parentHandler();

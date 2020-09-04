@@ -37,7 +37,7 @@ import axios from "axios"
           this.setState({
                 loading:false
               });
-              window.location="http://localhost:3000"
+            //  window.location="http://localhost:3000"
          }, 3000);
 
       })

@@ -6,39 +6,34 @@ import enquire from "../../../../../assets/images/enquire.svg"
 class AdminLandingScreen9 extends Component{
 
   state={
-    data:[
-      {
-        for:"Complete all 26 modules",
-        detail:"Learn new skills with our bite-sized video tutorials, then test your knowledge with a quick quiz."
-      },
-      {
-        for:"Take the final exam",
-        detail:"Pass the final 40-question exam and get certified."
-      },
-      {
-        for:"Share your certificate",
-        detail:"Download the showcase your new qualification on LinkedIn and your CV."
-      }
-    ],
-    loading:false
+   
+    loading:false,
+    r10h1:"h1",
+    loading1:true,
   }
 
-   submitHandler=(e)=>{
-     this.setState({
-       loading:true
-     })
-     setTimeout(()=>{
-       this.setState({
-             loading:false
-           })
-      }, 3000);
-     e.preventDefault();
-   }
+
+
+   
+   componentDidMount=()=>{
+   
+    if(this.props.content)
+    this.setState({...this.props.content });
+   
+  }
+
+  componentDidUpdate=()=>{
+   if(this.state.loading1 && this.props.content)
+   this.setState({...this.props.content,loading1:false})
+
+  }
+
+   
 
 
   render(){
 
-    return (<><textarea value={"Why Wait! Get Started"} style={{color:this.props.styles.color}} className="landingScreen9__head"> <span ></span></textarea>
+    return (<><textarea value={this.state.r10h1} onChange={(e)=>{this.setState({r10h1:e.target.value});this.props.parentLandingScreen(this.state)}} style={{color:this.props.styles.color}} className="landingScreen9__head"> <span ></span></textarea>
         <div style={this.props.styles} className="landingScreen9">
                 <div  className="landingScreen9__details">
                      <div style={{display:"none"}} className="landingScreen9__details-contact">Contact Us</div>
@@ -47,11 +42,11 @@ class AdminLandingScreen9 extends Component{
                      <div style={{display:"none"}} className="landingScreen9__details-email">hello@eduports.in</div>
                 </div>
                 <div className="landingScreen9__enquire">
-                     {this.state.loading?<><Spinner/><Backdrop show={this.state.loading}/></>:<form onSubmit={(e)=>this.submitHandler(e)} className="landingScreen9__enquire-form" >
-                           <input required className="landingScreen9__enquire-form-input" placeholder="Your Name *" type="text"/>
-                           <input required className="landingScreen9__enquire-form-input" placeholder="Your Number *" type="tel"/>
-                           <input className="landingScreen9__enquire-form-input" placeholder="Your Email *" type="email"/>
-                           <button type="submit"  className="landingScreen9__enquire-form-btn">Enquire Now</button>
+                     {this.state.loading?<><Spinner/><Backdrop show={this.state.loading}/></>:<form className="landingScreen9__enquire-form" >
+                           <input disabled required className="landingScreen9__enquire-form-input" placeholder="Your Name *" type="text"/>
+                           <input disabled required className="landingScreen9__enquire-form-input" placeholder="Your Number *" type="tel"/>
+                           <input disabled className="landingScreen9__enquire-form-input" placeholder="Your Email *" type="email"/>
+                           <button disabled type="submit"  className="landingScreen9__enquire-form-btn">Enquire Now</button>
                      </form>}
                 </div>
                 <div  className="landingScreen9__message">

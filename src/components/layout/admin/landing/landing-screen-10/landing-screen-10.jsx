@@ -15,8 +15,6 @@ class LandingScreen10 extends Component{
 
  componentDidMount=()=>{
     Aos.init({duration:1000});
-    console.log(this.state.content);
-
     if(this.props.content)
     this.setState({...this.props.content});
 
@@ -24,7 +22,6 @@ class LandingScreen10 extends Component{
 
   componentDidUpdate=()=>{
     Aos.init({duration:1000});
-console.log(this.props.content);
    if(this.state.loading && this.props.content)
    this.setState({...this.props.content,loading:false})
   }
@@ -36,6 +33,7 @@ console.log(this.props.content);
 
   inputHandler=(e)=>{
     this.setState({[e.target.name]:e.target.value})
+    this.parentHandler();
   }
 
 

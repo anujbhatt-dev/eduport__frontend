@@ -7,20 +7,28 @@ import "aos/dist/aos.css"
 
  class LandingScreen1 extends Component{
 
-   state= {
-     screen1:{
-      h1:"A platform created toease global trade.",
-      p1:"Online video classes with in-depth & practical skills. Education made easy, affordable and fun!",
-     }
-   }
+  state= {
+   
+    r1h1:"A platform created toease global trade.",
+    r1p1:"Online video classes with in-depth & practical skills. Education made easy, affordable and fun!",
+    loading:true,
+   
+ }
 
-   componentDidMount=()=>{
-     Aos.init({duration:1000});
-   }
+ componentDidMount=()=>{
+   Aos.init({duration:1000});
+   this.setState({r1h1:this.props.content.r1h1,r1p1:this.props.content.r1p1})
+ }
 
-   componentDidUpdate=()=>{
-     Aos.init({duration:1000});
-   }
+ componentDidUpdate=(prevState,prevProps)=>{
+   Aos.init({duration:1000});
+   if(this.state.loading && this.props.content.r1h1)
+   this.setState({r1h1:this.props.content.r1h1,r1p1:this.props.content.r1p1,loading:false})
+
+  //  if(prevProps.)
+  //  this.props.parentLandingScreen1(this.state);
+
+ }
 
 
    render(){
@@ -29,10 +37,10 @@ import "aos/dist/aos.css"
         <div data-aos="zoom-out" data-aos-once={true}  style={{color:this.props.styles.color}} className="landingScreen1">
             <div className="landingScreen1__text">
                <div className="landingScreen1__text-head">
-                  {this.state.screen1.h1}
+                  {this.state.r1h1}
                </div>
                <div className="landingScreen1__text-para">
-                  {this.state.screen1.p1}
+                  {this.state.r1p1}
                </div>
             </div>
             <div className="landingScreen1__imageWrapper">
