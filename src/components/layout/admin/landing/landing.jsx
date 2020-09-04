@@ -85,11 +85,11 @@ class AdminLanding extends Component{
               <hr  className="hr"/>      */}
               <AdminLandingScreen5 parentLandingScreen={this.parentLandingScreen}   content={this.state.content}   content={this.state.content}   styles={this.props.styles}/>
               <hr  className="hr"/>     
-              <AdminLandingScreen6   content={this.state.content}   styles={this.props.styles}/>
+              <AdminLandingScreen6  parentLandingScreen={this.parentLandingScreen}   content={this.state.content}   styles={this.props.styles}/>
      
               <AdminLandingScreen8 parentLandingScreen={this.parentLandingScreen}   content={this.state.content}  content={this.state.content}   styles={this.props.styles}/>
               <hr  className="hr"/>     
-              <AdminLandingScreen7    content={this.state.content}  styles={this.props.styles}/>
+              <AdminLandingScreen7  parentLandingScreen={this.parentLandingScreen}    content={this.state.content}  styles={this.props.styles}/>
               <hr  className="hr"/>     
               <AdminLandingScreen9  parentLandingScreen={this.parentLandingScreen}   content={this.state.content}  styles={this.props.styles}/>
               <hr  className="hr"/>     

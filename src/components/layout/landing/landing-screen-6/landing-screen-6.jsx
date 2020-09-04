@@ -7,68 +7,36 @@ import pic from "../../../../assets/images/screen1.svg"
 
  class LandingScreen6 extends Component{
 
-   state = {
-    data: [
+  state = {
+    r5: [
             {
               icon:"life-ring",
               h1:"Build Your web Presense",
               h2:"5 lessons / 30 min",
-              list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."]
-            },
-            {
-              icon:"bar-chart",
-              h1:"Build Your web Presense",
-              h2:"5 lessons / 30 min",
-              list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."]
-            },
-            {
-              icon:"camera",
-              h1:"Build Your web Presense",
-              h2:"5 lessons / 30 min",
-              list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."]
-            },
-            {
-              icon:"life-ring",
-              h1:"Build Your web Presense",
-              h2:"5 lessons / 30 min",
-              list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."]
-            },
-            {
-              icon:"bar-chart",
-              h1:"Build Your web Presense",
-              h2:"5 lessons / 30 min",
-              list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."]
-            },
-            {
-              icon:"camera",
-              h1:"Build Your web Presense",
-              h2:"5 lessons / 30 min",
-              list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."]
-            },{
-              icon:"life-ring",
-              h1:"Build Your web Presense",
-              h2:"5 lessons / 30 min",
-              list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."]
-            },
-            {
-              icon:"bar-chart",
-              h1:"Build Your web Presense",
-              h2:"5 lessons / 30 min",
-              list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."]
-            },
-            {
-              icon:"camera",
-              h1:"Build Your web Presense",
-              h2:"5 lessons / 30 min",
-              list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."]
-            },
+              list:["Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet.","Lorem ipsum dolor sit amet."],
+            }
           ],
+          cardInput:{
+            icon:"",
+            h1:"",
+            h2:"",
+            list:[],
+          },
+          loading:true,
   }
 
-   componentDidMount=()=>{
+  componentDidMount=()=>{
+   
+    if(this.props.content)
+    this.setState({...this.props.content });
+   
+  }
 
+  componentDidUpdate=()=>{
+   if(this.state.loading && this.props.content)
+   this.setState({...this.props.content,loading:false})
 
-   }
+  }
 
 
    sideScroll=(element, direction, speed, distance, step)=> {
@@ -90,11 +58,11 @@ import pic from "../../../../assets/images/screen1.svg"
    render(){
 
      return (<>
-       <div className="landingScreen6__head">Module ({this.state.data.length})</div>
+       <div className="landingScreen6__head">Module ({this.state.r5.length})</div>
          <div style={this.props.styles} className="landingScreen6">
              <div id="landingScreen6__carousel" className="landingScreen6__carousel">
                  <i onClick={()=>{this.sideScroll(document.getElementById('landingScreen6__carousel'),"left",5,275,5)}} id="slide" className="fa fa-angle-left landingScreen6__arrow landingScreen6__arrow--left" aria-hidden="true"></i>
-                  {this.state.data.map((data,i)=>{
+                  {this.state.r5.map((data,i)=>{
                     return (
                       <div data-aos="slide-left" data-aos-once={true} data-aos-offset="100px" data-aos-delay={100} key={i} id={"landingScreen6__"+i} className="landingScreen6__carousel-card">
                            <div className="landingScreen6__carousel-card-icon">

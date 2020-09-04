@@ -7,53 +7,24 @@ import React, {Component} from "react"
 class LandingScreen7 extends Component{
 
   state = {
-   data: [
-        {
-          name:"Anuj",
-          review:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam omnis hic laboriosam non, sequi fugit nostrum esse pariatur officia nemo ficia nem.",
-          rating:"4.5"
-        },
-        {
-          name:"Anuj",
-          review:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam omnis hic laboriosam non, sequi fugit nostrum esse pariatur officia nemo.",
-          rating:"4.5"
-        },
-        {
-          name:"Anuj",
-          review:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam omnis hic laboriosam non, sequi fugit nostrum esse pariatur officia nemo.",
-          rating:"4.5"
-        },
-        {
-          name:"Anuj",
-          review:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam omnis hic laboriosam non, sequi fugit nostrum esse pariatur officia nemo.",
-          rating:"4.5"
-        },
-        {
-          name:"Anuj",
-          review:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam omnis hic laboriosam non, sequi fugit nostrum esse pariatur officia nemo.",
-          rating:"4.5"
-        },
-        {
-          name:"Anuj",
-          review:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam omnis hic laboriosam non, sequi fugit nostrum esse pariatur officia nemo.",
-          rating:"4.5"
-        },
-        {
-          name:"Anuj",
-          review:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam omnis hic laboriosam non, sequi fugit nostrum esse pariatur officia nemo.",
-          rating:"4.5"
-        },
-        {
-          name:"Anuj",
-          review:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam omnis hic laboriosam non, sequi fugit nostrum esse pariatur officia nemo.",
-          rating:"4.5"
-        },
-        {
-          name:"Anuj",
-          review:"Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam omnis hic laboriosam non, sequi fugit nostrum esse pariatur officia nemo.",
-          rating:"4.5"
-        },
-   ]
+    reviews: [
+         
+    ],
+    reviewh1:"",
+    loading:true,
+  }
+ 
+  componentDidMount=()=>{
+    
+   if(this.props.content)
+   this.setState({...this.props.content });
+  
+ }
+ 
+ componentDidUpdate=()=>{
+  if(this.state.loading && this.props.content)
+  this.setState({...this.props.content,loading:false})
+ 
  }
 
      sideScroll=(element, direction, speed, distance, step)=> {
@@ -74,11 +45,11 @@ class LandingScreen7 extends Component{
   render(){
 
     return (<>
-      <div className="landingScreen6__head landingScreen7__head">Reviews</div>
+      <div className="landingScreen6__head landingScreen7__head">{this.state.reviewh1}</div>
         <div style={this.props.styles} className="landingScreen6 landingScreen7">
             <div  id="landingScreen6__carousel2" className="landingScreen6__carousel landingScreen7__carousel">
                 <i onClick={()=>{this.sideScroll(document.getElementById('landingScreen6__carousel2'),"left",5,275,5)}} id="slide" className="fa fa-angle-left landingScreen6__arrow landingScreen6__arrow--left" aria-hidden="true"></i>
-                 {this.state.data.map((data,i)=>{
+                 {this.state.reviews.map((data,i)=>{
                    return (
                      <div data-aos="slide-left" data-aos-once={true} data-aos-delay={100} key={i} id={"landingScreen6__"+i} className="landingScreen6__carousel-card landingScreen7__carousel-card">
                          <div className="landingScreen7__carousel-card-review">{data.review} </div>
