@@ -9,7 +9,7 @@ import axios from "axios"
 
   state={
     content:[
-      
+
     ],
     loading:true,
     page:0,
@@ -53,7 +53,7 @@ import axios from "axios"
                           </div>
                  })}
            </div>
-         {this.state.page+1<this.state.totalPages && !this.state.loading1?<button onClick={()=>{this.setState(state=>{return {loading1:true,page:state.page+1}})}} >Load More</button>:null}
+         {this.state.page+1<this.state.totalPages && !this.state.loading1?<button className="load__btn2 load__btn" onClick={()=>{this.setState(state=>{return {loading1:true,page:state.page+1}})}} >Load More</button>:<button className="load__btn2 load__btn">Loading...</button>}
          {this.state.loading1?"Loading...":null}
 
            </>
