@@ -14,7 +14,7 @@ class App extends React.Component {
      background1:"#fff",
      background2:"#DCDCDC",
      fontColor:"#000",
-     authenticated:true
+     authenticated:false
    }
 
 

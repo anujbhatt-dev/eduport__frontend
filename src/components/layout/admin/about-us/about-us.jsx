@@ -87,21 +87,25 @@ class AdminAboutUs extends Component{
            <figure data-aos="slide-left">
                <img src={profile} alt="Trulli"/>
                <figcaption data-aos="flip-down"><textarea value={""} className="figcaption__span1">Mr.Lorem Ipsum</textarea><br/><textarea value={""} className="figcaption__span2">prod. manager</textarea></figcaption>
+               <input type="text"/>
            </figure>
 
            <figure >
                <img src={profile} alt="Trulli"/>
                <figcaption data-aos="flip-down"><textarea value={""} className="figcaption__span1">Mr.Lorem Ipsum</textarea><br/><textarea value={""} className="figcaption__span2">prod. manager</textarea></figcaption>
+                <input type="text"/>
            </figure>
 
                <figure data-aos="slide-right">
                    <img src={profile} alt="Trulli"/>
                    <figcaption data-aos="flip-down"><textarea value={""} className="figcaption__span1">Mr.Lorem Ipsum</textarea><br/><textarea value={""} className="figcaption__span2">prod. manager</textarea></figcaption>
+                   <input type="text"/>
                </figure>
 
                <figure data-aos="slide-right">
                    <img src={profile} alt="Trulli"/>
                    <figcaption data-aos="flip-down"><textarea value={""} className="figcaption__span1">Mr.Lorem Ipsum</textarea><br/><textarea value={""} className="figcaption__span2">prod. manager</textarea></figcaption>
+                   <input placeholder="gender" type="text"/>
                </figure>
            </div>
 
