@@ -105,8 +105,8 @@ import axios from "axios"
                  <i onClick={this.addDetailHandler}  className="fa fa-plus fa-1x addIcon addIcon1" aria-hidden="true"></i>
            </div>
            <button className="load__btn" onClick={this.saveHandler} >Save</button>
-           {this.state.page+1<this.state.totalPages?<button onClick={()=>{this.setState(state=>{return {loading1:true,page:state.page+1}})}} >Load More</button>:null}
-123123
+           {this.state.page+1<this.state.totalPages && !this.state.loading1?<button onClick={()=>{this.setState(state=>{return {loading1:true,page:state.page+1}})}} >Load More</button>:null}
+          {this.state.loading1?"Loading...":null}
            </>
      )
    }

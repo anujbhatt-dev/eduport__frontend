@@ -53,7 +53,9 @@ import axios from "axios"
                           </div>
                  })}
            </div>
-         {this.state.page+1<this.state.totalPages?<button onClick={()=>{this.setState(state=>{return {loading1:true,page:state.page+1}})}} >Load More</button>:null}
+         {this.state.page+1<this.state.totalPages && !this.state.loading1?<button onClick={()=>{this.setState(state=>{return {loading1:true,page:state.page+1}})}} >Load More</button>:null}
+         {this.state.loading1?"Loading...":null}
+
            </>
      )
    }
