@@ -10,20 +10,9 @@ import axios from "axios"
 
     state={
 
-      // content:null,
-      // h1:"get free",
-      // h2:"EXPERT COUNSELLING",
-      // h3:"We need a few details to reach you.",
-      // c1:"Pref",
-      // c2:"",
-      // c3:"",
+     
       loading:true,
-      // formData:{
-      //   name:'',
-      //   mobile:"",
-      //   email:''
-      // },
-      // loadinng:false
+     
     }
 
     static contextType=LayoutContext;
@@ -37,17 +26,21 @@ import axios from "axios"
 
     componentDidMount=()=>{
       window.scrollTo({top:0,behavior:"smooth"})
-     // if(this.props.content)
-     this.setState({...this.props.content.contactPage});
-       //this.setState({loading:false});}
-
+  
+      // if(this.props.content.landingPage)
+      // this.setState({content:{...this.props.content.landingPage }});
+  
+      axios.get("/v1/content/contact").then(res=>{
+        this.setState({... res.data,loading:false});
+    }).catch(err=>{this.setState({loading:false});alert("oops")})
+  
     }
 
-    componentDidUpdate=()=>{
-      if(this.state.loading && this.props.content.contactPage)
-      {  this.setState({... this.props.content.contactPage});
-        this.setState({loading:false})}
-    }
+    // componentDidUpdate=()=>{
+    //   if(this.state.loading && this.props.content.contactPage)
+    //   {  this.setState({... this.props.content.contactPage});
+    //     this.setState({loading:false})}
+    // }
 
     inputHandler=(e)=>{
       this.setState({[e.target.name]:e.target.value});
@@ -60,6 +53,12 @@ import axios from "axios"
 
     if(!this.props.authenticated)
     window.location="http://vast-reaches-61761.herokuapp.com/admin/verify";
+
+    
+    if(this.state.loading)
+    return <div  id="loader1"><div class="loader">Loading...</div></div>
+
+
      return (<>
            <Helmet>
               <meta charSet="utf-8" />

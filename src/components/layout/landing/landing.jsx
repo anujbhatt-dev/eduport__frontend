@@ -10,7 +10,7 @@ import LandingScreen8 from "./landing-screen-8/landing-screen-8"
 import LandingScreen9 from "./landing-screen-9/landing-screen-9"
 import LandingScreen10 from "./landing-screen-10/landing-screen-10"
 import {Helmet} from "react-helmet"
-
+import axios from "axios"
 
 class Landing extends Component{
 
@@ -22,19 +22,27 @@ class Landing extends Component{
   componentDidMount=()=>{
     window.scrollTo({top:0,behavior:"smooth"})
 
-    if(this.props.content.landingPage)
-    this.setState({content:{...this.props.content.landingPage }});
+    // if(this.props.content.landingPage)
+    // this.setState({content:{...this.props.content.landingPage }});
+
+    axios.get("/v1/content/landing").then(res=>{
+      console.log(res);
+      this.setState({content:res.data,loading:false});
+  }).catch(err=>{this.setState({loading:false});alert("oops")})
 
   }
 
-  componentDidUpdate=()=>{
-   if(this.state.loading && this.props.content.landingPage)
-   this.setState({content:{...this.props.content.landingPage },loading:false})
-  }
+  // componentDidUpdate=()=>{
+  //  if(this.state.loading && this.props.content.landingPage)
+  //  this.setState({content:{...this.props.content.landingPage },loading:false})
+  // }
 
    render(){
      // <input name="background" onChange={(e)=>this.props.styleHandler(e)} value={this.props.styles.background} type="color"/>
      // <input name="fontColor" onChange={(e)=>this.props.styleHandler(e)} value={this.props.styles.background} type="color"/>
+
+     if(this.state.loading)
+     return <div  id="loader1"><div class="loader">Loading...</div></div>
 
      return (<>
            <Helmet>

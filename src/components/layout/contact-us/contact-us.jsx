@@ -45,14 +45,20 @@ import axios from "axios"
 
     }
 
+   
     componentDidMount=()=>{
-      console.log("Mounting")
-
       window.scrollTo({top:0,behavior:"smooth"})
-      if(this.props.content)
-      this.setState({... this.props.content.contactPage});
-
+  
+      // if(this.props.content.landingPage)
+      // this.setState({content:{...this.props.content.landingPage }});
+  
+      axios.get("/v1/content/contact").then(res=>{
+        console.log(res);
+        this.setState({... res.data,loading1:false});
+    }).catch(err=>{this.setState({loading1:false});alert("oops")})
+  
     }
+  
 
     componentDidUpdate=()=>{
       if(this.state.loading1 && this.props.content.contactPage)
@@ -70,6 +76,9 @@ import axios from "axios"
     }
 
    render(){
+
+    if(this.state.loading1)
+    return <div  id="loader1"><div class="loader">Loading...</div></div>
 
      return (<>
            <Helmet>

@@ -7,6 +7,23 @@ import "aos/dist/aos.css"
 
 class AboutUs extends Component{
 
+
+  // componentDidMount=()=>{
+  //   window.scrollTo({top:0,behavior:"smooth"})
+
+  //   // if(this.props.content.landingPage)
+  //   // this.setState({content:{...this.props.content.landingPage }});
+
+  //   axios.get("/v1/content/pricing").then(res=>{
+  //     console.log(res);
+  //     this.setState({content:res.data,loading:false});
+  // }).catch(err=>{this.setState({loading:false});alert("oops")})
+
+  // }
+
+
+
+
   componentDidMount=()=>{
     window.scrollTo({top:0,behavior:"smooth"})
     Aos.init({duration:1500,once:true});

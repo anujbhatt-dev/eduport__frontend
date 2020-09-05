@@ -52,7 +52,7 @@ class AdminNavigation extends Component{
                   <NavLink style={{color:style.color}} activeStyle={{color: "#0f3460",textDecoration:"underline"}} to="/admin/blogs"><div className="navigation__items-item">blogs</div></NavLink>
                   <NavLink style={{color:style.color}} activeStyle={{color: "#0f3460",textDecoration:"underline"}} to="/admin/contactUs"><div className="navigation__items-item">contact</div></NavLink>
                   <NavLink style={{color:style.color}} activeStyle={{color: "#0f3460",textDecoration:"underline"}} to="/admin/studentList"><div className="navigation__items-item">student</div></NavLink>
-                  <div style={{color:"grey",cursor:"pointer"}} className="navigation__items-item"><i className="fa fa-sign-out fa-2x" aria-hidden="true"></i></div>
+                  <div onClick={()=> window.location="http://vast-reaches-61761.herokuapp.com"} style={{color:"grey",cursor:"pointer"}} className="navigation__items-item"><i className="fa fa-sign-out fa-2x" aria-hidden="true"></i></div>
             </nav>
 
 

@@ -32,30 +32,15 @@ import axios from "axios"
 
 
     state={
-        content:{},
-        loading:true,
+       
     }
 
-
-    componentDidMount(){
-
-
-        axios.get("/v1/content").then(res=>{
-            console.log(res);
-            this.setState({content:res.data,loading:false});
-        })
-        window.scrollTo({top:0,behavior:"smooth"})
-
-
-    }
 
 
 
    render(){
 
 
-    if(this.state.loading)
-     return <div  id="loader1"><div class="loader">Loading...</div></div>
 
      return (
         <div className="layout">
@@ -88,22 +73,22 @@ import axios from "axios"
              </Switch>
              <Switch>
                 <Route exact path="/">
-                    <Landing content={this.state.content} styleHandler={this.props.styleHandler}  styles={this.props.styles}/>
+                    <Landing  styleHandler={this.props.styleHandler}  styles={this.props.styles}/>
                 </Route>
                 <Route exact path="/pricing">
-                    <Pricing content={this.state.content}  styles={this.props.styles}/>
+                    <Pricing   styles={this.props.styles}/>
                 </Route>
                 <Route exact path="/contactUs">
-                    <ContactUs content={this.state.content} styles={this.props.styles}/>
+                    <ContactUs  styles={this.props.styles}/>
                 </Route>
                 <Route exact path="/aboutUs">
-                    <AboutUs content={this.state.content}  styles={this.props.styles}/>
+                    <AboutUs   styles={this.props.styles}/>
                  </Route>
                  <Route exact path="/blogs">
-                     <Blogs content={this.state.content}  styles={this.props.styles}/>
+                     <Blogs   styles={this.props.styles}/>
                  </Route>
                  <Route exact path="/blogs:id">
-                     <Post content={this.state.content} styles={this.props.styles}/>
+                     <Post  styles={this.props.styles}/>
                  </Route>
 
 
@@ -111,25 +96,25 @@ import axios from "axios"
                      <Verify />
                  </Route>
                  <Route exact path="/admin">
-                     <AdminLanding authenticated={this.props.authenticated} content={this.state.content} styleHandler={this.props.styleHandler}  styles={this.props.styles}/>
+                     <AdminLanding authenticated={this.props.authenticated}  styleHandler={this.props.styleHandler}  styles={this.props.styles}/>
                  </Route>
                  <Route exact path="/admin/pricing">
-                     <AdminPricing authenticated={this.props.authenticated} content={this.state.content}  styles={this.props.styles}/>
+                     <AdminPricing authenticated={this.props.authenticated}   styles={this.props.styles}/>
                  </Route>
                  <Route exact path="/admin/contactUs">
-                     <AdminContactUs authenticated={this.props.authenticated} content={this.state.content} styles={this.props.styles}/>
+                     <AdminContactUs authenticated={this.props.authenticated}  styles={this.props.styles}/>
                  </Route>
                  <Route exact path="/admin/aboutUs">
-                     <AdminAboutUs authenticated={this.props.authenticated} content={this.state.content}  styles={this.props.styles}/>
+                     <AdminAboutUs authenticated={this.props.authenticated}   styles={this.props.styles}/>
                   </Route>
                   <Route exact path="/admin/blogs">
-                      <AdminBlogs authenticated={this.props.authenticated} content={this.state.content}  styles={this.props.styles}/>
+                      <AdminBlogs authenticated={this.props.authenticated}   styles={this.props.styles}/>
                   </Route>
                   <Route exact path="/admin/blogs:id">
-                      <AdminPost authenticated={this.props.authenticated} content={this.state.content} styles={this.props.styles}/>
+                      <AdminPost authenticated={this.props.authenticated}  styles={this.props.styles}/>
                   </Route>
                   <Route exact path="/admin/studentList">
-                      <AdminStudentList authenticated={this.props.authenticated} content={this.state.content} styles={this.props.styles}/>
+                      <AdminStudentList authenticated={this.props.authenticated}  styles={this.props.styles}/>
                   </Route>
              </Switch>
            </div>

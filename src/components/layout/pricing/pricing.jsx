@@ -3,6 +3,8 @@ import Faq from "./faq/faq"
 import Price from "./price/price"
 import LandingScreen9 from "../landing/landing-screen-9/landing-screen-9"
 import {Helmet} from "react-helmet"
+import axios from "axios"
+
 
  class Pricing extends Component{
 
@@ -15,17 +17,26 @@ import {Helmet} from "react-helmet"
    componentDidMount=()=>{
     window.scrollTo({top:0,behavior:"smooth"})
 
-    if(this.props.content.pricingPage)
-    this.setState({content:{...this.props.content.pricingPage }});
+    // if(this.props.content.landingPage)
+    // this.setState({content:{...this.props.content.landingPage }});
+
+    axios.get("/v1/content/pricing").then(res=>{
+      console.log(res);
+      this.setState({content:res.data,loading:false});
+  }).catch(err=>{this.setState({loading:false});alert("oops")})
 
   }
 
-  componentDidUpdate=()=>{
-   if(this.state.loading && this.props.content.pricingPage)
-   this.setState({content:{...this.props.content.pricingPage },loading:false})
+  // componentDidUpdate=()=>{
+  //  if(this.state.loading && this.props.content.pricingPage)
+  //  this.setState({content:{...this.props.content.pricingPage },loading:false})
 
-  }
+  // }
    render(){
+
+    if(this.state.loading)
+    return <div  id="loader1"><div class="loader">Loading...</div></div>
+
 
      return (<>
           <Helmet>

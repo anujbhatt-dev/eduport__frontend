@@ -24,16 +24,11 @@ class AdminLanding extends Component{
   componentDidMount=()=>{
     window.scrollTo({top:0,behavior:"smooth"})
 
-    if(this.props.content.landingPage)
-    this.setState({content:{...this.props.content.landingPage }});
+    axios.get("/v1/content/landing").then(res=>{
+      this.setState({content:res.data,loading:false});
+  }).catch(err=>{this.setState({loading:false});alert("oops")})
 
   }
-
-  componentDidUpdate=()=>{
-   if(this.state.loading && this.props.content.landingPage)
-   this.setState({content:{...this.props.content.landingPage },loading:false})
-  }
-
 
 
   parentLandingScreen1=(data)=>{
@@ -69,8 +64,15 @@ class AdminLanding extends Component{
 
    render(){
 
+
+
+
     if(!this.props.authenticated)
        window.location="http://vast-reaches-61761.herokuapp.com/admin/verify";
+
+
+       if(this.state.loading)
+       return <div  id="loader1"><div class="loader">Loading...</div></div>
 
      return (<>
            <Helmet>
