@@ -126,6 +126,19 @@
      outline: none;
    }
 }
+
+.load__btn2{
+   position: static;
+   background-color: $color-secondary-blue;
+   border-color: $color-secondary-blue;
+   transform: scale(1) rotateX(4deg)  translateX(0%);
+   &:hover{
+     background-color: $color-secondary-blue;
+     border-color: $color-secondary-blue;
+     transform: scale(1.1) rotateX(0deg)  translateX(0%);
+   }
+}
+
 .studentList__search{
   text-align: center;
   height: 4rem;
