@@ -17,13 +17,13 @@ import "aos/dist/aos.css"
 
    componentDidMount=()=>{
      Aos.init({duration:1000});
-     this.setState({r1h1:this.props.content.r1h1,r1p1:this.props.content.r1p1})
+     this.setState({...this.props.content})
    }
 
    componentDidUpdate=(prevState,prevProps)=>{
      Aos.init({duration:1000});
      if(this.state.loading && this.props.content.r1h1)
-     this.setState({r1h1:this.props.content.r1h1,r1p1:this.props.content.r1p1,loading:false})
+     this.setState({...this.props.content,loading:false})
 
     //  if(prevProps.)
     //  this.props.parentLandingScreen1(this.state);

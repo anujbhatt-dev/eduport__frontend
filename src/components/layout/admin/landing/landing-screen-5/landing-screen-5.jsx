@@ -7,7 +7,13 @@
      r4:[ {
          h1:"Complete all 26 modules",
          p1:"Learn new skills with our bite-sized video tutorials, then test your knowledge with a quick quiz."
-       }
+       },{
+        h1:"Complete all 26 modules",
+        p1:"Learn new skills with our bite-sized video tutorials, then test your knowledge with a quick quiz."
+      },{
+        h1:"Complete all 26 modules",
+        p1:"Learn new skills with our bite-sized video tutorials, then test your knowledge with a quick quiz."
+      }
      ],
      r4h1:"",
      loading:true,

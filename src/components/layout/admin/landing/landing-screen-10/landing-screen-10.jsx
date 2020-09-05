@@ -6,8 +6,8 @@ import ashoka from "../../../../../assets/images/ashoka.svg"
 class LandingScreen10 extends Component{
 
   state={
-    r8h1:"Narendra modi",
-    r8h2:"Let us come together and think of ways India does not have to import but we export to the world.",
+    r8h2:"Narendra modi",
+    r8h1:"Let us come together and think of ways India does not have to import but we export to the world.",
     loading:true,
   }
 

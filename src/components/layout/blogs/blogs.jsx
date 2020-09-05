@@ -37,6 +37,9 @@ import axios from "axios"
 
    render(){
 
+    if(this.state.loading)
+    return <div  id="loader1"><div class="loader">Loading...</div></div>
+
      return (<>
            <Helmet>
               <meta charSet="utf-8" />

@@ -32,26 +32,87 @@ class AdminLanding extends Component{
 
 
   parentLandingScreen1=(data)=>{
-
-    this.setState({content:{... data}});
+    let content={... this.state.content};
+    content.r1h1=data.r1h1;
+    content.r1p1=data.r1p1;
+    this.setState({content:{... content}});
   }
 
   parentLandingScreen2=(data)=>{
 
-//  let   r2h1=data.r2h1 ;
-//  let   r2p1=data.r2p1 ;
-//  let   r2h2=data.r2h2 ;
-//  let r2list1=data.r2list1;
-//  let r2list2=data.r2list2;
- this.setState({content:{... data}});
- console.log(data)
+    let content={... this.state.content};
+
+         content.r2h1=data.r2h1 ;
+         content.r2p1=data.r2p1 ;
+         content.r2h2=data.r2h2 ;
+         content.r2list1=data.r2list1;
+         content.r2list2=data.r2list2;
+ this.setState({content:{... content}});
 
   }
 
-  parentLandingScreen=(data)=>{
-    this.setState({content:{... data}});
-    console.log(data)
+
+
+  parentLandingScreen3=(data)=>{
+    let content={... this.state.content};
+
+    content.r3h1=data.r3h1;
+    content.r3h2=data.r3h2;
+    content.r3h3=data.r3h3;
+    content.r3h4=data.r3h4;
+    content.r3h5=data.r3h5;
+    content.r3h6=data.r3h6;
+    content.r3h7=data.r3h7;
+    content.r3p1=data.r3p1;
+    content.r3p2=data.r3p2;
+    content.r3p3=data.r3p3;
+    content.r3p4=data.r3p4;
+    content.r3p5=data.r3p5;
+    content.r3p6=data.r3p6;
+    this.setState({content:{... content}});
   }
+
+  // parentLandingScreen4=(data)=>{
+  //   this.setState({content:{... data}});
+  //   console.log(data)
+  // }
+  parentLandingScreen5=(data)=>{
+    let content={... this.state.content};
+    content.r4h1=data.r4h1;
+    content.r4=data.r4;
+    this.setState({content:{... content}});
+  }
+
+  parentLandingScreen6=(data)=>{
+    let content={... this.state.content};
+    content.r5=data.r5;
+    this.setState({content:{... content}});
+  }
+  parentLandingScreen7=(data)=>{
+    let content={... this.state.content};
+    content.reviews=data.reviews;
+    content.reviewh1=data.reviewh1;
+    this.setState({content:{... content}});
+  }
+  parentLandingScreen8=(data)=>{
+    let content={... this.state.content};
+  content.r9h1=data.r9h1;
+    content.r9=data.r9;
+    this.setState({content:{... content}});
+
+  }
+  parentLandingScreen9=(data)=>{
+    let content={... this.state.content};
+    content.r10h1=data.r10h1;
+      this.setState({content:{... content}});
+  }
+  parentLandingScreen10=(data)=>{
+    let content={... this.state.content};
+    content.r8h1=data.r8h1;
+      content.r8h2=data.r8h2;
+      this.setState({content:{... content}});
+  }
+
 
   saveHandler=(e)=>{
     e.preventDefault();
@@ -86,21 +147,21 @@ class AdminLanding extends Component{
               <hr  className="hr"/>
               <AdminLandingScreen2  parentLandingScreen2={this.parentLandingScreen2} content={this.state.content}     styles={this.props.styles}/>
               <hr  className="hr"/>
-              <AdminLandingScreen3 parentLandingScreen={this.parentLandingScreen}   content={this.state.content}   styles={this.props.styles}/>
+              <AdminLandingScreen3 parentLandingScreen={this.parentLandingScreen3}   content={this.state.content}   styles={this.props.styles}/>
               <hr  className="hr"/>
               {/* <AdminLandingScreen4  parentLandingScreen={this.parentLandingScreen}   content={this.state.content}   content={this.state.content}   styles={this.props.styles}/>
               <hr  className="hr"/>      */}
-              <AdminLandingScreen5 parentLandingScreen={this.parentLandingScreen}   content={this.state.content}   content={this.state.content}   styles={this.props.styles}/>
+              <AdminLandingScreen5 parentLandingScreen={this.parentLandingScreen5}   content={this.state.content}   content={this.state.content}   styles={this.props.styles}/>
               <hr  className="hr"/>
-              <AdminLandingScreen6  parentLandingScreen={this.parentLandingScreen}   content={this.state.content}   styles={this.props.styles}/>
+              <AdminLandingScreen6  parentLandingScreen={this.parentLandingScreen6}   content={this.state.content}   styles={this.props.styles}/>
 
-              <AdminLandingScreen8 parentLandingScreen={this.parentLandingScreen}   content={this.state.content}  content={this.state.content}   styles={this.props.styles}/>
+              <AdminLandingScreen8 parentLandingScreen={this.parentLandingScreen8}   content={this.state.content}  content={this.state.content}   styles={this.props.styles}/>
               <hr  className="hr"/>
-              <AdminLandingScreen7  parentLandingScreen={this.parentLandingScreen}    content={this.state.content}  styles={this.props.styles}/>
+              <AdminLandingScreen7  parentLandingScreen={this.parentLandingScreen7}    content={this.state.content}  styles={this.props.styles}/>
               <hr  className="hr"/>
-              <AdminLandingScreen9  parentLandingScreen={this.parentLandingScreen}   content={this.state.content}  styles={this.props.styles}/>
+              <AdminLandingScreen9  parentLandingScreen={this.parentLandingScreen9}   content={this.state.content}  styles={this.props.styles}/>
               <hr  className="hr"/>
-              <AdminLandingScreen10  parentLandingScreen={this.parentLandingScreen}  content={this.state.content}   styles={this.props.styles}/>
+              <AdminLandingScreen10  parentLandingScreen={this.parentLandingScreen10}  content={this.state.content}   styles={this.props.styles}/>
               <hr  className="hr"/>
               <button className="load__btn" onClick={this.saveHandler}>Save</button>
 
