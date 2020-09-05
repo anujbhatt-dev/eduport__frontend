@@ -41,7 +41,7 @@ class AdminNavigation extends Component{
                  </div>
                  <div style={style} className="logo__tagline">
                       {/* Making India the World's factory */}
-                      <div style={{color:"grey",fontWeight:"bold"}}><strong style={{color:"black",fontWeight:"bold"}}>NOTE: </strong>Press  _space_   at the end  of any field  before hitting save btn</div><br/>
+                      <div style={{fontSize:"1.2rem",color:"grey",fontWeight:"bold"}}><strong style={{color:"black",fontWeight:"bold"}}>NOTE: </strong>Press _space_ at the end of any field before hitting save btn</div><br/>
                       <div><a target="_blank" style={{color:"black",fontWeight:"bold"}} href="https://fontawesome.com/v4.7.0/icons/">click to browse icons names</a></div>
                  </div>
             </div>
