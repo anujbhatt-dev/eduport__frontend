@@ -55,7 +55,7 @@ class App extends React.Component {
       <Helmet>
             <meta charSet="utf-8" />
             <title>{"Eduport By IndiaPort"}</title>
-            <link rel="canonical" href={"http://localhost:3000/"} />
+            <link rel="canonical" href={"http://vast-reaches-61761.herokuapp.com//"} />
             <meta name="description" content={"making india world's factory"} />
         </Helmet>
       <div style={{color:this.state.color}} className="App">

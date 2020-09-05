@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import s8p1 from "../../../../../assets/images/screen8-pic1.jpeg"
+// import s8p1 from "../../../../../assets/images/screen8-pic1.jpeg"
 import cover from "../../../../../assets/images/mobile-cover.png"
 import play from "../../../../../assets/images/google-play.svg"
 import apple from "../../../../../assets/images/apple.svg"
@@ -12,7 +12,7 @@ class AdminLandingScreen8 extends Component{
     r9h1:"Designed for your busy life.",
     r9:[],
     loading:true,
-    
+
   }
 
   componentDidMount=()=>{
@@ -29,7 +29,7 @@ class AdminLandingScreen8 extends Component{
   }
 
 
- 
+
 
   inputHandler2=(e)=>{
     this.setState({r9h1:e.target.value});

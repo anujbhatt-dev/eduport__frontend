@@ -40,7 +40,7 @@ import axios from "axios"
      // if(this.props.content)
      this.setState({...this.props.content.contactPage});
        //this.setState({loading:false});}
-    
+
     }
 
     componentDidUpdate=()=>{
@@ -59,12 +59,12 @@ import axios from "axios"
    render(){
 
     if(!this.props.authenticated)
-    window.location="http://localhost:3000/admin/verify";
+    window.location="http://vast-reaches-61761.herokuapp.com/admin/verify";
      return (<>
            <Helmet>
               <meta charSet="utf-8" />
               <title>{"Eduport By IndiaPort | Contact Us"}</title>
-              <link rel="canonical" href={"http://localhost:3000/pricing"} />
+              <link rel="canonical" href={"http://vast-reaches-61761.herokuapp.com/pricing"} />
               <meta name="description" content={"making india world's factory"} />
           </Helmet>
           <div style={{color:this.props.styles.color}} className="contactUs">

@@ -23,10 +23,10 @@ class AdminLanding extends Component{
 
   componentDidMount=()=>{
     window.scrollTo({top:0,behavior:"smooth"})
-   
+
     if(this.props.content.landingPage)
     this.setState({content:{...this.props.content.landingPage }});
-   
+
   }
 
   componentDidUpdate=()=>{
@@ -42,10 +42,10 @@ class AdminLanding extends Component{
   }
 
   parentLandingScreen2=(data)=>{
-   
-//  let   r2h1=data.r2h1 ;  
-//  let   r2p1=data.r2p1 ;  
-//  let   r2h2=data.r2h2 ;     
+
+//  let   r2h1=data.r2h1 ;
+//  let   r2p1=data.r2p1 ;
+//  let   r2h2=data.r2h2 ;
 //  let r2list1=data.r2list1;
 //  let r2list2=data.r2list2;
  this.setState({content:{... data}});
@@ -64,40 +64,40 @@ class AdminLanding extends Component{
        alert("saved");
     })
    }
-   
+
 
 
    render(){
 
     if(!this.props.authenticated)
-       window.location="http://localhost:3000/admin/verify";
+       window.location="http://vast-reaches-61761.herokuapp.com/admin/verify";
 
      return (<>
            <Helmet>
               <meta charSet="utf-8" />
               <title>{"Eduport By IndiaPort"}</title>
-              <link rel="canonical" href={"http://localhost:3000/pricing"} />
+              <link rel="canonical" href={"http://vast-reaches-61761.herokuapp.com/pricing"} />
               <meta name="description" content={"making india world's factory"} />
           </Helmet>
         { !this.state.content.r1h1?null: <div className="landing">
               <AdminLandingScreen1 parentLandingScreen1={this.parentLandingScreen1} content={this.state.content}     styles={this.props.styles}/>
-              <hr  className="hr"/>     
+              <hr  className="hr"/>
               <AdminLandingScreen2  parentLandingScreen2={this.parentLandingScreen2} content={this.state.content}     styles={this.props.styles}/>
-              <hr  className="hr"/>     
+              <hr  className="hr"/>
               <AdminLandingScreen3 parentLandingScreen={this.parentLandingScreen}   content={this.state.content}   styles={this.props.styles}/>
-              <hr  className="hr"/>     
+              <hr  className="hr"/>
               {/* <AdminLandingScreen4  parentLandingScreen={this.parentLandingScreen}   content={this.state.content}   content={this.state.content}   styles={this.props.styles}/>
               <hr  className="hr"/>      */}
               <AdminLandingScreen5 parentLandingScreen={this.parentLandingScreen}   content={this.state.content}   content={this.state.content}   styles={this.props.styles}/>
-              <hr  className="hr"/>     
+              <hr  className="hr"/>
               <AdminLandingScreen6  parentLandingScreen={this.parentLandingScreen}   content={this.state.content}   styles={this.props.styles}/>
-     
+
               <AdminLandingScreen8 parentLandingScreen={this.parentLandingScreen}   content={this.state.content}  content={this.state.content}   styles={this.props.styles}/>
-              <hr  className="hr"/>     
+              <hr  className="hr"/>
               <AdminLandingScreen7  parentLandingScreen={this.parentLandingScreen}    content={this.state.content}  styles={this.props.styles}/>
-              <hr  className="hr"/>     
+              <hr  className="hr"/>
               <AdminLandingScreen9  parentLandingScreen={this.parentLandingScreen}   content={this.state.content}  styles={this.props.styles}/>
-              <hr  className="hr"/>     
+              <hr  className="hr"/>
               <AdminLandingScreen10  parentLandingScreen={this.parentLandingScreen}  content={this.state.content}   styles={this.props.styles}/>
               <hr  className="hr"/>
               <button className="load__btn" onClick={this.saveHandler}>Save</button>

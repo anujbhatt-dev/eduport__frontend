@@ -25,9 +25,9 @@
   &__btn-mark{
     margin: 0rem;
     padding: 0.5rem;
-    background: $color-secondary-blue;
+    background: $color-orangered;
     &:focus{
-       background: $color-secondary-blue;
+       background: $color-orangered;
     }
   }
   &__btn-unmark{
@@ -95,27 +95,32 @@
    margin-bottom:0rem;
    height: 4rem;
    width: 25rem;
-   border: none;
-   border: 5px solid $color-secondary-blue;
+   border: 5px solid $color-orangered;
    border-bottom: none;
-   background: rgba($color-secondary-blue,.9);
+   background: rgba($color-orangered,1);
    transition: all .5s;
    font-size: 2rem;
    color: $color-white;
    font-weight: bold;
    border-top-left-radius: 25px;
    border-top-right-radius: 25px;
-   transform: scale(1) rotateX(4deg);
+   border: 5px solid $color-white;
+   border-bottom: none;
+   transform: scale(1) rotateX(4deg) translateX(-50%);
    transform-origin: bottom;
    cursor: pointer;
+   position: fixed;
+   bottom: 0;
+   left: 50%;
+   z-index: 100;
    &-loading{
      border-radius: 0;
    }
    &:hover{
-     box-shadow: 0 0 5rem rgba($color-secondary-blue,.1);
-     border-top: 10px solid $color-secondary-blue;
-     transform: scale(1.1) rotateX(0deg);
-     background: rgba($color-secondary-blue,1);
+     box-shadow: 0 0 5rem rgba($color-orangered,.1);
+     border-top: 10px solid $color-white;
+     transform: scale(1.1) rotateX(0deg)  translateX(-50%);
+     background: rgba($color-orangered,1);
    }
    &:focus{
      outline: none;

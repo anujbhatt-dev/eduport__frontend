@@ -14,10 +14,10 @@ import {Helmet} from "react-helmet"
 
    componentDidMount=()=>{
     window.scrollTo({top:0,behavior:"smooth"})
-   
+
     if(this.props.content.pricingPage)
     this.setState({content:{...this.props.content.pricingPage }});
-   
+
   }
 
   componentDidUpdate=()=>{
@@ -31,7 +31,7 @@ import {Helmet} from "react-helmet"
           <Helmet>
              <meta charSet="utf-8" />
              <title>{"Eduport By IndiaPort | Pricing"}</title>
-             <link rel="canonical" href={"http://localhost:3000/pricing"} />
+             <link rel="canonical" href={"http://vast-reaches-61761.herokuapp.com/pricing"} />
              <meta name="description" content={"making india world's factory"} />
          </Helmet>
           <div styles={this.props.styles} className="pricing">

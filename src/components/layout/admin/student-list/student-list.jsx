@@ -58,7 +58,7 @@ import axios from "axios"
    render(){
 
     if(!this.props.authenticated)
-    window.location="http://localhost:3000/admin/verify";
+    window.location="http://vast-reaches-61761.herokuapp.com/admin/verify";
 
      return (
        <div className="studentList">

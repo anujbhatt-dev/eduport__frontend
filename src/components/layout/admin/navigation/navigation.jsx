@@ -28,77 +28,6 @@ class AdminNavigation extends Component{
     this.props.history.push("/");
   }
 
-   componentDidMount=()=>{
-this.repeat();
-   }
-
-
-   repeat=()=>{
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+" M"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"A"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"K"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"I"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"N"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"G"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+" I"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"N"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"D"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"I"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"A"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+" T"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"H"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"E"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+" W"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"O"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"R"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"L"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"D"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"S"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"'s"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+" F"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"A"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"C"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"T"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"O"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"R"}});
-    setTimeout(()=>{this.setState((prevState)=>{return{value:prevState.value+"Y"}});
-
-    setTimeout(()=>{this.setState((prevState)=>{return{value:""}});
-
-  this.repeat();
-  },20000);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-  },200);
-   }
-
-
-
   render(){
    let style = {...this.props.styles}
    style.color = "grey"
@@ -112,7 +41,8 @@ this.repeat();
                  </div>
                  <div style={style} className="logo__tagline">
                       {/* Making India the World's factory */}
-                      {this.state.value}
+                      <div style={{color:"grey",fontWeight:"bold"}}><strong style={{color:"black",fontWeight:"bold"}}>NOTE: </strong>Press  _space_   at the end  of any field  before hitting save btn</div><br/>
+                      <div><a target="_blank" style={{color:"black",fontWeight:"bold"}} href="https://fontawesome.com/v4.7.0/icons/">click to browse icons names</a></div>
                  </div>
             </div>
             <nav  className="navigation__items">
@@ -122,6 +52,7 @@ this.repeat();
                   <NavLink style={{color:style.color}} activeStyle={{color: "#0f3460",textDecoration:"underline"}} to="/admin/blogs"><div className="navigation__items-item">blogs</div></NavLink>
                   <NavLink style={{color:style.color}} activeStyle={{color: "#0f3460",textDecoration:"underline"}} to="/admin/contactUs"><div className="navigation__items-item">contact</div></NavLink>
                   <NavLink style={{color:style.color}} activeStyle={{color: "#0f3460",textDecoration:"underline"}} to="/admin/studentList"><div className="navigation__items-item">student</div></NavLink>
+                  <div style={{color:"grey",cursor:"pointer"}} className="navigation__items-item"><i className="fa fa-sign-out fa-2x" aria-hidden="true"></i></div>
             </nav>
 
 

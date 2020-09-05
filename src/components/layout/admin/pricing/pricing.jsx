@@ -15,10 +15,10 @@ import axios from "axios"
 
    componentDidMount=()=>{
      window.scrollTo({top:0,behavior:"smooth"})
-    
+
      if(this.props.content.pricingPage)
      this.setState({content:{...this.props.content.pricingPage }});
-    
+
    }
 
    componentDidUpdate=()=>{
@@ -27,7 +27,7 @@ import axios from "axios"
 
    }
 
-    
+
    faqsHandler=(faqs)=>{
      let content={... this.state.content}
      content[faqs]=faqs;
@@ -48,31 +48,31 @@ import axios from "axios"
        alert("saved");
     })
    }
-   
+
 
 
    render(){
 
     if(!this.props.authenticated)
-    window.location="http://localhost:3000/admin/verify";
+    window.location="http://vast-reaches-61761.herokuapp.com/admin/verify";
 
      return (<>
           <Helmet>
              <meta charSet="utf-8" />
              <title>{"Eduport By IndiaPort | Pricing"}</title>
-             <link rel="canonical" href={"http://localhost:3000/pricing"} />
+             <link rel="canonical" href={"http://vast-reaches-61761.herokuapp.com/pricing"} />
              <meta name="description" content={"making india world's factory"} />
          </Helmet>
           <div styles={this.props.styles} className="pricing">
-              {this.state.content.pricings?<AdminPrice  
+              {this.state.content.pricings?<AdminPrice
                                            styles={this.props.styles}
                                            pricingsHandler={this.pricingsHandler}
                                            pricings={this.state.content.pricings}/>
-                                           
-                                           
+
+
               :null}
-             
-             
+
+
              {this.state.content.faqs?<AdminFaq
                                      faqs={this.state.content.faqs}
                                       styles={this.props.styles}

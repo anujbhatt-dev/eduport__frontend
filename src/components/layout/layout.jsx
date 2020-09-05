@@ -55,7 +55,7 @@ import axios from "axios"
 
 
     if(this.state.loading)
-     return "Loading..."
+     return <div  id="loader1"><div class="loader">Loading...</div></div>
 
      return (
         <div className="layout">

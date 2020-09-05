@@ -21,10 +21,10 @@ class Landing extends Component{
 
   componentDidMount=()=>{
     window.scrollTo({top:0,behavior:"smooth"})
-   
+
     if(this.props.content.landingPage)
     this.setState({content:{...this.props.content.landingPage }});
-   
+
   }
 
   componentDidUpdate=()=>{
@@ -40,7 +40,7 @@ class Landing extends Component{
            <Helmet>
               <meta charSet="utf-8" />
               <title>{"Eduport By IndiaPort"}</title>
-              <link rel="canonical" href={"http://localhost:3000/pricing"} />
+              <link rel="canonical" href={"http://vast-reaches-61761.herokuapp.com/pricing"} />
               <meta name="description" content={"making india world's factory"} />
           </Helmet>
           { !this.state.content.r1h1?null: <div className="landing">

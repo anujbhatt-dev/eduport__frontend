@@ -31,7 +31,7 @@ import axios from "axios"
 
 
       //console.log(this.state.formData)
-      
+
       axios.post("/v1/client",this.state.formData).then(res=>{
         setTimeout(()=>{
           this.setState({
@@ -42,7 +42,7 @@ import axios from "axios"
 
       })
 
-      
+
     }
 
     componentDidMount=()=>{
@@ -51,7 +51,7 @@ import axios from "axios"
       window.scrollTo({top:0,behavior:"smooth"})
       if(this.props.content)
       this.setState({... this.props.content.contactPage});
-      
+
     }
 
     componentDidUpdate=()=>{
@@ -62,7 +62,7 @@ import axios from "axios"
 
 
     inputHandler=(e)=>{
-    
+
       let formData={...this.state.formData}
       formData[e.target.name]=e.target.value;
 
@@ -75,7 +75,7 @@ import axios from "axios"
            <Helmet>
               <meta charSet="utf-8" />
               <title>{"Eduport By IndiaPort | Contact Us"}</title>
-              <link rel="canonical" href={"http://localhost:3000/pricing"} />
+              <link rel="canonical" href={"http://vast-reaches-61761.herokuapp.com/pricing"} />
               <meta name="description" content={"making india world's factory"} />
           </Helmet>
           <div style={{color:this.props.styles.color}} className="contactUs">
