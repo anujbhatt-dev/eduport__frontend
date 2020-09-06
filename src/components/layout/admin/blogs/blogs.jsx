@@ -16,8 +16,6 @@ import axios from "axios"
        title:"",
        content:""
      },loading:true,
-     loading1:true,
-     totalPages:0,
      page:0,
    }
 
@@ -25,19 +23,19 @@ import axios from "axios"
    componentDidMount=()=>{
     window.scrollTo({top:0,behavior:"smooth"})
 
-    axios.get("/v1/content/blogs/0").then(res=>{
-      this.setState({content:res.data.content,totalPages:res.data.totalPages,loading:false,loading1:false});
-  }).catch(err=>{this.setState({loading:false,loading1:false});alert("oops")})
+    axios.get("/v1/admin/content/blogs/").then(res=>{
+      this.setState({content:res.data,loading:false});
+  }).catch(err=>{this.setState({loading:false});alert("oops")})
 
   }
 
- componentDidUpdate=()=>{
-  if(this.state.loading1)
-  axios.get("/v1/content/blogs/"+this.state.page).then(res=>{
-    console.log(res);
-    this.setState(state=>{return {content:state.content.concat(res.data.content),totalPages:res.data.totalPages,loading1:false}});
-}).catch(err=>{this.setState({loading1:false});alert("oops")})
- }
+//  componentDidUpdate=()=>{
+//   if(this.state.loading1)
+//   axios.get("/v1/content/blogs/"+this.state.page).then(res=>{
+//     console.log(res);
+//     this.setState(state=>{return {content:state.content.concat(res.data.content),totalPages:res.data.totalPages,loading1:false}});
+// }).catch(err=>{this.setState({loading1:false});alert("oops")})
+//  }
 
    onChangeHandler=(e,i)=>{
     let content= [...this.state.content]
@@ -86,6 +84,10 @@ import axios from "axios"
     if(!this.props.authenticated)
     window.location="http://vast-reaches-61761.herokuapp.com/admin/verify";
 
+
+    if(this.state.loading)
+    return <div  id="loader1"><div class="loader">Loading...</div></div>
+
      return (<>
            <Helmet>
               <meta charSet="utf-8" />
@@ -105,8 +107,7 @@ import axios from "axios"
                  <i onClick={this.addDetailHandler}  className="fa fa-plus fa-1x addIcon addIcon1" aria-hidden="true"></i>
            </div>
            <button className="load__btn" onClick={this.saveHandler} >Save</button>
-           {this.state.page+1<this.state.totalPages && !this.state.loading1?<button className="load__btn load__btn2" onClick={()=>{this.setState(state=>{return {loading1:true,page:state.page+1}})}} >Load More</button>:null}
-          {this.state.loading1?<button className="load__btn load__btn2">Loading...</button>:null}
+          
            </>
      )
    }
