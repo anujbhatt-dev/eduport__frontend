@@ -14,9 +14,31 @@
     &-card{
       border-radius: 8px;
       background: $color-white;
-      border: 1px solid rgba($color-black,.1);
+      border: 1px solid rgba($color-black,.2);
       margin: 1rem 3rem;
       padding: 1rem 2rem;
+      overflow-y: scroll;
+      &::-webkit-scrollbar{
+          width: .5rem;
+          position: absolute;
+        }
+        &::-webkit-scrollbar-track{
+          background: transparent;
+          border-top-right-radius: 8px;
+          border-bottom-right-radius: 8px;
+        }
+
+      &::-webkit-scrollbar-thumb{
+          background: $color-primary-blue;
+          border-radius: 1000px;
+        } 
+      &-module{
+        height: 50vh;
+        
+      }
+      &-review{
+        height: 23vh;
+      }
       &:hover{
         animation: carousel .5s ease;
         animation-fill-mode: forwards;
@@ -43,6 +65,7 @@
         padding-bottom: 1.5rem;
       }
       &-h2{
+        width: 29.5rem;
         font-size: 1.8rem;
         font-family: "PT Sans",sans-serif;
         font-weight: bold;
@@ -51,6 +74,7 @@
       }
       &-list{
         &-item{
+          width: 29.5rem;
           font-size: 1.5rem;
           font-family: "PT Sans",sans-serif;
           font-weight: bold;

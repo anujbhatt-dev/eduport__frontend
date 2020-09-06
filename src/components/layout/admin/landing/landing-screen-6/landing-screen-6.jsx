@@ -25,10 +25,10 @@ import pic from "../../../../../assets/images/screen1.svg"
   }
 
   componentDidMount=()=>{
-   
+
     if(this.props.content)
     this.setState({...this.props.content });
-   
+
   }
 
   componentDidUpdate=()=>{
@@ -74,7 +74,7 @@ import pic from "../../../../../assets/images/screen1.svg"
 
     }
 
-    
+
 
     removeDetailHandler=(i)=>{
      let r5= [...this.state.r5]
@@ -86,13 +86,13 @@ import pic from "../../../../../assets/images/screen1.svg"
 
    }
 
-  
+
 
    addDetailHandler2=(i1)=>{
 
      let r5=[... this.state.r5];
      r5[i1].list.push("");
-     
+
       // let newState= this.state.data[i]
       //    console.log(newState);
       //   newState.list.push(newState.listInput);
@@ -144,7 +144,7 @@ import pic from "../../../../../assets/images/screen1.svg"
                  <i onClick={()=>{this.sideScroll(document.getElementById('landingScreen6__carousel'),"left",5,275,5)}} id="slide" className="fa fa-angle-left landingScreen6__arrow landingScreen6__arrow--left" aria-hidden="true"></i>
                   {this.state.r5.map((data,i)=>{
                     return (
-                      <div style={{position:"relative"}} data-aos="slide-left" data-aos-once={true} data-aos-offset="100px" data-aos-delay={100} key={i} id={"landingScreen6__"+i} className="landingScreen6__carousel-card">
+                      <div style={{position:"relative"}} data-aos="slide-left" data-aos-once={true} data-aos-offset="100px" data-aos-delay={100} key={i} id={"landingScreen6__"+i} className="landingScreen6__carousel-card landingScreen6__carousel-card-module">
                            <textarea value={data.icon} placeholder="icon" name="icon" onChange={e=>this.onChangeHandler(e,i)} className="">
 
                            </textarea><br/>
