@@ -57,13 +57,13 @@ import axios from "axios"
                  })}
            </div>
           
-                <button disabled={this.state.page===0} onClick={()=>{this.setState(state=>{return {loading1:true,page:state.page-1}})}} >{"-"}</button>
+                <button disabled={this.state.page===0} onClick={()=>{this.setState(state=>{return {loading:true,page:state.page-1}})}} >{"-"}</button>
                 {this.state.page+1}/{this.state.totalPages}
                 <button disabled={this.state.page+1===this.state.totalPages} onClick={()=>{this.setState(state=>{return {loading:true,page:state.page+1}})}}>{"+"}</button>
 
 
          {/* {this.state.page+1<this.state.totalPages && !this.state.loading1?<button className="load__btn2 load__btn" onClick={()=>{this.setState(state=>{return {loading1:true,page:state.page+1}})}} >Load More</button>:null} */}
-         {this.state.loading1?<button className="load__btn2 load__btn">Loading...</button>:null}
+         {this.state.loading?<button className="load__btn2 load__btn">Loading...</button>:null}
 
            </>
      )
