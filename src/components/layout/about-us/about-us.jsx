@@ -77,14 +77,15 @@ class AboutUs extends Component{
 
           {this.state.r2h1?
           <div className="aboutUs__screen1">
-          <div data-aos="fade-up-right" className="aboutUs__screen1-img">
-              <img  src={about} alt=""/>
-          </div>
+
 
             <div className="aboutUs__screen1-text">
                  <div data-aos="flip-down" className="aboutUs__screen1-text-head">{this.state.r2h1}</div>
                  <div data-aos="flip-down" className="aboutUs__screen1-text-para">{this.state.r2p1}</div><br/>
                  <div data-aos="flip-down" className="aboutUs__screen1-text-para">{this.state.r2p2}</div>
+            </div>
+            <div data-aos="fade-up-right" className="aboutUs__screen1-img">
+                <img  src={about} alt=""/>
             </div>
 
         </div>:null}
@@ -104,14 +105,16 @@ class AboutUs extends Component{
 
       {this.state.r4h1?
       <div className="aboutUs__screen1">
-      <div data-aos="fade-up-right" className="aboutUs__screen1-img">
-          <img  src={about} alt=""/>
-      </div>
+
 
         <div className="aboutUs__screen1-text">
                  <div data-aos="flip-down" className="aboutUs__screen1-text-head">{this.state.r4h1}</div>
                  <div data-aos="flip-down" className="aboutUs__screen1-text-para">{this.state.r4p1}</div><br/>
                  <div data-aos="flip-down" className="aboutUs__screen1-text-para">{this.state.r4p2}</div>
+            </div>
+
+            <div data-aos="fade-up-right" className="aboutUs__screen1-img">
+                <img  src={about} alt=""/>
             </div>
 
     </div>:null}
@@ -120,9 +123,9 @@ class AboutUs extends Component{
            <div className="aboutUs__face-head">{this.state.r5h1}</div>
 
            <div className="aboutUs__face-figures">
-              
-              {this.state.team.map(data=>
-             <figure data-aos="slide-left">
+
+              {this.state.team.map((data,i)=>
+             <figure data-aos={i%3===0?"slide-right":i%2===0?"flip-down":"slide-left"}>
                <img src={profile} alt="Trulli"/>
                <figcaption data-aos="flip-down">
                  <span className="figcaption__span1">{data.name}</span><br/>

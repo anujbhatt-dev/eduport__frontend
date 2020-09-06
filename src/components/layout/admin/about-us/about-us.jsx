@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import {Helmet} from "react-helmet"
 import about from "../../../../assets/images/about.svg"
 import profile from "../../../../assets/images/profile.svg"
+import female from "../../../../assets/images/female.svg"
 import axios from "axios"
 
 
@@ -46,7 +47,7 @@ class AdminAboutUs extends Component{
           name:"",
           position:"",
           gender:"male",
-      }) 
+      })
 
       this.setState({team:team})
   }
@@ -78,7 +79,7 @@ class AdminAboutUs extends Component{
 
    render(){
     if(!this.props.authenticated)
-    window.location="http://localhost:3000/admin/verify";
+    window.location="http://vast-reaches-61761.herokuapp.com/admin/verify";
 
     if(this.state.loading)
     return <div  id="loader1"><div class="loader">Loading...</div></div>
@@ -153,7 +154,7 @@ class AdminAboutUs extends Component{
 
                {this.state.team.map((data,i)=>
            <figure data-aos="slide-left">
-           {data.gender==="male"?<img src={profile} alt="Trulli"/>:"Female Image"}
+           {data.gender==="male"?<img src={profile} alt="Trulli"/>:<img src={female} alt="Trulli"/>}
                <figcaption data-aos="flip-down">
                    <textarea name="name" onChange={(e)=>this.onTeamChangeHandler(e,i)} value={data.name} className="figcaption__span1"></textarea><br/>
                    <textarea name="position" onChange={(e)=>this.onTeamChangeHandler(e,i)} value={data.position} className="figcaption__span2"></textarea></figcaption>
@@ -167,7 +168,7 @@ class AdminAboutUs extends Component{
 
                )}
 
-               
+
            </div>
            <i onClick={this.addTeamMemberHandler} className="fa fa-plus fa-1x addIcon addIcon1" aria-hidden="true"></i>
 
