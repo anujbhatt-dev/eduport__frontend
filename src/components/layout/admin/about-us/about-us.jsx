@@ -2,20 +2,86 @@ import React, {Component} from "react"
 import {Helmet} from "react-helmet"
 import about from "../../../../assets/images/about.svg"
 import profile from "../../../../assets/images/profile.svg"
+import axios from "axios"
+
 
 class AdminAboutUs extends Component{
 
   state={
-
-  }
-
+    r1h1:"",
+    r1p1:"",
+    r1p2:"",
+    r2h1:"",
+    r2p1:"",
+    r2p2:"",
+    r3h1:"",
+    r3p1:"",
+    r3p2:"",
+    r4h1:"",
+    r4p1:"",
+    r4p2:"",
+    r5h1:"",
+    team:[
+        {name:"",
+        position:"",
+           gender:"",}
+    ],
+    loading:true,
+}
   componentDidMount=()=>{
     window.scrollTo({top:0,behavior:"smooth"})
+
+    axios.get("/v1/content/about").then(res=>{
+      console.log(res);
+      this.setState({...res.data,loading:false});
+  }).catch(err=>{this.setState({loading:false});alert("oops")})
+
   }
+
+
+  addTeamMemberHandler=()=>{
+      let team= [... this.state.team];
+
+      team.push({
+          name:"",
+          position:"",
+          gender:"male",
+      }) 
+
+      this.setState({team:team})
+  }
+
+  onTeamChangeHandler=(e,i)=>{
+    let team= [... this.state.team];
+    team[i][e.target.name]=e.target.value;
+    this.setState({team:team})
+  }
+
+  onTeamRemoveHandler=(i)=>{
+    let team= [... this.state.team];
+   team.splice(i,1);
+   this.setState({team:team})
+
+  }
+
+
+
+  saveHandler=(e)=>{
+    e.preventDefault();
+    axios.post("/v1/admin/aboutpage",this.state).then(res=>{
+       alert("saved");
+    })
+   }
+
+
+
 
    render(){
     if(!this.props.authenticated)
     window.location="http://localhost:3000/admin/verify";
+
+    if(this.state.loading)
+    return <div  id="loader1"><div class="loader">Loading...</div></div>
 
      return (<>
            <Helmet>
@@ -27,9 +93,9 @@ class AdminAboutUs extends Component{
           <div className="aboutUs">
             <div className="aboutUs__screen1">
             <div className="aboutUs__screen1-text">
-                 <textarea value={""} data-aos="flip-down" className="aboutUs__screen1-text-head">Story Behind</textarea>
-                 <textarea value={""} data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</textarea><br/>
-                 <textarea value={""} data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</textarea>
+                 <textarea value={this.state.r1h1} name="r1h1" onChange={(e)=>this.setState({[e.target.name]:e.target.value})} data-aos="flip-down" className="aboutUs__screen1-text-head"></textarea>
+                 <textarea value={this.state.r1p1} name="r1p1" onChange={(e)=>this.setState({[e.target.name]:e.target.value})} data-aos="flip-down" className="aboutUs__screen1-text-para"></textarea><br/>
+                 <textarea value={this.state.r1p2} name="r1p2" onChange={(e)=>this.setState({[e.target.name]:e.target.value})} data-aos="flip-down" className="aboutUs__screen1-text-para"></textarea>
             </div>
               <div data-aos="fade-up-left" className="aboutUs__screen1-img">
                   <img  src={about} alt=""/>
@@ -38,10 +104,10 @@ class AdminAboutUs extends Component{
 
           <div className="aboutUs__screen1">
 
-            <div className="aboutUs__screen1-text">
-                 <textarea value={""} data-aos="flip-down" data-aos="flip-down" className="aboutUs__screen1-text-head">Cause our business serves</textarea>
-                 <textarea value={""} data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</textarea><br/>
-                 <textarea value={""} data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</textarea>
+             <div className="aboutUs__screen1-text">
+                 <textarea value={this.state.r2h1} name="r2h1" onChange={(e)=>this.setState({[e.target.name]:e.target.value})} data-aos="flip-down" className="aboutUs__screen1-text-head"></textarea>
+                 <textarea value={this.state.r2p1} name="r2p1" onChange={(e)=>this.setState({[e.target.name]:e.target.value})} data-aos="flip-down" className="aboutUs__screen1-text-para"></textarea><br/>
+                 <textarea value={this.state.r2p2} name="r2p2" onChange={(e)=>this.setState({[e.target.name]:e.target.value})} data-aos="flip-down" className="aboutUs__screen1-text-para"></textarea>
             </div>
 
             <div data-aos="fade-up-right" className="aboutUs__screen1-img">
@@ -54,10 +120,10 @@ class AdminAboutUs extends Component{
 
         <div className="aboutUs__screen1">
         <div className="aboutUs__screen1-text">
-             <textarea value={""} data-aos="flip-down" className="aboutUs__screen1-text-head">Business Model and How do we make our product</textarea>
-             <textarea value={""} data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</textarea><br/>
-             <textarea value={""} data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</textarea>
-        </div>
+                 <textarea value={this.state.r3h1} name="r3h1" onChange={(e)=>this.setState({[e.target.name]:e.target.value})} data-aos="flip-down" className="aboutUs__screen1-text-head"></textarea>
+                 <textarea value={this.state.r3p1} name="r3p1" onChange={(e)=>this.setState({[e.target.name]:e.target.value})} data-aos="flip-down" className="aboutUs__screen1-text-para"></textarea><br/>
+                 <textarea value={this.state.r3p2} name="r3p2" onChange={(e)=>this.setState({[e.target.name]:e.target.value})} data-aos="flip-down" className="aboutUs__screen1-text-para"></textarea>
+            </div>
           <div data-aos="fade-up-left" className="aboutUs__screen1-img">
               <img  src={about} alt=""/>
           </div>
@@ -67,10 +133,10 @@ class AdminAboutUs extends Component{
 
 
         <div className="aboutUs__screen1-text">
-             <textarea value={""} data-aos="flip-down" data-aos="flip-down" className="aboutUs__screen1-text-head">What's Next</textarea>
-             <textarea value={""} data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</textarea><br/>
-             <textarea value={""} data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</textarea>
-        </div>
+                 <textarea value={this.state.r4h1} name="r4h1" onChange={(e)=>this.setState({[e.target.name]:e.target.value})} data-aos="flip-down" className="aboutUs__screen1-text-head"></textarea>
+                 <textarea value={this.state.r4p1} name="r4p1" onChange={(e)=>this.setState({[e.target.name]:e.target.value})} data-aos="flip-down" className="aboutUs__screen1-text-para"></textarea><br/>
+                 <textarea value={this.state.r4p2} name="r4p2" onChange={(e)=>this.setState({[e.target.name]:e.target.value})} data-aos="flip-down" className="aboutUs__screen1-text-para"></textarea>
+            </div>
 
 
         <div data-aos="fade-up-right" className="aboutUs__screen1-img">
@@ -80,39 +146,34 @@ class AdminAboutUs extends Component{
     </div>
 
       <div className="aboutUs__face">
-           <textarea value={""} className="aboutUs__face-head">Core Team</textarea>
+           <textarea name="r5h1" onChange={(e)=>this.setState({[e.target.name]:e.target.value})} className="aboutUs__face-head">{this.state.r5h1}</textarea>
 
            <div className="aboutUs__face-figures">
 
+
+               {this.state.team.map((data,i)=>
            <figure data-aos="slide-left">
-               <img src={profile} alt="Trulli"/>
-               <figcaption data-aos="flip-down"><textarea value={""} className="figcaption__span1">Mr.Lorem Ipsum</textarea><br/><textarea value={""} className="figcaption__span2">prod. manager</textarea></figcaption>
-               <input type="text"/>
-           </figure>
+           {data.gender==="male"?<img src={profile} alt="Trulli"/>:"Female Image"}
+               <figcaption data-aos="flip-down">
+                   <textarea name="name" onChange={(e)=>this.onTeamChangeHandler(e,i)} value={data.name} className="figcaption__span1"></textarea><br/>
+                   <textarea name="position" onChange={(e)=>this.onTeamChangeHandler(e,i)} value={data.position} className="figcaption__span2"></textarea></figcaption>
+               <select name="gender" onChange={e=>this.onTeamChangeHandler(e,i)}>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+               </select>
+               <i onClick={()=>this.onTeamRemoveHandler(i)} className="fa fa-remove fa-1x removeIcon" aria-hidden="true"></i>
 
-           <figure >
-               <img src={profile} alt="Trulli"/>
-               <figcaption data-aos="flip-down"><textarea value={""} className="figcaption__span1">Mr.Lorem Ipsum</textarea><br/><textarea value={""} className="figcaption__span2">prod. manager</textarea></figcaption>
-                <input type="text"/>
-           </figure>
-
-               <figure data-aos="slide-right">
-                   <img src={profile} alt="Trulli"/>
-                   <figcaption data-aos="flip-down"><textarea value={""} className="figcaption__span1">Mr.Lorem Ipsum</textarea><br/><textarea value={""} className="figcaption__span2">prod. manager</textarea></figcaption>
-                   <input type="text"/>
                </figure>
 
-               <figure data-aos="slide-right">
-                   <img src={profile} alt="Trulli"/>
-                   <figcaption data-aos="flip-down"><textarea value={""} className="figcaption__span1">Mr.Lorem Ipsum</textarea><br/><textarea value={""} className="figcaption__span2">prod. manager</textarea></figcaption>
-                   <input placeholder="gender" type="text"/>
-               </figure>
+               )}
+
+               
            </div>
+           <i onClick={this.addTeamMemberHandler} className="fa fa-plus fa-1x addIcon addIcon1" aria-hidden="true"></i>
 
       </div>
 
-
-
+      <button className="load__btn" onClick={(e)=>this.saveHandler(e)}>Save</button>
           </div>
           </>
      )

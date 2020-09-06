@@ -16,7 +16,7 @@ import axios from "axios"
        title:"",
        content:""
      },loading:true,
-     loading:false,
+     loading1:true,
      totalPages:0,
      page:0,
    }
@@ -26,8 +26,8 @@ import axios from "axios"
     window.scrollTo({top:0,behavior:"smooth"})
 
     axios.get("/v1/content/blogs/0").then(res=>{
-      this.setState({content:res.data.content,totalPages:res.data.totalPages,loading:false});
-  }).catch(err=>{this.setState({loading:false});alert("oops")})
+      this.setState({content:res.data.content,totalPages:res.data.totalPages,loading:false,loading1:false});
+  }).catch(err=>{this.setState({loading:false,loading1:false});alert("oops")})
 
   }
 

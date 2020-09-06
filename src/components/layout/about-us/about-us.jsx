@@ -4,30 +4,43 @@ import about from "../../../assets/images/about.svg"
 import profile from "../../../assets/images/profile.svg"
 import Aos from "aos"
 import "aos/dist/aos.css"
+import axios from "axios"
 
 class AboutUs extends Component{
 
 
-  // componentDidMount=()=>{
-  //   window.scrollTo({top:0,behavior:"smooth"})
-
-  //   // if(this.props.content.landingPage)
-  //   // this.setState({content:{...this.props.content.landingPage }});
-
-  //   axios.get("/v1/content/pricing").then(res=>{
-  //     console.log(res);
-  //     this.setState({content:res.data,loading:false});
-  // }).catch(err=>{this.setState({loading:false});alert("oops")})
-
-  // }
-
-
-
-
+  state={
+    r1h1:"",
+    r1p1:"",
+    r1p2:"",
+    r2h1:"",
+    r2p1:"",
+    r2p2:"",
+    r3h1:"",
+    r3p1:"",
+    r3p2:"",
+    r4h1:"",
+    r4p1:"",
+    r4p2:"",
+    r5h1:"",
+    team:[
+        {name:"",
+        position:"",
+           gender:"",}
+    ],
+    loading:true,
+}
   componentDidMount=()=>{
     window.scrollTo({top:0,behavior:"smooth"})
     Aos.init({duration:1500,once:true});
+
+    axios.get("/v1/content/about").then(res=>{
+      console.log(res);
+      this.setState({...res.data,loading:false});
+  }).catch(err=>{this.setState({loading:false});alert("oops")})
+
   }
+
 
 
 
@@ -37,6 +50,9 @@ class AboutUs extends Component{
 
    render(){
 
+    if(this.state.loading)
+    return <div  id="loader1"><div class="loader">Loading...</div></div>
+
      return (<>
            <Helmet>
               <meta charSet="utf-8" />
@@ -45,74 +61,74 @@ class AboutUs extends Component{
               <meta name="description" content={"making india world's factory"} />
           </Helmet>
           <div className="aboutUs">
+
+          {this.state.r1h1?
             <div className="aboutUs__screen1">
             <div className="aboutUs__screen1-text">
-                 <div data-aos="flip-down" className="aboutUs__screen1-text-head">Story Behind</div>
-                 <div data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</div><br/>
-                 <div data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</div>
+                 <div data-aos="flip-down" className="aboutUs__screen1-text-head">{this.state.r1h1}</div>
+                 <div data-aos="flip-down" className="aboutUs__screen1-text-para">{this.state.r1p1}</div><br/>
+                 <div data-aos="flip-down" className="aboutUs__screen1-text-para">{this.state.r1p2}</div>
             </div>
               <div data-aos="fade-up-left" className="aboutUs__screen1-img">
                   <img  src={about} alt=""/>
               </div>
-          </div>
+          </div>:null}
 
+
+          {this.state.r2h1?
           <div className="aboutUs__screen1">
           <div data-aos="fade-up-right" className="aboutUs__screen1-img">
               <img  src={about} alt=""/>
           </div>
 
             <div className="aboutUs__screen1-text">
-                 <div data-aos="flip-down" data-aos="flip-down" className="aboutUs__screen1-text-head">Cause our business serves</div>
-                 <div data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</div><br/>
-                 <div data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</div>
+                 <div data-aos="flip-down" className="aboutUs__screen1-text-head">{this.state.r2h1}</div>
+                 <div data-aos="flip-down" className="aboutUs__screen1-text-para">{this.state.r2p1}</div><br/>
+                 <div data-aos="flip-down" className="aboutUs__screen1-text-para">{this.state.r2p2}</div>
             </div>
 
-        </div>
+        </div>:null}
 
 
+        {this.state.r3h1?
         <div className="aboutUs__screen1">
         <div className="aboutUs__screen1-text">
-             <div data-aos="flip-down" className="aboutUs__screen1-text-head">Business Model and How do we make our product</div>
-             <div data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</div><br/>
-             <div data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</div>
-        </div>
+                 <div data-aos="flip-down" className="aboutUs__screen1-text-head">{this.state.r3h1}</div>
+                 <div data-aos="flip-down" className="aboutUs__screen1-text-para">{this.state.r3p1}</div><br/>
+                 <div data-aos="flip-down" className="aboutUs__screen1-text-para">{this.state.r3p2}</div>
+            </div>
           <div data-aos="fade-up-left" className="aboutUs__screen1-img">
               <img  src={about} alt=""/>
           </div>
-      </div>
+      </div>:null}
 
+      {this.state.r4h1?
       <div className="aboutUs__screen1">
       <div data-aos="fade-up-right" className="aboutUs__screen1-img">
           <img  src={about} alt=""/>
       </div>
 
         <div className="aboutUs__screen1-text">
-             <div data-aos="flip-down" data-aos="flip-down" className="aboutUs__screen1-text-head">What's Next</div>
-             <div data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</div><br/>
-             <div data-aos="flip-down" className="aboutUs__screen1-text-para">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi ut consequuntur error architecto eum labore temporibus debitis distinctio blanditiis voluptatem, velit praesentium vel ullam, recusandae mollitia doloremque. Possimus cupiditate quos illo quas necessitatibus, quo nisi cum rerum doloribus hic non atque totam, pariatur voluptatum ducimus ratione</div>
-        </div>
+                 <div data-aos="flip-down" className="aboutUs__screen1-text-head">{this.state.r4h1}</div>
+                 <div data-aos="flip-down" className="aboutUs__screen1-text-para">{this.state.r4p1}</div><br/>
+                 <div data-aos="flip-down" className="aboutUs__screen1-text-para">{this.state.r4p2}</div>
+            </div>
 
-    </div>
+    </div>:null}
 
       <div className="aboutUs__face">
-           <div className="aboutUs__face-head">Core Team</div>
+           <div className="aboutUs__face-head">{this.state.r5h1}</div>
 
            <div className="aboutUs__face-figures">
-
-           <figure data-aos="slide-left">
+              
+              {this.state.team.map(data=>
+             <figure data-aos="slide-left">
                <img src={profile} alt="Trulli"/>
-               <figcaption data-aos="flip-down"><span className="figcaption__span1">Mr.Lorem Ipsum</span><br/><span className="figcaption__span2">prod. manager</span></figcaption>
-           </figure>
+               <figcaption data-aos="flip-down">
+                 <span className="figcaption__span1">{data.name}</span><br/>
+              <span className="figcaption__span2">{data.position}</span></figcaption>
+           </figure> )}
 
-           <figure >
-               <img src={profile} alt="Trulli"/>
-               <figcaption data-aos="flip-down"><span className="figcaption__span1">Mr.Lorem Ipsum</span><br/><span className="figcaption__span2">prod. manager</span></figcaption>
-           </figure>
-
-               <figure data-aos="slide-right">
-                   <img src={profile} alt="Trulli"/>
-                   <figcaption data-aos="flip-down"><span className="figcaption__span1">Mr.Lorem Ipsum</span><br/><span className="figcaption__span2">prod. manager</span></figcaption>
-               </figure>
            </div>
 
       </div>
