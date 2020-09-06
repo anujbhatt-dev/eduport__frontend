@@ -8,7 +8,7 @@ class AdminLandingScreen7 extends Component{
 
   state = {
    reviews: [
-        
+
    ],
    dataInput:{
 
@@ -22,10 +22,10 @@ class AdminLandingScreen7 extends Component{
  }
 
  componentDidMount=()=>{
-   
+
   if(this.props.content)
   this.setState({...this.props.content });
- 
+
 }
 
 componentDidUpdate=()=>{
@@ -102,7 +102,7 @@ componentDidUpdate=()=>{
                 <i onClick={()=>{this.sideScroll(document.getElementById('landingScreen6__carousel2'),"left",5,275,5)}} id="slide" className="fa fa-angle-left landingScreen6__arrow landingScreen6__arrow--left" aria-hidden="true"></i>
                  {this.state.reviews.map((data,i)=>{
                    return (
-                     <div style={{position:"relative"}} data-aos="slide-left" data-aos-once={true} data-aos-delay={100} key={i} id={"landingScreen6__"+i} className="landingScreen6__carousel-card landingScreen7__carousel-card">
+                     <div style={{position:"relative"}} data-aos="slide-left" data-aos-once={true} data-aos-delay={100} key={i} id={"landingScreen6__"+i} className="landingScreen6__carousel-card landingScreen7__carousel-card  landingScreen6__carousel-card-review">
                          <textarea value={data.comment}  name="comment" onChange={(e)=>{this.onChangeHandler(e,i)}} className="landingScreen7__carousel-card-review"> </textarea><br/>
                          <textarea value={data.name} name="name" onChange={(e)=>{this.onChangeHandler(e,i)}} className="landingScreen7__carousel-card-name"></textarea><br/>
                          <textarea value={data.rating}   name="rating" onChange={(e)=>{this.onChangeHandler(e,i)}} className="landingScreen7__carousel-card-rating"> ⭐</textarea><br/>

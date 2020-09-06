@@ -17,7 +17,12 @@
       border: 1px solid rgba($color-black,.1);
       margin: 1rem 3rem;
       padding: 1rem 2rem;
-      min-height: 50vh;
+      &-module{
+        min-height: 55vh;
+      }
+      &-review{
+        min-height: 23vh;
+      }
       &:hover{
         animation: carousel .5s ease;
         animation-fill-mode: forwards;
