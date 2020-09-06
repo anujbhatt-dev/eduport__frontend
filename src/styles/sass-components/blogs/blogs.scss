@@ -65,3 +65,21 @@
     }
   }
 }
+.pageWrapper{
+   display:flex;
+   justify-content: center;
+   align-items: center;
+   padding: 1rem 0;
+}
+.page__btn{
+   font-size: 3rem;
+   padding: 0 1rem;
+   margin:0 2rem;
+   border: none;
+   color: $color-black;
+}
+.page__num{
+  letter-spacing: 2px;
+  font-size: 3rem;
+  font-weight: 500;
+}

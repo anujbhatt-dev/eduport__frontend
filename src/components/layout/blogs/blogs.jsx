@@ -14,7 +14,6 @@ import axios from "axios"
     loading:true,
     page:0,
     totalPages:0,
-    loading1:false,
   }
 
 
@@ -32,7 +31,7 @@ import axios from "axios"
   axios.get("/v1/content/blogs/"+this.state.page).then(res=>{
     console.log(res);
     this.setState(state=>{return {content:(res.data.content),totalPages:res.data.totalPages,loading:false}});
-}).catch(err=>{this.setState({loading1:false});alert("oops")})
+}).catch(err=>{this.setState({loading:false});alert("oops")})
  }
 
    render(){
@@ -57,9 +56,9 @@ import axios from "axios"
                  })}
            </div>
           
-                <button disabled={this.state.page===0} onClick={()=>{this.setState(state=>{return {loading:true,page:state.page-1}})}} >{"-"}</button>
-                {this.state.page+1}/{this.state.totalPages}
-                <button disabled={this.state.page+1===this.state.totalPages} onClick={()=>{this.setState(state=>{return {loading:true,page:state.page+1}})}}>{"+"}</button>
+                <div className="pageWrapper"><button className="page__btn" disabled={this.state.page===0} onClick={()=>{this.setState(state=>{return {loading:true,page:state.page-1}})}} >{"-"}</button>
+                <div className="page__num">{this.state.page+1}/{this.state.totalPages}</div>
+                <button className="page__btn" disabled={this.state.page+1===this.state.totalPages} onClick={()=>{this.setState(state=>{return {loading:true,page:state.page+1}})}}>{"+"}</button></div>
 
 
          {/* {this.state.page+1<this.state.totalPages && !this.state.loading1?<button className="load__btn2 load__btn" onClick={()=>{this.setState(state=>{return {loading1:true,page:state.page+1}})}} >Load More</button>:null} */}
