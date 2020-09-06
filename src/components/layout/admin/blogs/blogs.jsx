@@ -95,6 +95,15 @@ import axios from "axios"
               <link rel="canonical" href={"http://vast-reaches-61761.herokuapp.com/blogs"} />
               <meta name="description" content={"making india world's factory"} />
           </Helmet>
+          <h2>
+          {"Note: "}<br/>
+
+          {"For Headings        : "+  "<h1>My Heading</h1>"}<br/>
+          {"For Bold            : "+  "<strong>My Blod Word</strong>"}<br/>
+          {"For Horizontal line : "+  "<hr/>"}<br/>
+          {"For Next line       : "+  "<br/>"}<br/>
+          </h2>
+
            <div className="blogs">
                  {this.state.content.map((data,i)=>{
                    return <div style={{position:"relative"}} className="blogs__item">
