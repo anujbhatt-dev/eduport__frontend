@@ -32,14 +32,8 @@ class Landing extends Component{
 
   }
 
-  // componentDidUpdate=()=>{
-  //  if(this.state.loading && this.props.content.landingPage)
-  //  this.setState({content:{...this.props.content.landingPage },loading:false})
-  // }
 
    render(){
-     // <input name="background" onChange={(e)=>this.props.styleHandler(e)} value={this.props.styles.background} type="color"/>
-     // <input name="fontColor" onChange={(e)=>this.props.styleHandler(e)} value={this.props.styles.background} type="color"/>
 
      if(this.state.loading)
      return <div  id="loader1"><div class="loader">Loading...</div></div>

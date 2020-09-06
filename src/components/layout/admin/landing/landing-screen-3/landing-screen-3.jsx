@@ -51,8 +51,7 @@
 
    render(){
 
-    if(this.state.loading)
-    return <div  id="loader1"><div class="loader">Loading...</div></div>
+    
 
      return (<>
          <textarea cols={50} row={5} value={this.state.r3h1} name="r3h1" onChange={(e)=>this.inputHandler(e)} style={{color:this.props.styles.color}} className="landingScreen3__head"></textarea>
