@@ -33,6 +33,11 @@
         font-size: 2rem;
         font-weight: 400;
         padding-bottom: 1rem;
+        & td{
+          & img{
+            width: 100%;
+          }
+        }
       }
       &-goBack{
         ont-family: "Open Sans",sans-serif;
