@@ -38,7 +38,7 @@ import axios from "axios"
 
     if(this.state.loading)
     return <><div  id="loader1"><div class="loader">Loading...</div></div>
-    
+
             </>
 
      return (<>
@@ -50,15 +50,15 @@ import axios from "axios"
           </Helmet>
            <div className="blogs">
                  {this.state.content.map((data,i)=>{
-                   return <div className="blogs__item">
+                   return <div  className="blogs__item">
                                <div className="blogs__item-title">{data.title}</div>
                                <div className="blogs__item-info">By <span className="blogs__item-info-by">{data.name}</span> on <span className="blogs__item-info-date">{data.createdDate}</span></div>
                                <div  className="blogs__item-content"> <td dangerouslySetInnerHTML={{__html:data.content.slice(0,350)}} /></div><Link to={{pathname:"/blogs:"+data.title,state:{...data}}} className="blogs__item-readMore">...Read More</Link>
                           </div>
-                         
+
                  })}
            </div>
-          
+
                 <div className="pageWrapper"><button className="page__btn" disabled={this.state.page===0} onClick={()=>{this.setState(state=>{return {loading:true,page:state.page-1}})}} >{"-"}</button>
                 <div className="page__num">{this.state.page+1}/{this.state.totalPages}</div>
                 <button className="page__btn" disabled={this.state.page+1===this.state.totalPages} onClick={()=>{this.setState(state=>{return {loading:true,page:state.page+1}})}}>{"+"}</button></div>

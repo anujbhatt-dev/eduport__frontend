@@ -106,7 +106,7 @@ import axios from "axios"
 
            <div className="blogs">
                  {this.state.content.map((data,i)=>{
-                   return <div style={{position:"relative"}} className="blogs__item">
+                   return <div style={{position:"relative"}} className="blogs__item1">
                                <textarea name="title" onChange={(e)=>this.onChangeHandler(e,i)} value={data.title}  className="blogs__item-title"></textarea><br/>
                                <textarea name="name" onChange={(e)=>this.onChangeHandler(e,i)} value={data.name}  className="blogs__item-info">By <span className="blogs__item-info-by"></span> on <span className="blogs__item-info-date">{data.date}</span></textarea><br/>
                                <textarea name="content" onChange={(e)=>this.onChangeHandler(e,i)} value={data.content}  className="blogs__item-content"> </textarea><Link to={{pathname:"/admin/blogs:"+data.title,state:{...data}}} className="blogs__item-readMore">...Read More</Link><br/>
@@ -116,7 +116,7 @@ import axios from "axios"
                  <i onClick={this.addDetailHandler}  className="fa fa-plus fa-1x addIcon addIcon1" aria-hidden="true"></i>
            </div>
            <button className="load__btn" onClick={this.saveHandler} >Save</button>
-          
+
            </>
      )
    }
