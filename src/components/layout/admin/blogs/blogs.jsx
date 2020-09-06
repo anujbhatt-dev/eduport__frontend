@@ -100,7 +100,7 @@ import axios from "axios"
                    return <div style={{position:"relative"}} className="blogs__item">
                                <textarea name="title" onChange={(e)=>this.onChangeHandler(e,i)} value={data.title}  className="blogs__item-title"></textarea><br/>
                                <textarea name="name" onChange={(e)=>this.onChangeHandler(e,i)} value={data.name}  className="blogs__item-info">By <span className="blogs__item-info-by"></span> on <span className="blogs__item-info-date">{data.date}</span></textarea><br/>
-                               <textarea name="content" onChange={(e)=>this.onChangeHandler(e,i)} value={data.content?data.content.slice(0,350):""}  className="blogs__item-content"> </textarea><Link to={{pathname:"/admin/blogs:"+data.title,state:{...data}}} className="blogs__item-readMore">...Read More</Link><br/>
+                               <textarea name="content" onChange={(e)=>this.onChangeHandler(e,i)} value={data.content}  className="blogs__item-content"> </textarea><Link to={{pathname:"/admin/blogs:"+data.title,state:{...data}}} className="blogs__item-readMore">...Read More</Link><br/>
                                <i onClick={()=>this.removeDetailHandler(i)} className="fa fa-remove fa-2x removeIcon" aria-hidden="true"></i>
                           </div>
                  })}

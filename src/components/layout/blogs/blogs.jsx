@@ -37,7 +37,9 @@ import axios from "axios"
    render(){
 
     if(this.state.loading)
-    return <div  id="loader1"><div class="loader">Loading...</div></div>
+    return <><div  id="loader1"><div class="loader">Loading...</div></div>
+    
+            </>
 
      return (<>
            <Helmet>
@@ -51,8 +53,9 @@ import axios from "axios"
                    return <div className="blogs__item">
                                <div className="blogs__item-title">{data.title}</div>
                                <div className="blogs__item-info">By <span className="blogs__item-info-by">{data.name}</span> on <span className="blogs__item-info-date">{data.createdDate}</span></div>
-                               <div  className="blogs__item-content">{data.content.slice(0,350)} </div><Link to={{pathname:"/blogs:"+data.title,state:{...data}}} className="blogs__item-readMore">...Read More</Link>
+                               <div  className="blogs__item-content"> <td dangerouslySetInnerHTML={{__html:data.content.slice(0,350)}} /></div><Link to={{pathname:"/blogs:"+data.title,state:{...data}}} className="blogs__item-readMore">...Read More</Link>
                           </div>
+                         
                  })}
            </div>
           

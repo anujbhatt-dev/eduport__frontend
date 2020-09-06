@@ -25,12 +25,16 @@ import axios from "axios"
 
     submitHandler=(e)=>{
       e.preventDefault();
+
+
+
       this.setState({
         loading:true,
       })
 
 
-      //console.log(this.state.formData)
+  
+
 
       axios.post("/v1/client",this.state.formData).then(res=>{
         setTimeout(()=>{
