@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import {Helmet} from "react-helmet"
 import about from "../../../assets/images/about.svg"
 import profile from "../../../assets/images/profile.svg"
+import female from "../../../assets/images/female.svg"
 import Aos from "aos"
 import "aos/dist/aos.css"
 import axios from "axios"
@@ -126,7 +127,7 @@ class AboutUs extends Component{
 
               {this.state.team.map((data,i)=>
              <figure data-aos={i%3===0?"slide-right":i%2===0?"flip-down":"slide-left"}>
-               <img src={profile} alt="Trulli"/>
+             {data.gender==="male"?<img src={profile} alt="Trulli"/>:<img src={female} alt="Trulli"/>}
                <figcaption data-aos="flip-down">
                  <span className="figcaption__span1">{data.name}</span><br/>
               <span className="figcaption__span2">{data.position}</span></figcaption>
