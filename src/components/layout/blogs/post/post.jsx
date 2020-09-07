@@ -27,7 +27,7 @@ import {Helmet} from "react-helmet";
           <div className="post">
           <div className="post-title">{this.props.history.location.state.title}</div>
           <div className="post-info">By <span className="post-info-by">{this.props.history.location.state.by}</span> on <span className="post-info-date">{this.props.history.location.state.createdDate}</span></div>
-          <div  className="post-content"> <td dangerouslySetInnerHTML={{__html:this.props.history.location.state.content.replaceAll("image__blog","image__blog2")}} /></div>
+          <div  className="post-content"> <td dangerouslySetInnerHTML={{__html:this.props.history.location.state.content.replace("image__blog","image__blog2")}} /></div>
           <Link to={"/blogs"} className="post-goBack">...blogs</Link>
           </div>
 

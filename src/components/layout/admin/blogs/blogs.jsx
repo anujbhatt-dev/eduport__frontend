@@ -112,6 +112,8 @@ import axios from "axios"
                                <textarea name="content" onChange={(e)=>this.onChangeHandler(e,i)} value={data.content}  className="blogs__item-content"> </textarea><Link to={{pathname:"/admin/blogs:"+data.title,state:{...data}}} className="blogs__item-readMore">...Read More</Link><br/>
                                <i onClick={()=>this.removeDetailHandler(i)} className="fa fa-remove fa-2x removeIcon" aria-hidden="true"></i>
                           </div>
+
+                          
                  })}
                  <i onClick={this.addDetailHandler}  className="fa fa-plus fa-1x addIcon addIcon1" aria-hidden="true"></i>
            </div>
