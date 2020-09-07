@@ -105,6 +105,7 @@ import axios from "axios"
                                <textarea cols="100" placeholder="title" name="title" onChange={(e)=>this.onChangeHandler(e,i)} value={data.title}  className="blogs__item-title"></textarea><br/>
                                <textarea placeholder="name of the author" name="name" onChange={(e)=>this.onChangeHandler(e,i)} value={data.name}  className="blogs__item-info">By <span className="blogs__item-info-by"></span> on <span className="blogs__item-info-date">{data.date}</span></textarea><br/>
                                <textarea cols="100" rows="10" style={{color:"black",lineHeight:"1.5"}} placeholder="content" name="content" onChange={(e)=>this.onChangeHandler(e,i)} value={data.content}  className="blogs__item-content"> </textarea><br/>
+                               <Link to={{pathname:"/blogs:"+data.title,state:{...data}}} style={{position:"static"}} className="blogs__item-readMore">Preview after safe</Link>
                                <i onClick={()=>this.removeDetailHandler(i)} className="fa fa-remove fa-2x removeIcon" aria-hidden="true"></i>
                           </div>
 
