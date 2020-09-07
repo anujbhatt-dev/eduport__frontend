@@ -8,10 +8,7 @@
   justify-content: center;
   align-items: center;
   position:fixed;
-  // background: linear-gradient(90deg, rgba(237,233,233,1) 0%, rgba(255,255,255,1) 50%, rgba(237,233,233,1) 100%);
   background: $color-white;
-  // background-image: radial-gradient(#7ed56f, #28b485);
-  // background: transparent;
   color: $color-white;
   width:100vw;
   height:100vh;
@@ -20,7 +17,6 @@
   left:0%;
   font-size: 3rem;
   animation: modal .2s linear;
-  // border-radius: 8px;
   overflow: hidden;
   transform-origin: 100% 0;
 }

@@ -20,25 +20,18 @@
     perspective: 150rem;
     -moz-perspective: 150rem;
     position: relative;
-    // height: 90vh;
     margin: 3rem 3rem;
-    // width: 25%;
     @include respond(tab-land){
-      // height: 90vh;
       margin: 1rem 1rem;
-      // width: 70%;
     }
     @include respond(phone){
       display: flex;
-      // height: 90vh;
       justify-content: center;
       flex-flow:column;
       margin: 1rem auto;
-      // width: 100%;
     }
 }
 .card__side {
-    // background-color: $color-white;
     height: 50vh;
     transition: all 0.8s ease;
     position: absolute;
@@ -48,7 +41,6 @@
     width: 50vh;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-    // border-radius: 3px;
     box-shadow: 0 1rem 5rem  rgba($color-postman-background, 0.5);
     @include respond(tab-land){
        height: 50vh;
@@ -61,25 +53,19 @@
 
 }
 .card__side--front {
-     // border-radius: 60px;
-    // background-color: $color-white;
-    // color: $color-secondary-blue;
     border-bottom: 1rem solid $color-secondary-blue;
     border-left: 1rem solid $color-secondary-blue;
     position: relative;
     display: flex;
     flex-direction: column;
-    // align-items: center;
     justify-content: space-between;
     &-image{
       width: 60%;
       height: 60%;
-      // position: absolute;
       object-fit: fill;
       object-position: center;
       bottom: 0;
       margin: 0 auto;
-      // padding-bottom: 5rem;
     }
     &-head{
        font-size: 2.5rem;
@@ -95,16 +81,13 @@
       letter-spacing: 2px;
       padding: 1rem;
       padding-bottom:  1rem;
-      // align-self: flex-start;
     }
     @include respond(tab-port){
       border: none;
       &-image{
         width: 50%;
         height: 50%;
-        // position: absolute;
         bottom: 0;
-        // padding-bottom: 5rem;
       }
       &-head{
          font-size: 2.5rem;
@@ -124,8 +107,6 @@
 
 }
 .card__side--back {
-    // border-radius: 60px;
-    // background-color: rgba($color-secondary-blue,1);
     transform: rotateY(180deg);
     display: flex;
     justify-content: center;
@@ -140,7 +121,7 @@
       @include respond(tab-land){
         font-size: 2.2rem;
         font-weight: 800;
-      } 
+      }
     }
     &:last-child{
       color:$color-grey;
@@ -149,7 +130,7 @@
       @include respond(tab-land){
         font-size: 2rem;
         font-weight: 500;
-      } 
+      }
     }
 }
 
@@ -160,27 +141,3 @@
 .card:hover .card__side--back {
     transform: rotateY(0);
 }
-
-
-// @media only screen and (hover: none), only screen and (max-width: 56.25em) {
-//     .card {
-//         // height: 90vh;
-//         // border-radius: 3px;
-//         // background-color: #fff;
-//         box-shadow: 0 1.5rem 4rem rgba(0, 0, 0, 0.15);
-//     }
-//     .card__side {
-//       // height: 90vh;
-//         box-shadow: none;
-//         height: auto;
-//         position: relative;
-//     }
-//     .card__side--back {
-//         // background-color: rgba($color-secondary-blue,1);
-//         transform: rotateY(0);
-//         padding-bottom: 1rem;
-//     }
-//     .card:hover .card__side--front {
-//         transform: rotateY(0);
-//     }
-// }

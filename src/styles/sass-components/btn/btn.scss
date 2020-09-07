@@ -5,7 +5,6 @@
     text-decoration: none;
     text-transform: uppercase;
     padding: 1.5rem 4rem;
-    // border-radius: 10rem;
     transition: all 0.2s;
     animation: btnUp 0.5s ease-out;
     animation-fill-mode: backwards;
@@ -47,7 +46,6 @@
     top: 0;
     left: 0;
     z-index: -1;
-    // border-radius: 10rem;
     transition: all 0.2s ease-out;
 }
 .btn:hover:after {

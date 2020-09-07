@@ -2,7 +2,6 @@ import React, {Component} from "react"
 import AdminLandingScreen1 from "./landing-screen-1/landing-screen-1"
 import AdminLandingScreen2 from "./landing-screen-2/landing-screen-2"
 import AdminLandingScreen3 from "./landing-screen-3/landing-screen-3"
-import AdminLandingScreen4 from "./landing-screen-4/landing-screen-4"
 import AdminLandingScreen5 from "./landing-screen-5/landing-screen-5"
 import AdminLandingScreen6 from "./landing-screen-6/landing-screen-6"
 import AdminLandingScreen7 from "./landing-screen-7/landing-screen-7"
@@ -149,8 +148,6 @@ class AdminLanding extends Component{
               <hr  className="hr"/>
               <AdminLandingScreen3 parentLandingScreen={this.parentLandingScreen3}   content={this.state.content}   styles={this.props.styles}/>
               <hr  className="hr"/>
-              {/* <AdminLandingScreen4  parentLandingScreen={this.parentLandingScreen}   content={this.state.content}   content={this.state.content}   styles={this.props.styles}/>
-              <hr  className="hr"/>      */}
               <AdminLandingScreen5 parentLandingScreen={this.parentLandingScreen5}   content={this.state.content}   content={this.state.content}   styles={this.props.styles}/>
               <hr  className="hr"/>
               <AdminLandingScreen6  parentLandingScreen={this.parentLandingScreen6}   content={this.state.content}   styles={this.props.styles}/>

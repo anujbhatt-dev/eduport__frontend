@@ -33,7 +33,7 @@ import axios from "axios"
       })
 
 
-  
+
 
 
       axios.post("/v1/client",this.state.formData).then(res=>{
@@ -41,7 +41,6 @@ import axios from "axios"
           this.setState({
                 loading:false
               });
-            //  window.location="http://localhost:3000"
          }, 3000);
 
       })
@@ -49,20 +48,20 @@ import axios from "axios"
 
     }
 
-   
+
     componentDidMount=()=>{
       window.scrollTo({top:0,behavior:"smooth"})
-  
+
       // if(this.props.content.landingPage)
       // this.setState({content:{...this.props.content.landingPage }});
-  
+
       axios.get("/v1/content/contact").then(res=>{
         console.log(res);
         this.setState({... res.data,loading1:false});
     }).catch(err=>{this.setState({loading1:false});alert("oops")})
-  
+
     }
-  
+
 
     componentDidUpdate=()=>{
       if(this.state.loading1 && this.props.content.contactPage)

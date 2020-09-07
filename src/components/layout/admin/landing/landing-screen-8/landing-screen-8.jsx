@@ -1,5 +1,4 @@
 import React, {Component} from "react"
-// import s8p1 from "../../../../../assets/images/screen8-pic1.jpeg"
 import cover from "../../../../../assets/images/mobile-cover.png"
 import play from "../../../../../assets/images/google-play.svg"
 import apple from "../../../../../assets/images/apple.svg"

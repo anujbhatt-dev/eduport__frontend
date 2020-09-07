@@ -1,6 +1,5 @@
 .landingScreen6{
   position: relative;
-  // padding-bottom: 10rem;
   background: rgba($color-grey,.05);
   &__carousel{
     display: flex;
@@ -17,14 +16,13 @@
       background: $color-white;
       border: 1px solid rgba($color-black,.2);
       margin: 1rem 3rem;
-      padding: 1rem 2rem; 
-      // overflow: hidden;
+      padding: 1rem 2rem;
       &-module{
-        height: 60vh;
-       
+        height: 70vh;
+
         & .landingScreen6__carousel-card-list{
-         
-          height: 32vh;
+
+          height: 40vh;
           overflow-y: scroll;
           &::-webkit-scrollbar{
             width: .5rem;
@@ -33,13 +31,13 @@
           &::-webkit-scrollbar-track{
             background: transparent;
           }
-  
+
         &::-webkit-scrollbar-thumb{
             background: $color-primary-blue;
             border-radius: 1000px;
           }
         }
-        
+
       }
       &-review{
         height: 23vh;
@@ -78,16 +76,16 @@
         padding-bottom: 2rem;
       }
       &-list{
-      
+
         &-item{
           width: 38rem;
           font-size: 1.5rem;
           font-family: "PT Sans",sans-serif;
           font-weight: bold;
           color: $color-primary-blue;
-          padding: 1.2rem 0;
+          padding: .7rem 0;
         }
-        padding-bottom: 8rem;
+        padding-bottom: 0rem;
       }
     }
   }
@@ -96,7 +94,6 @@
      text-align: center;
      font-size: 4rem;
      padding: 3rem 0;
-     // padding-top: 5rem;
      font-family:"PT Sarif",serif;
   }
   &__arrow{
@@ -192,9 +189,7 @@
 @keyframes carousel {
   from{
     transform: scale(1);
-    // border: 1px solid rgba($color-black,.1);
   }to{
     transform: scale(1.05);
-    // border: 1px solid rgba($color-black,.2);
   }
 }

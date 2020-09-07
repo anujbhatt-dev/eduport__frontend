@@ -21,10 +21,6 @@ class Landing extends Component{
 
   componentDidMount=()=>{
     window.scrollTo({top:0,behavior:"smooth"})
-
-    // if(this.props.content.landingPage)
-    // this.setState({content:{...this.props.content.landingPage }});
-
     axios.get("/v1/content/landing").then(res=>{
       console.log(res);
       this.setState({content:res.data,loading:false});

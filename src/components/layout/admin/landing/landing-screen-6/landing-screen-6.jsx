@@ -1,8 +1,6 @@
 import React, {Component} from "react"
 import pic from "../../../../../assets/images/screen1.svg"
-// import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-// import { Carousel } from 'react-responsive-carousel';
-// import Carousel from 'react-elastic-carousel';
+
 
 
  class AdminLandingScreen6 extends Component{

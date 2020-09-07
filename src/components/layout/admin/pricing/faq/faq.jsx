@@ -92,7 +92,7 @@ import axios from "axios"
                         <i onClick={this.addFaqHandler}  className="fa fa-plus fa-1x addIcon addIcon1" aria-hidden="true"></i>
                  </div>
              </div>
-    
+
          </div>
      )
    }

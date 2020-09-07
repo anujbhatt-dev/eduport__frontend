@@ -29,13 +29,7 @@ import axios from "axios"
 
   }
 
-//  componentDidUpdate=()=>{
-//   if(this.state.loading1)
-//   axios.get("/v1/content/blogs/"+this.state.page).then(res=>{
-//     console.log(res);
-//     this.setState(state=>{return {content:state.content.concat(res.data.content),totalPages:res.data.totalPages,loading1:false}});
-// }).catch(err=>{this.setState({loading1:false});alert("oops")})
-//  }
+
 
    onChangeHandler=(e,i)=>{
     let content= [...this.state.content]
@@ -95,26 +89,26 @@ import axios from "axios"
               <link rel="canonical" href={"http://vast-reaches-61761.herokuapp.com/blogs"} />
               <meta name="description" content={"making india world's factory"} />
           </Helmet>
-          <h2>
-          {"Note: "}<br/>
-
-          {"For Headings        : "+  "<h1>My Heading</h1>"}<br/>
-          {"For Bold            : "+  "<strong>My Blod Word</strong>"}<br/>
+          <p style={{lineHeight:"1.5",fontSize:"1.5rem"}}>
+          <h2>{"Note: "}</h2><p> any HTML tag or Inline Css can be used for writing a blog (only content section)</p><br/>
+          {"For Headings        : "+  "<h1>"} <strong>MyHeading</strong> {"</h1>"}<br/>
+          {"For Adding color to any tag       : "+  '<h1 style="color:'} <strong>myColorName</strong> {'">MyHeading</h1>'}<br/>
+          {"For Bold            : "+  "<strong>"} <strong>MyBlodWord</strong>{"</strong>"}<br/>
           {"For Horizontal line : "+  "<hr/>"}<br/>
           {"For Next line       : "+  "<br/>"}<br/>
-          {"For Next image       : "+  "<img class='image__blog' src='My Image Address'/>"}<br/>
-          </h2>
+          {'For image       : '+  '<img class="image__blog" src="'}  <strong>MyImageAddress</strong>{'"/>'}<br/>
+          </p>
 
            <div className="blogs">
                  {this.state.content.map((data,i)=>{
                    return <div style={{position:"relative"}} className="blogs__item1">
-                               <textarea name="title" onChange={(e)=>this.onChangeHandler(e,i)} value={data.title}  className="blogs__item-title"></textarea><br/>
-                               <textarea name="name" onChange={(e)=>this.onChangeHandler(e,i)} value={data.name}  className="blogs__item-info">By <span className="blogs__item-info-by"></span> on <span className="blogs__item-info-date">{data.date}</span></textarea><br/>
-                               <textarea name="content" onChange={(e)=>this.onChangeHandler(e,i)} value={data.content}  className="blogs__item-content"> </textarea><Link to={{pathname:"/admin/blogs:"+data.title,state:{...data}}} className="blogs__item-readMore">...Read More</Link><br/>
+                               <textarea cols="100" placeholder="title" name="title" onChange={(e)=>this.onChangeHandler(e,i)} value={data.title}  className="blogs__item-title"></textarea><br/>
+                               <textarea placeholder="name of the author" name="name" onChange={(e)=>this.onChangeHandler(e,i)} value={data.name}  className="blogs__item-info">By <span className="blogs__item-info-by"></span> on <span className="blogs__item-info-date">{data.date}</span></textarea><br/>
+                               <textarea cols="100" rows="10" style={{color:"black",lineHeight:"1.5"}} placeholder="content" name="content" onChange={(e)=>this.onChangeHandler(e,i)} value={data.content}  className="blogs__item-content"> </textarea><br/>
                                <i onClick={()=>this.removeDetailHandler(i)} className="fa fa-remove fa-2x removeIcon" aria-hidden="true"></i>
                           </div>
 
-                          
+
                  })}
                  <i onClick={this.addDetailHandler}  className="fa fa-plus fa-1x addIcon addIcon1" aria-hidden="true"></i>
            </div>

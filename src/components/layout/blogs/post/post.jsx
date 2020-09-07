@@ -10,11 +10,7 @@ import {Helmet} from "react-helmet";
 
 
    render(){
-     // <div className="Post__date">{this.props.history.location.state.state.date}</div>
-     // <div className="Post__title">{this.props.history.location.state.state.title}</div>
-     // <div className="Post__content">{this.props.history.location.state.state.content}</div>
-
-
+       console.log(this.props.history.location.state);
      return (<>
 
        <Helmet>
@@ -26,8 +22,8 @@ import {Helmet} from "react-helmet";
 
           <div className="post">
           <div className="post-title">{this.props.history.location.state.title}</div>
-          <div className="post-info">By <span className="post-info-by">{this.props.history.location.state.by}</span> on <span className="post-info-date">{this.props.history.location.state.createdDate}</span></div>
-          <div  className="post-content"> <td dangerouslySetInnerHTML={{__html:this.props.history.location.state.content.replace("image__blog","image__blog2")}} /></div>
+          <div className="post-info">By <span className="post-info-by">{this.props.history.location.state.name}</span> on <span className="post-info-date">{this.props.history.location.state.createdDate}</span></div>
+          <div  className="post-content"> <td dangerouslySetInnerHTML={{__html:this.props.history.location.state.content.replace(/image__blog/g,"image__blog2")}} /></div>
           <Link to={"/blogs"} className="post-goBack">...blogs</Link>
           </div>
 

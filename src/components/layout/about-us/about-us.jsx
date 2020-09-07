@@ -1,6 +1,10 @@
 import React, {Component} from "react"
 import {Helmet} from "react-helmet"
 import about from "../../../assets/images/about.svg"
+import about2 from "../../../assets/images/about2.svg"
+import about3 from "../../../assets/images/about3.svg"
+import about4 from "../../../assets/images/about4.svg"
+
 import profile from "../../../assets/images/profile.svg"
 import female from "../../../assets/images/female.svg"
 import Aos from "aos"
@@ -86,7 +90,7 @@ class AboutUs extends Component{
                  <div data-aos="flip-down" className="aboutUs__screen1-text-para">{this.state.r2p2}</div>
             </div>
             <div data-aos="fade-up-right" className="aboutUs__screen1-img">
-                <img  src={about} alt=""/>
+                <img  src={about2} alt=""/>
             </div>
 
         </div>:null}
@@ -100,7 +104,7 @@ class AboutUs extends Component{
                  <div data-aos="flip-down" className="aboutUs__screen1-text-para">{this.state.r3p2}</div>
             </div>
           <div data-aos="fade-up-left" className="aboutUs__screen1-img">
-              <img  src={about} alt=""/>
+              <img  src={about3} alt=""/>
           </div>
       </div>:null}
 
@@ -115,7 +119,7 @@ class AboutUs extends Component{
             </div>
 
             <div data-aos="fade-up-right" className="aboutUs__screen1-img">
-                <img  src={about} alt=""/>
+                <img  src={about4} alt=""/>
             </div>
 
     </div>:null}

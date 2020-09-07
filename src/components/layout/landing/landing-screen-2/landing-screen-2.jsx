@@ -4,7 +4,7 @@
  class LandingScreen2 extends Component{
 
   state={
-   
+
     r2h1:"About Eduport: ",
     r2p1:"Eduport is training centre of Indiaport. ",
     r2h2:"",
@@ -64,19 +64,14 @@ if(this.state.loading && this.props.content.r2h1)
                     <div className="landingScreen2__courseDetails-head">{this.state.r2h2}</div>
                     {this.state.r2list1.map(data=><div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-module"><i class={"fa fa-"+data.icon+" landingScreen2__courseDetails-icon1"} aria-hidden="true"></i>{data.p1} <span>{data.p2}</span></div>
 )}
-                    {/* <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-module"><i class="fa fa-bars landingScreen2__courseDetails-icon1" aria-hidden="true"></i> Modules: <span>{this.state.module.number}</span></div>
-                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-hours"><i class="fa fa-clock-o landingScreen2__courseDetails-icon1" aria-hidden="true"></i> Hours: <span>{this.state.module.hours}</span></div>
-                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-sundayZoomCall"><i class="fa fa-video-camera landingScreen2__courseDetails-icon1" aria-hidden="true"></i> sunday zoom call</div> */}
 
                </div>
                <div className="landingScreen2__courseDetails">
-                   
+
                     <div className="landingScreen2__courseDetails-head">{this.state.r2h3}</div>
                     {this.state.r2list2.map(data=><div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-module"><i class={"fa fa-"+data.icon+" landingScreen2__courseDetails-icon2"} aria-hidden="true"></i> {data.p1}</div>
 )}
-                    {/* <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-module"><i class="fa fa-mobile landingScreen2__courseDetails-icon2" aria-hidden="true"></i> Mobile Courses</div>
-                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-hours"><i class="fa fa-video-camera landingScreen2__courseDetails-icon2" aria-hidden="true"></i> Video tutorial</div>
-                    <div className="landingScreen2__courseDetails-item landingScreen2__courseDetails-sundayZoomCall"><i class="fa fa-phone landingScreen2__courseDetails-icon2" aria-hidden="true"></i> support</div> */}
+                  
 
                </div>
          </div>

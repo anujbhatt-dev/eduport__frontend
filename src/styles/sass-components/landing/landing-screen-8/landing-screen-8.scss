@@ -27,11 +27,8 @@
       background: rgba($color-grey,.2);
       height: 35vh;
       margin-top: 30vh;
-      // box-shadow: 0rem 1rem 2rem -1rem rgba($color-black,1);
       &-box{
-        // padding-right: 10rem;
          &-head{
-           // background: transparent;
            font-size: 4rem;
            font-weight: bold;
            margin-left: 2rem;
@@ -47,14 +44,12 @@
            &-apple{
              background: $color-black;
              color:$color-white;
-             // border-radius: 10px;
              padding: 1rem 2rem;
              margin: 1rem;
            }
            &-google{
              background: $color-black;
              color:$color-white;
-             // border-radius: 10px;
              margin: 1rem;
              padding: 1rem 2rem;
            }
@@ -83,7 +78,6 @@
        flex-basis: 33.3%;
        display: flex;
        &-iconWrapper{
-         // width: 15%;
          font-size: 3rem;
          display: flex;
          align-items: center;
@@ -91,8 +85,6 @@
 
          & i{
            padding: 1rem 1.5rem;
-           // height: 100%;
-           // width: 100%;
          }
        }
        &-item{
@@ -131,14 +123,12 @@
              &-apple{
                background: $color-black;
                color:$color-white;
-               // border-radius: 10px;
                padding: 1rem 2rem;
                margin: 1rem;
              }
              &-google{
                background: $color-black;
                color:$color-white;
-               // border-radius: 10px;
                margin: 1rem;
                padding: 1rem 2rem;
              }
@@ -183,7 +173,6 @@
         flex-flow: column;
         height: auto;
         justify-content: center;
-        // margin-top: 10vh;
         &-box{
            &-head{
              font-size: 2rem;
@@ -198,14 +187,12 @@
              &-apple{
                background: $color-black;
                color:$color-white;
-               // border-radius: 10px;
                padding: 1rem 1.5rem;
                margin: 1rem;
              }
              &-google{
                background: $color-black;
                color:$color-white;
-               // border-radius: 10px;
                margin: 1rem;
                padding: 1rem 1.5rem;
              }

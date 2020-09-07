@@ -12,7 +12,7 @@ import ReactWhatsapp from 'react-whatsapp';
 
      return (
 
-             <ReactWhatsapp element="div" number="+917895339580" message="Hello World!!!" >
+             <ReactWhatsapp element="div" number="+918517885555" message="Hello World!!!" >
              <div id="WAButton" className="whatsapp">
                 <i className="fa fa-whatsapp" aria-hidden="true"></i>
              </div>

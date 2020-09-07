@@ -1,12 +1,11 @@
 import React, {Component} from "react"
 import Spinner from "../../../../../UI/spinner/spinner"
-import Backdrop from "../../../../../UI/backdrop/backdrop"
 import enquire from "../../../../../assets/images/enquire.svg"
 
 class AdminLandingScreen9 extends Component{
 
   state={
-   
+
     loading:false,
     r10h1:"h1",
     loading1:true,
@@ -14,12 +13,12 @@ class AdminLandingScreen9 extends Component{
 
 
 
-   
+
    componentDidMount=()=>{
-   
+
     if(this.props.content)
     this.setState({...this.props.content });
-   
+
   }
 
   componentDidUpdate=()=>{
@@ -28,7 +27,7 @@ class AdminLandingScreen9 extends Component{
 
   }
 
-   
+
 
 
   render(){
@@ -42,7 +41,7 @@ class AdminLandingScreen9 extends Component{
                      <div style={{display:"none"}} className="landingScreen9__details-email">hello@eduports.in</div>
                 </div>
                 <div className="landingScreen9__enquire">
-                     {this.state.loading?<><Spinner/><Backdrop show={this.state.loading}/></>:<form className="landingScreen9__enquire-form" >
+                     {this.state.loading?<><Spinner/></>:<form className="landingScreen9__enquire-form" >
                            <input disabled required className="landingScreen9__enquire-form-input" placeholder="Your Name *" type="text"/>
                            <input disabled required className="landingScreen9__enquire-form-input" placeholder="Your Number *" type="tel"/>
                            <input disabled className="landingScreen9__enquire-form-input" placeholder="Your Email *" type="email"/>

@@ -11,7 +11,7 @@ import {Switch,Route} from "react-router-dom"
 import Footer from "./footer/footer"
 import Fixed from "./fixed/fixed"
 
-// Admin
+
 import Verify from "./admin/verify/verify"
 import AdminLanding from "./admin/landing/landing"
 import AdminPricing from "./admin/pricing/pricing"
@@ -32,7 +32,7 @@ import axios from "axios"
 
 
     state={
-       
+
     }
 
 

@@ -1,6 +1,5 @@
 import React, {Component} from "react"
 import Spinner from "../../../../UI/spinner/spinner"
-import Backdrop from "../../../../UI/backdrop/backdrop"
 import enquire from "../../../../assets/images/enquire.svg"
 import axios from "axios"
 
@@ -19,10 +18,10 @@ class LandingScreen9 extends Component{
 
 
   componentDidMount=()=>{
-   
+
     if(this.props.content)
     this.setState({...this.props.content });
-   
+
   }
 
   componentDidUpdate=()=>{
@@ -33,7 +32,7 @@ class LandingScreen9 extends Component{
 
    submitHandler=(e)=>{
 
-    
+
     this.setState({
       loading:true
     })
@@ -45,7 +44,7 @@ class LandingScreen9 extends Component{
             })
        }, 3000);
     })
-       
+
      e.preventDefault();
    }
 
@@ -65,7 +64,7 @@ class LandingScreen9 extends Component{
                      <div style={{display:"none"}} className="landingScreen9__details-email">hello@eduports.in</div>
                 </div>
                 <div className="landingScreen9__enquire">
-                     {this.state.loading?<><Spinner/><Backdrop show={this.state.loading}/></>:<form onSubmit={(e)=>this.submitHandler(e)} className="landingScreen9__enquire-form" >
+                     {this.state.loading?<><Spinner/></>:<form onSubmit={(e)=>this.submitHandler(e)} className="landingScreen9__enquire-form" >
                            <input onChange={(e)=>this.inputHandler(e)} name="name" required className="landingScreen9__enquire-form-input" placeholder="Your Name *" type="text"/>
                            <input onChange={(e)=>this.inputHandler(e)} name="phone" required className="landingScreen9__enquire-form-input" placeholder="Your Number *" type="tel"/>
                            <input onChange={(e)=>this.inputHandler(e)} name="email" className="landingScreen9__enquire-form-input" placeholder="Your Email *" type="email"/>

@@ -8,11 +8,11 @@ import "aos/dist/aos.css"
  class LandingScreen1 extends Component{
 
   state= {
-   
+
     r1h1:"A platform created toease global trade.",
     r1p1:"Online video classes with in-depth & practical skills. Education made easy, affordable and fun!",
     loading:true,
-   
+
  }
 
  componentDidMount=()=>{
@@ -25,8 +25,6 @@ import "aos/dist/aos.css"
    if(this.state.loading && this.props.content.r1h1)
    this.setState({r1h1:this.props.content.r1h1,r1p1:this.props.content.r1p1,loading:false})
 
-  //  if(prevProps.)
-  //  this.props.parentLandingScreen1(this.state);
 
  }
 

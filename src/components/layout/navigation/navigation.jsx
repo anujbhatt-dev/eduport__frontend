@@ -1,5 +1,4 @@
 import React, {Component} from "react"
-import Backdrop from "../../../UI/backdrop/backdrop"
 import {NavLink, withRouter} from "react-router-dom"
 
 class Navigation extends Component{
@@ -126,7 +125,7 @@ this.repeat();
 
          </div>
     )
-    // <Backdrop  clicked={this.modalHandler} show={this.state.show}/>
+
   }
 }
 

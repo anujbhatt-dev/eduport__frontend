@@ -1,7 +1,6 @@
 import React, {Component} from "react"
 import AdminFaq from "./faq/faq"
 import AdminPrice from "./price/price"
-// import LandingScreen9 from "../landing/landing-screen-9/landing-screen-9"
 import {Helmet} from "react-helmet"
 import axios from "axios"
 
@@ -16,9 +15,6 @@ import axios from "axios"
   componentDidMount=()=>{
     window.scrollTo({top:0,behavior:"smooth"})
 
-    // if(this.props.content.landingPage)
-    // this.setState({content:{...this.props.content.landingPage }});
-
     axios.get("/v1/content/pricing").then(res=>{
       console.log(res);
       this.setState({content:res.data,loading:false});
@@ -26,11 +22,7 @@ import axios from "axios"
 
   }
 
-  //  componentDidUpdate=()=>{
-  //   if(this.state.loading && this.props.content.pricingPage)
-  //   this.setState({content:{...this.props.content.pricingPage },loading:false})
 
-  //  }
 
 
    faqsHandler=(faqs)=>{
@@ -61,7 +53,7 @@ import axios from "axios"
     if(!this.props.authenticated)
     window.location="http://vast-reaches-61761.herokuapp.com/admin/verify";
 
-    
+
     if(this.state.loading)
     return <div  id="loader1"><div class="loader">Loading...</div></div>
 

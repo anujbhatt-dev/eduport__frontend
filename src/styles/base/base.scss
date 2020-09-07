@@ -9,20 +9,6 @@
 
 }
 
-// ::-webkit-scrollbar{
-//    width: .5rem;
-//    // position: absolute;
-// }
-// //
-// // ::-webkit-scrollbar-track{
-// //   background: transparent;
-// // }
-// //
-// ::-webkit-scrollbar-thumb{
-//   background: $color-primary-blue;
-//   // border-radius: 1000px;
-// }
-
 html{
   // 1 rem
   // scroll-behavior: smooth;
@@ -88,4 +74,8 @@ a{
   @include respond(tab-port){
     display: none;
   }
+}
+textarea{
+  max-width: 70vw;
+  padding: 1rem;
 }

@@ -4,7 +4,9 @@ import about from "../../../../assets/images/about.svg"
 import profile from "../../../../assets/images/profile.svg"
 import female from "../../../../assets/images/female.svg"
 import axios from "axios"
-
+import about2 from "../../../../assets/images/about2.svg"
+import about3 from "../../../../assets/images/about3.svg"
+import about4 from "../../../../assets/images/about4.svg"
 
 class AdminAboutUs extends Component{
 
@@ -112,7 +114,7 @@ class AdminAboutUs extends Component{
             </div>
 
             <div data-aos="fade-up-right" className="aboutUs__screen1-img">
-                <img  src={about} alt=""/>
+                <img  src={about2} alt=""/>
             </div>
 
 
@@ -126,7 +128,7 @@ class AdminAboutUs extends Component{
                  <textarea value={this.state.r3p2} name="r3p2" onChange={(e)=>this.setState({[e.target.name]:e.target.value})} data-aos="flip-down" className="aboutUs__screen1-text-para"></textarea>
             </div>
           <div data-aos="fade-up-left" className="aboutUs__screen1-img">
-              <img  src={about} alt=""/>
+              <img  src={about3} alt=""/>
           </div>
       </div>
 
@@ -141,7 +143,7 @@ class AdminAboutUs extends Component{
 
 
         <div data-aos="fade-up-right" className="aboutUs__screen1-img">
-            <img  src={about} alt=""/>
+            <img  src={about4} alt=""/>
         </div>
 
     </div>
