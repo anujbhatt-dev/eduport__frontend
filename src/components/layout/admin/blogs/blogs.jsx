@@ -102,6 +102,7 @@ import axios from "axios"
           {"For Bold            : "+  "<strong>My Blod Word</strong>"}<br/>
           {"For Horizontal line : "+  "<hr/>"}<br/>
           {"For Next line       : "+  "<br/>"}<br/>
+          {"For Next image       : "+  "<img class='image__blog' src='My Image Address'/>"}<br/>
           </h2>
 
            <div className="blogs">
