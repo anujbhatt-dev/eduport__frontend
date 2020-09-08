@@ -25,18 +25,16 @@ import axios from "axios"
 
     submitHandler=(e)=>{
       e.preventDefault();
-
-
-
-      this.setState({
+     this.setState({
         loading:true,
       })
 
+      let formData={...this.state.formData}
 
+      if(!formData.preference)
+       formData.preference=this.state.c1;
 
-
-
-      axios.post("/v1/client",this.state.formData).then(res=>{
+      axios.post("/v1/client",formData).then(res=>{
         setTimeout(()=>{
           this.setState({
                 loading:false
@@ -55,8 +53,9 @@ import axios from "axios"
       // if(this.props.content.landingPage)
       // this.setState({content:{...this.props.content.landingPage }});
 
+
+
       axios.get("/v1/content/contact").then(res=>{
-        console.log(res);
         this.setState({... res.data,loading1:false});
     }).catch(err=>{this.setState({loading1:false});alert("oops")})
 
@@ -105,9 +104,10 @@ import axios from "axios"
                     <label htmlFor="contactUs__category">Preference</label>
                     <select placeholder="choose you preference" name="preference" onChange={(e)=>this.inputHandler(e)} value={this.state.formData.preference} required id="contactUs__category" >
                       {/* <option >choose you preference</option> */}
-                      <option value={this.state.c3}>{this.state.c3}</option>
                       <option value={this.state.c1}>{this.state.c1}</option>
                       <option value={this.state.c2}>{this.state.c2}</option>
+                      <option  value={this.state.c3}>{this.state.c3}</option>
+
                     </select>
                     <input type="submit" className="contactUs__form-submit" value="Proceed"/>
                     <div className="contactUs__form-terms">By signing up, you agree to Eduport’s  <span>Privacy policy</span> and <span>Terms of Use.</span></div>

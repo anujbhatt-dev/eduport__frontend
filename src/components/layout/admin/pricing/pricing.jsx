@@ -9,6 +9,7 @@ import axios from "axios"
   state={
    loading:true,
     content:{},
+    saveloading:false,
   }
 
 
@@ -41,7 +42,10 @@ import axios from "axios"
 
    saveHandler=(e)=>{
     e.preventDefault();
+    this.setState({saveloading:true});
+
     axios.post("/v1/admin/pricingpage",this.state.content).then(res=>{
+      this.setState({saveloading:false});
        alert("saved");
     })
    }
@@ -81,7 +85,7 @@ import axios from "axios"
              :null}
 
 
-              <button className="load__btn" onClick={(e)=>this.saveHandler(e)}>Save</button>
+             <button className="load__btn" disabled={this.state.saveloading} onClick={this.saveHandler}>  {this.state.saveloading?"This may take a while":"Save"}</button>
           </div>
           </>
      )

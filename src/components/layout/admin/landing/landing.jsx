@@ -18,6 +18,8 @@ class AdminLanding extends Component{
   state={
     content:{},
     loading:true,
+    saveloading:false,
+
   }
 
   componentDidMount=()=>{
@@ -115,7 +117,9 @@ class AdminLanding extends Component{
 
   saveHandler=(e)=>{
     e.preventDefault();
+    this.setState({saveloading:true});
     axios.post("/v1/admin/landingpage",this.state.content).then(res=>{
+      this.setState({saveloading:false,});
        alert("saved");
     })
    }
@@ -160,7 +164,7 @@ class AdminLanding extends Component{
               <hr  className="hr"/>
               <AdminLandingScreen10  parentLandingScreen={this.parentLandingScreen10}  content={this.state.content}   styles={this.props.styles}/>
               <hr  className="hr"/>
-              <button className="load__btn" onClick={this.saveHandler}>Save</button>
+              <button className="load__btn" disabled={this.state.saveloading} onClick={this.saveHandler}>  {this.state.saveloading?"This may take a while":"Save"}</button>
 
           </div>}
           </>

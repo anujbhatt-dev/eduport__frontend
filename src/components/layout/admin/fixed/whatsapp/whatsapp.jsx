@@ -9,10 +9,10 @@ import ReactWhatsapp from 'react-whatsapp';
 
 
    render(){
-
+     const message = "Hello eduport. I am interested to know about your program.Please provide me with more details regarding the course. Thank you"
      return (
 
-             <ReactWhatsapp element="div" number="+917895339580" message="Hello World!!!" >
+             <ReactWhatsapp element="div" number="+918517885555" message={message}>
              <div id="WAButton" className="whatsapp">
                 <i className="fa fa-whatsapp" aria-hidden="true"></i>
              </div>

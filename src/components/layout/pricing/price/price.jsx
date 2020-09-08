@@ -6,7 +6,7 @@
 
    state={
      data:[
-       
+
      ]
    }
 
@@ -30,12 +30,14 @@
                           <div data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-typeDetail">{data.p1}</div>
                           <div data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-price">{data.price}</div>
                           {data.type==="Premium"? <div data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-time">pricing</div>:<div data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-time">{data.p2}</div>}
+                          <div className={i===1?"lastminpricelist lastminpricelist2":"lastminpricelist"}>
                           {data.list.map(item=>{
                             return <div data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className="price__card-list">
                                         <div className="price__card-list-tick"><i className="fa fa-check" aria-hidden="true"></i></div>
                                         <div className="price__card-list-item">{item}</div>
                                    </div>
                           })}
+                          </div>
                           <button data-aos="fade-down" data-aos-delay={(i===0||i===2)?10:0} data-aos-once={true} className={i===1?"btn btn-blue price__card--btn btn-blue-2":"btn btn-blue price__card--btn"}>Start Free Trial</button>
                        </div>
               })}

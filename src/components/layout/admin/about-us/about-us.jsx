@@ -11,6 +11,7 @@ import about4 from "../../../../assets/images/about4.svg"
 class AdminAboutUs extends Component{
 
   state={
+    saveloading:false,
     r1h1:"",
     r1p1:"",
     r1p2:"",
@@ -71,7 +72,10 @@ class AdminAboutUs extends Component{
 
   saveHandler=(e)=>{
     e.preventDefault();
+    this.setState({saveloading:true,})
     axios.post("/v1/admin/aboutpage",this.state).then(res=>{
+      this.setState({saveloading:false,})
+
        alert("saved");
     })
    }
@@ -176,7 +180,7 @@ class AdminAboutUs extends Component{
 
       </div>
 
-      <button className="load__btn" onClick={(e)=>this.saveHandler(e)}>Save</button>
+      <button className="load__btn" disabled={this.state.saveloading} onClick={this.saveHandler}>  {this.state.saveloading?"This may take a while":"Save"}</button>
           </div>
           </>
      )

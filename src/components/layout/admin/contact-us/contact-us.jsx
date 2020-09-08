@@ -12,6 +12,7 @@ import axios from "axios"
 
 
       loading:true,
+      saveloading:false,
 
     }
 
@@ -19,7 +20,11 @@ import axios from "axios"
 
     submitHandler=(e)=>{
       e.preventDefault();
+      this.setState({saveloading:true,});
+
      axios.post("v1/admin/contactpage",this.state).then(res=>{
+       this.setState({saveloading:false,});
+
        alert("saved");
      })
     }
@@ -60,7 +65,7 @@ import axios from "axios"
           </Helmet>
           <div style={{color:this.props.styles.color}} className="contactUs">
                  <hr className="hr"/>
-              <form onSubmit={(e)=>this.submitHandler(e)} className="contactUs__form">
+              <form  className="contactUs__form">
                     <input name="h1" onChange={(e)=>this.inputHandler(e)} value={this.state.h1} className="contactUs__form-h1 contactUs__form-h1--mod"/>
                     <input name="h2" onChange={(e)=>this.inputHandler(e)} value={this.state.h2} className="contactUs__form-h1"/>
                     <input name="h3" onChange={(e)=>this.inputHandler(e)} value={this.state.h3} className="contactUs__form-h2"/>
@@ -74,11 +79,10 @@ import axios from "axios"
                     <input  name="c1" onChange={(e)=>this.inputHandler(e)}  value={this.state.c1} required  placeholder="prefrence1" className="contactUs__form-input" type="text"/>
                     <input  name="c2" onChange={(e)=>this.inputHandler(e)}  value={this.state.c2} required  placeholder="prefrence2" className="contactUs__form-input" type="text"/>
                     <input  name="c3" onChange={(e)=>this.inputHandler(e)}  value={this.state.c3} required  placeholder="prefrence3" className="contactUs__form-input" type="text"/>
-
-                    <input type="submit" className="contactUs__form-submit" value="SAVE"/>
                     <div className="contactUs__form-terms">By signing up, you agree to Eduport’s  <span>Privacy policy</span> and <span>Terms of Use.</span></div>
+            </form>
+            <button className="load__btn" disabled={this.state.saveloading} onClick={this.submitHandler}>  {this.state.saveloading?"This may take a while":"Save"}</button>
 
-                </form>
           </div>
           </>
      )
