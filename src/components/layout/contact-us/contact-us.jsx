@@ -28,14 +28,9 @@ import axios from "axios"
 
 
 
-      this.setState({
+    this.setState({
         loading:true,
       })
-
-
-
-
-
       axios.post("/v1/client",this.state.formData).then(res=>{
         setTimeout(()=>{
           this.setState({
