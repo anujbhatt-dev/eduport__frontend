@@ -13,6 +13,7 @@ import Fixed from "./fixed/fixed"
 
 
 import Verify from "./admin/verify/verify"
+import ChangePassword from "./admin/changePassword/changePassword"
 import AdminLanding from "./admin/landing/landing"
 import AdminPricing from "./admin/pricing/pricing"
 import AdminBlogs from "./admin/blogs/blogs"
@@ -94,6 +95,9 @@ import axios from "axios"
 
                  <Route exact path="/admin/verify">
                      <Verify />
+                 </Route>
+                 <Route exact path="/admin/changePassword">
+                     <ChangePassword />
                  </Route>
                  <Route exact path="/admin">
                      <AdminLanding authenticated={this.props.authenticated}  styleHandler={this.props.styleHandler}  styles={this.props.styles}/>
