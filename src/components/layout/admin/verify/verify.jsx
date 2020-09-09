@@ -40,7 +40,6 @@ import { withRouter,Link } from "react-router-dom";
                 <input onChange={(e)=>this.inputHandler(e)} name="secret" className="adminVerification__form-input" placehonder="Enter Admin Secret" type="password"/>
               </div>
               <input className="btn btn-blue" type="submit" value="verify" name="" id=""/>
-              <Link style={{color:"black",fontSize:"2rem",alignSelf:"flex-end",padding:"2rem 0"}} to="/admin/changePassword">forget password ?</Link>
             </form>
         </div>
      )

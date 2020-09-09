@@ -26,6 +26,8 @@ class AdminNavigation extends Component{
 
     axios.post("/v1/admin/passwordResetRequest",null,{params:{url:"http://localhost:3000/admin/passwordReset"}}).then(res=>{
       alert("hey admin check eduport's email");
+    }).catch(err=>{
+      alert("oops")
     })
 
   }
@@ -51,7 +53,7 @@ class AdminNavigation extends Component{
                 {this.props.authenticated?<div style={style} className="logo__tagline">
                       <div style={{fontSize:"1.2rem",color:"grey",fontWeight:"bold"}}><strong style={{color:"black",fontWeight:"bold"}}>NOTE: </strong>Press _space_ at the end of any field before hitting save btn</div><br/>
                       <div><a target="_blank" style={{color:"black",fontWeight:"bold"}} href="https://fontawesome.com/v4.7.0/icons/">Click to browse Icon names</a></div><br/>
-                     <div style={{color:"black",fontWeight:"bold"}}  onClick={this.passwordResetHandler} className="navigation__items-item">Password rest</div>
+                     <div style={{cursor:"pointer",fontSize:"1rem",color:"grey",fontWeight:"light",paddingLeft:"0"}}  onClick={this.passwordResetHandler} className="navigation__items-item">Password reset</div>
                  </div>:null}
             </div>
             <nav  className="navigation__items">
