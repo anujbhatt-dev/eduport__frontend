@@ -1,5 +1,7 @@
 import React, {Component} from "react"
 import {NavLink, withRouter} from "react-router-dom"
+import axios from "axios"
+
 
 class AdminNavigation extends Component{
 
@@ -20,6 +22,14 @@ class AdminNavigation extends Component{
     }
   }
 
+  passwordResetHandler=()=>{
+
+    axios.post("/v1/admin/passwordResetRequest",null,{params:{url:"http://localhost:3000/admin/passwordReset"}}).then(res=>{
+      alert("hey admin check eduport's email");
+    })
+
+  }
+
 
 
 
@@ -38,10 +48,11 @@ class AdminNavigation extends Component{
                       <div className="logo__name-main">Eduport</div>
                       <div className="logo__name-secondary">By IndiaPort</div>
                  </div>
-                 <div style={style} className="logo__tagline">
+                {this.props.authenticated?<div style={style} className="logo__tagline">
                       <div style={{fontSize:"1.2rem",color:"grey",fontWeight:"bold"}}><strong style={{color:"black",fontWeight:"bold"}}>NOTE: </strong>Press _space_ at the end of any field before hitting save btn</div><br/>
-                      <div><a target="_blank" style={{color:"black",fontWeight:"bold"}} href="https://fontawesome.com/v4.7.0/icons/">click to browse icon names</a></div>
-                 </div>
+                      <div><a target="_blank" style={{color:"black",fontWeight:"bold"}} href="https://fontawesome.com/v4.7.0/icons/">Click to browse Icon names</a></div><br/>
+                     <div style={{color:"black",fontWeight:"bold"}}  onClick={this.passwordResetHandler} className="navigation__items-item">Password rest</div>
+                 </div>:null}
             </div>
             <nav  className="navigation__items">
                   <NavLink exact style={{color:style.color}} activeStyle={{color: "#0f3460",textDecoration:"underline"}} to="/admin"><div className="navigation__items-item">Home</div></NavLink>
