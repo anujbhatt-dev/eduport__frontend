@@ -71,7 +71,7 @@ import axios from "axios"
     this.setState({saveloading:true,})
     axios.post("/v1/admin/blogspage",this.state.content).then(res=>{
       this.setState({
-        saveloading:true,
+        saveloading:false,
          flag:true
       })
        alert("saved");
