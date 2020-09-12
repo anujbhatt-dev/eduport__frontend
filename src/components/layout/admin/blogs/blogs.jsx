@@ -83,7 +83,7 @@ import axios from "axios"
    render(){
 
     if(!this.props.authenticated)
-    window.location="http://vast-reaches-61761.herokuapp.com/admin/verify";
+    window.location="http://eduports.in/admin/verify";
 
 
     if(this.state.loading)
@@ -93,7 +93,7 @@ import axios from "axios"
            <Helmet>
               <meta charSet="utf-8" />
               <title>{"Eduport By IndiaPort | Blogs"}</title>
-              <link rel="canonical" href={"http://vast-reaches-61761.herokuapp.com/blogs"} />
+              <link rel="canonical" href={"http://eduports.in/blogs"} />
               <meta name="description" content={"making india world's factory"} />
           </Helmet>
           <p style={{lineHeight:"1.5",fontSize:"1.5rem"}}>

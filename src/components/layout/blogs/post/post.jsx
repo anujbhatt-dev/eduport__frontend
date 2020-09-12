@@ -16,7 +16,7 @@ import {Helmet} from "react-helmet";
        <Helmet>
              <meta charSet="utf-8" />
              <title>{this.props.history.location.state.title}</title>
-             <link rel="canonical" href={"http://vast-reaches-61761.herokuapp.com/"+this.props.history.location.state.title} />
+             <link rel="canonical" href={"http://eduports.in/"+this.props.history.location.state.title} />
              <meta name="description" content={this.props.history.location.state.content.slice(0,350)} />
          </Helmet>
 

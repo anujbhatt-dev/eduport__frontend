@@ -132,7 +132,7 @@ class AdminLanding extends Component{
 
 
     if(!this.props.authenticated)
-       window.location="http://vast-reaches-61761.herokuapp.com/admin/verify";
+       window.location="http://eduports.in/admin/verify";
 
 
        if(this.state.loading)
@@ -142,7 +142,7 @@ class AdminLanding extends Component{
            <Helmet>
               <meta charSet="utf-8" />
               <title>{"Eduport By IndiaPort"}</title>
-              <link rel="canonical" href={"http://vast-reaches-61761.herokuapp.com/pricing"} />
+              <link rel="canonical" href={"http://eduports.in/pricing"} />
               <meta name="description" content={"making india world's factory"} />
           </Helmet>
         { !this.state.content.r1h1?null: <div className="landing">

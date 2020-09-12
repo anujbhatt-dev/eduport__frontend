@@ -11,14 +11,14 @@ import {Helmet} from "react-helmet";
 
    render(){
      if(!this.props.authenticated)
-     window.location="http://vast-reaches-61761.herokuapp.com/admin/verify";
+     window.location="http://eduports.in/admin/verify";
 
      return (<>
 
        <Helmet>
              <meta charSet="utf-8" />
              <title>{this.props.history.location.state.title}</title>
-             <link rel="canonical" href={"http://vast-reaches-61761.herokuapp.com/"+this.props.history.location.state.title} />
+             <link rel="canonical" href={"http://eduports.in/"+this.props.history.location.state.title} />
              <meta name="description" content={this.props.history.location.state.content.slice(0,350)} />
          </Helmet>
 

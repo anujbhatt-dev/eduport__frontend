@@ -46,7 +46,7 @@ import axios from "axios"
            <Helmet>
               <meta charSet="utf-8" />
               <title>{"Eduport By IndiaPort | Blogs"}</title>
-              <link rel="canonical" href={"http://vast-reaches-61761.herokuapp.com/blogs"} />
+              <link rel="canonical" href={"http://eduports.in/blogs"} />
               <meta name="description" content={"making india world's factory"} />
           </Helmet>
            <div className="blogs">

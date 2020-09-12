@@ -24,7 +24,7 @@ class AdminNavigation extends Component{
 
   passwordResetHandler=()=>{
 
-    axios.post("/v1/admin/passwordResetRequest",null,{params:{url:"http://localhost:3000/admin/passwordReset"}}).then(res=>{
+    axios.post("/v1/admin/passwordResetRequest",null,{params:{url:"http://eduports.in/admin/passwordReset"}}).then(res=>{
       alert("hey admin check eduport's email");
     }).catch(err=>{
       alert("oops")
@@ -63,7 +63,7 @@ class AdminNavigation extends Component{
                   <NavLink style={{color:style.color}} activeStyle={{color: "#0f3460",textDecoration:"underline"}} to="/admin/blogs"><div className="navigation__items-item">blogs</div></NavLink>
                   <NavLink style={{color:style.color}} activeStyle={{color: "#0f3460",textDecoration:"underline"}} to="/admin/contactUs"><div className="navigation__items-item">contact</div></NavLink>
                   <NavLink style={{color:style.color}} activeStyle={{color: "#0f3460",textDecoration:"underline"}} to="/admin/studentList"><div className="navigation__items-item">student</div></NavLink>
-                  <div onClick={()=> window.location="http://vast-reaches-61761.herokuapp.com"} style={{color:"grey",cursor:"pointer"}} className="navigation__items-item"><i className="fa fa-sign-out fa-2x" aria-hidden="true"></i></div>
+                  <div onClick={()=> window.location="http://eduports.in"} style={{color:"grey",cursor:"pointer"}} className="navigation__items-item"><i className="fa fa-sign-out fa-2x" aria-hidden="true"></i></div>
             </nav>
 
 
