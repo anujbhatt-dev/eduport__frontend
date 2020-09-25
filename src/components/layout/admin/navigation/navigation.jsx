@@ -4,7 +4,6 @@ import axios from "axios"
 
 
 class AdminNavigation extends Component{
-
    state={
      show:false,
      value:""
@@ -24,7 +23,7 @@ class AdminNavigation extends Component{
 
   passwordResetHandler=()=>{
 
-    axios.post("/v1/admin/passwordResetRequest",null,{params:{url:"http://eduports.in/admin/passwordReset"}}).then(res=>{
+    axios.post("/v1/admin/passwordResetRequest",null,{params:{url:"http://vast-reaches-61761.herokuapp.com/admin/passwordReset"}}).then(res=>{
       alert("hey admin check eduport's email");
     }).catch(err=>{
       alert("oops")
